@@ -1,0 +1,555 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>在线打印机列表</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<style>
+	#consoleLog {
+		border: solid 1px #999999;
+		border-top-color: #CCCCCC;
+		border-left-color: #CCCCCC;
+		padding: 5px;
+	    width: 100%;
+		height: 300px;
+		overflow-y: scroll;
+	}
+	
+	#consoleLog pre {
+	    font-size: 11px;
+		padding: 1px;
+		border: solid 1px transparent;
+	}
+</style>
+
+  <body>
+
+    <div class="container-fluid">
+          <h2 class="sub-header">在线打印机列表:</h2>
+          <p>页面刷新时间间隔：<strong id="period"></strong>ms</p>
+          <p>当前在线：<strong id="total"></strong></p>
+          <br/><br/>
+		  
+		  <div class="row">
+		      <div class="col-md-6">			
+		   	      <div class="input-group" >
+		            <span>SN:</span>
+		            <input type="text" id="snInput" placeholder="输入设备编号" aria-describedby="basic-addon1">
+		          </div>
+
+					<br/>	
+		            <br/>	
+					
+				  <div style="width:100%; background:lightgray">
+					<p><input type="checkbox" id="prtcheckbox" value="toprt" >数据通道保持长连接</p>
+				    <div class="input-group" >
+		              <button id="printBtn" type="button">打印</button>
+		              <input type="text" id="printInput" placeholder="打印数据（hex string）..." style="width:500px">
+		          	</div>		
+		          	<br/>		
+		          	<div class="input-group">
+		              <button id="printFileBtn" type="button">打印指令文件</button>    &nbsp;    &nbsp;
+					  <input type="number" id="copyInput" placeholder="打印副本数,默认为1" aria-describedby="basic-addon1">
+		              <input type="file" class="chooseFile"/>
+		          	</div>		
+				  </div>
+		          
+				    <br/><br/>	
+					
+				    <div style="width:100%; background:lightgray">
+				        <p><input type="checkbox" id="ctrlcheckbox" value="todev" checked="checked">发向设备</p>
+			            <div class="input-group">	      
+							<button id="ctrlBtn" type="button">控制</button>
+			                <input type="text" id="ctrlInput"  placeholder="控制指令（hex string）..." style="width:500px">	          
+			            </div>	
+					    <br/>
+					    <div class="input-group">	      
+							<select id="cmdcombobox"></select>	
+							<input type="text" id="cmdparam"  placeholder="指令参数（hex string）...">	
+							<button id="cmdBtn" type="button">发送</button>
+			            </div>					  
+				    </div>	          
+		      </div>
+			
+			  
+			   <div id="echo-log" class="col-md-6"  style="float: left; margin-left: 20px; padding-left: 20px; width: 600px; border-left: solid 1px #cccccc;"> 
+					<strong>操作日志:</strong>
+		            <div id="consoleLog"></div>
+		       </div>
+
+		  </div>
+
+
+          <br/><br/><br/><br/>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>编号</th>
+                  <th>主状态</th>
+                  <th>子状态</th>
+                  <th>接受缓冲区大小</th>
+                  <th>更新时间</th>
+				  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="devlist">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script>
+		var cmdList={
+			CTRL_CMDGET_MODEL: "10010000",
+			CTRL_CMDGET_DEVNO: "10020000",
+			CTRL_CMDGET_PROTVER: "10030000",
+			CTRL_CMD_CONNT: "10040000",
+			CTRL_CMD_UNCONNT: "10050000",
+			CTRL_CMDSET_PSW: "10060000",
+			CTRL_CMDGET_USERDAT: "10070200",
+			CTRL_CMDSET_USERDAT: "10080000",
+			CTRL_CMDGET_DEVSTAT: "10090100",
+			CTRL_CMDGET_PWSSTAT: "100A0000",
+			CTRL_CMDSET_ENCRYPT: "100B0000",
+			CTRL_CMDGET_DEVINFO: "100C0000",
+			CTRL_CMD_RESETCFG: "100D0000",
+			CTRL_CMD_CLSBUF: "100E0000",
+			CTRL_CMDGET_STATISINFO: "100F0200",
+			CTRL_CMDGET_MAINTAININFO: "10100000",
+			CTRL_CMD_DEVRESTART: "10110000",
+			CTRL_CMD_DEVCHKSLF: "10120000",
+			CTRL_CMDGET_WORKMODE: "10130000",
+			CTRL_CMDSET_WORKMODE: "10140200",
+			CTRL_CMDGET_VERINFO: "10150000",
+			CTRL_CMDGET_CFGINFOS: "10170000",
+			CTRL_CMDSET_CFGINFOS: "10180000",
+			CTRL_CMDSET_SYSPARAM: "101C0000",
+			CTRL_CMDGET_SYSPARAM: "101B0000",
+			CTRL_CMDSET_OPER: "101D0000",
+		};
+		Object.keys(cmdList).forEach(function(key){
+			var opt = document.createElement("option");
+		    opt.innerHTML = key;
+		    document.getElementById("cmdcombobox").appendChild(opt);
+		});
+		
+		$("#cmdBtn").click(function(){       
+			var number = $("#snInput").val();
+			var data = cmdList[$("#cmdcombobox").val()];
+			var param = $("#cmdparam").val();
+			if(number===""){
+			   writeToScreen(timestamp() + " 设备ID不能为空!" , "error");
+			   return;
+			}
+			if(data===""){
+			   writeToScreen(timestamp() + " 控制数据不能为空!", "error");
+			   return;
+			}
+			if(param){
+				var LL = param.length/2;
+				
+				var sum = 0;
+				for(var i = 0; i<param.length; i+=2){
+					sum += parseInt(param.substr(i,2),16);
+				}
+				var SS = decimalToHex(sum,2);
+				SS = SS.substring(SS.length-2);
+				
+				data = data.substring(0,4) + decimalToHex(LL,2)+ SS + param;
+			}
+			console.log("cmd:" + data);
+
+			var form = new FormData();
+			form.append("number",number);
+			form.append("cmd",data);
+			if( $("#ctrlcheckbox").prop("checked") == true )
+			{
+			   form.append("todev","true");
+			}
+
+			var settings = {
+				 "async": false,
+				 "crossDomain": true,
+				 "url": "/api/push/ctrl",
+				 "method": "POST",
+				 "headers": {
+				   "cache-control": "no-cache"
+				  },
+				 "processData": false,
+				 "contentType": false,
+				 "mimeType":"multipart/form-data",
+				 "data":form
+			}
+			
+			writeToScreen(timestamp() + " 发送指令：0x"+data);
+			
+			$.ajax(settings).done(function (data) {
+				writeToScreen(timestamp() + " 执行成功，设备返回：0x"+data, "ok");
+			}).fail(function (jqXHR) {
+				writeToScreen(timestamp() + " 执行失败，返回信息："+jqXHR.responseText, "error");
+			});
+        });
+
+		function writeToScreen(message, lev)
+		{
+		    var pre = document.createElement("pre");
+		    pre.style.wordWrap = "break-word";
+			if( lev == "error" ){
+				pre.style.color = "red";
+			}else if( lev == "ok" ){
+				pre.style.color = "darkgreen";
+			}
+		    pre.innerHTML = message;
+		    document.getElementById("consoleLog").appendChild(pre);
+			$('#consoleLog').scrollTop( $('#consoleLog')[0].scrollHeight );
+		}
+		
+		function timestamp()
+		{
+		    var myDate = new Date();
+			return myDate.toLocaleTimeString();
+		}
+
+
+        $(function(){
+
+            var interval = 2000;
+            $("#period").text(interval);
+
+            $("#printBtn").click(function(){
+               var number = $("#snInput").val();
+               var data = $("#printInput").val();
+               if(number===""){
+				   writeToScreen(timestamp() + " 设备ID不能为空!" , "error");
+                   return;
+               }
+               if(data===""){
+                   writeToScreen(timestamp() + " 打印数据不能为空!", "error");
+                   return;
+               }
+
+               var form = new FormData();
+               form.append("number",number);
+               form.append("cmd",data);
+
+               var settings = {
+                 "async": false,
+                 "crossDomain": true,
+                 "url": "/api/push/print",
+                 "method": "POST",
+                 "headers": {
+                   "cache-control": "no-cache"
+                  },
+                 "processData": false,
+                 "contentType": false,
+                 "mimeType":"multipart/form-data",
+                 "data":form
+               }
+
+               $.ajax(settings).done(function () {
+                    writeToScreen(timestamp() + " 打印成功", "ok");
+               }).fail(function (jqXHR) {
+					writeToScreen(timestamp() + " 打印失败，返回信息："+jqXHR.responseText, "error");
+               });
+            });
+
+			$("#prtcheckbox").click(function(){       
+               var persistent = $("#prtcheckbox").prop("checked");
+   			   var settings = {
+                 "async": false,
+                 "crossDomain": true,
+                 "url": "/api/datachan/" + persistent,
+                 "method": "POST",
+                 "headers": {
+                   "cache-control": "no-cache"
+                  },
+                 "processData": false,
+                 "contentType": false,
+                 "mimeType":"multipart/form-data",
+               }
+
+               $.ajax(settings).done(function (data) {
+					writeToScreen(timestamp() + " 设置成功", "ok");
+               }).fail(function (jqXHR) {
+					writeToScreen(timestamp() + " 设置失败，返回信息："+jqXHR.responseText, "error");
+               });
+			});
+
+
+            $("#ctrlBtn").click(function(){       
+               var number = $("#snInput").val();
+               var data = $("#ctrlInput").val();
+               if(number===""){
+                   writeToScreen(timestamp() + " 设备ID不能为空!" , "error");
+                   return;
+               }
+               if(data===""){
+                   writeToScreen(timestamp() + " 控制数据不能为空!", "error");
+                   return;
+               }
+
+               var form = new FormData();
+               form.append("number",number);
+               form.append("cmd",data);
+               if( $("#ctrlcheckbox").prop("checked") == true )
+               {
+                   form.append("todev","true");
+               }
+
+               var settings = {
+                 "async": false,
+                 "crossDomain": true,
+                 "url": "/api/push/ctrl",
+                 "method": "POST",
+                 "headers": {
+                   "cache-control": "no-cache"
+                  },
+                 "processData": false,
+                 "contentType": false,
+                 "mimeType":"multipart/form-data",
+                 "data":form
+               }
+
+               $.ajax(settings).done(function (data) {
+					writeToScreen(timestamp() + " 执行成功，设备返回：0x"+data, "ok");
+               }).fail(function (jqXHR) {
+					writeToScreen(timestamp() + " 执行失败，返回信息："+jqXHR.responseText, "error");
+               });
+            });
+
+
+            window.setInterval(freshDevs,interval);
+
+            function freshDevs(){
+
+                var settings = {
+                  "async": true,
+                  "crossDomain": true,
+                  "url": "/api/all",
+                  "method": "GET",
+                  "headers": {
+                    "cache-control": "no-cache"
+                  }
+                }
+
+                $.ajax(settings).done(function (response) {
+                    var $tbody = $('#devlist');
+                    $tbody.empty();
+
+                   console.log(response)
+				   
+                   var jsonObj = response;//JSON.parse(response);
+                   for(var i=0; i<jsonObj.length; i++){
+					   $copy_btn = '<button type="button" class="copysn btn btn-default" title="选择该设备" data-sn="'+jsonObj[i].number+'"><i class="glyphicon glyphicon-tags" /></button>'
+				       $offline_btn = '<button type="button" class="offlinesn btn btn-danger" title="强制下线"  data-sn="'+jsonObj[i].number+'"><i class="glyphicon glyphicon-remove-sign" /></button>'	
+					   $info_btn = '<button type="button" class="devinfo btn btn-info" title="设备信息" data-info="'+jsonObj[i].info+'"><i class="glyphicon glyphicon-info-sign" /></button>'
+					
+					
+                       var row = '<tr><td>' + jsonObj[i].number + '</td><td>' + jsonObj[i].mainStatus + '</td><td>' +
+                                    jsonObj[i].subStatus + '</td><td>' + jsonObj[i].recSize + '</td><td>' + jsonObj[i].upDate +
+									'</td><td>' + 
+									$copy_btn + $offline_btn + 
+									$info_btn + 
+                                    '</td></tr>';
+                        $tbody.append(row);
+                   }
+
+                   $("#total").text(jsonObj.length);
+                });
+            }
+
+        });
+		
+		$(document).on('click', '.copysn', function() {
+		    var sn = $(this).data('sn');
+			console.log(sn);
+		    $("#snInput").val(sn);
+		});
+		
+		$(document).on('click', '.devinfo', function() {
+		    var info = $(this).data('info');
+			console.log(info);
+			writeToScreen("    *********设备信息：*********\n"+info+"\n    ********* END *********", "ok");
+		});
+		
+		
+		$(document).on('click', '.offlinesn', function() {
+		    var sn = $(this).data('sn');
+			var settings = {
+                "async": false,
+                "crossDomain": true,
+                "url": "/api/offline/" + sn,
+                "method": "DELETE",
+                "headers": {
+                    "cache-control": "no-cache",
+                },
+                "processData": false,
+                "contentType": false
+            }
+	
+            $.ajax(settings).done(function() {
+                list();
+            }).fail(function(jqXHR) {
+            });
+		});
+		
+		var cacheData = "";
+
+		$("#printFileBtn").click(function(){
+		   var number = $("#snInput").val();
+		   if(number===""){
+			    writeToScreen(timestamp() + " 设备ID不能为空!" , "error");
+                return;
+		   }
+
+		   if(cacheData===""){
+			   writeToScreen(timestamp() + " 打印数据不能为空!", "error");
+			   return;
+		   }
+		
+		
+		
+		   var copys = $("#copyInput").val();
+		   console.log("copy:"+copys);
+		   if(copys===0 || copys==='')
+				copys = 1;
+				
+		   
+				
+		   for(var i=0; i<copys; i++){				
+			   
+			   var form = new FormData();
+			   form.append("number",number);
+			   form.append("cmd",cacheData);
+	
+			   var settings = {
+				 "async": false,
+				 "crossDomain": true,
+				 "url": "/api/push/print",
+				 "method": "POST",
+				 "headers": {
+				   "cache-control": "no-cache"
+				  },
+				 "processData": false,
+				 "contentType": false,
+				 "mimeType":"multipart/form-data",
+				 "data":form
+			   }
+	
+			   var start = new Date().getTime();
+	
+			   $.ajax(settings).done(function () {
+				    var end = new Date().getTime();
+					writeToScreen(timestamp() + " 执行成功，耗时："+ (end-start), "ok");
+			   }).fail(function (jqXHR) {
+					writeToScreen(timestamp() + " 执行失败，返回信息："+jqXHR.responseText, "error");
+			   });
+		    }
+		});
+					
+					
+        var converter = {
+        //通过 file 控件 读取文件为 二进制字符串 再转换成 十六进制 字符串并返回
+        binaryToHex: function (inputFile) {
+            var _this = this;
+            inputFile.addEventListener('change', function () {
+			
+				cacheData = "";
+			
+                var files = this.files
+                        , len = files.length
+                        , reader = new FileReader()
+                        ;
+                if (0 == len)return;
+
+                //读取文件完成
+                reader.onload = function (e) {
+                    //转换
+                    var hexSring = _this._binaryToHex(e.target.result);
+					cacheData = hexSring; 
+                }
+
+                // 读取文件类型：二进制
+                reader.readAsBinaryString(files[0]);
+            }, false);
+        },
+        // 十六进制 转成 二进制
+        hexToBinary: function (string) {
+            var length = string.length
+                    , i = 0
+                    , result = ''
+                    ;
+            for (; i < length; i++) {
+                result += string.charCodeAt(i).toString(2);
+            }
+
+            return result;
+        },
+        // 二进制 转成  十六进制
+        _binaryToHex: function (string) {
+            var length = string.length
+                    , i = 0
+                    , result = ''
+                    ;
+            for (; i < length; i++) {
+                var item = string.charCodeAt(i).toString(16);
+                if(item.length === 1 ){
+                    result += "0";
+                }
+                result += item;
+
+            }
+            return result;
+        }
+    }
+
+        var inputFile = document.querySelector('.chooseFile');
+        converter.binaryToHex(inputFile);
+		
+		function decimalToHex(d, padding) {
+			var hex = Number(d).toString(16);
+			padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
+
+			while (hex.length < padding) {
+				hex = "0" + hex;
+			}
+
+			return hex;
+		}
+    </script>
+
+  </body>
+</html>
+
+
+

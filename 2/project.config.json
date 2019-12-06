@@ -1,0 +1,89 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wx646bf0db0e0be0e4",
+	"projectname": "%E5%BE%97%E5%A4%B1%E4%BA%91%E6%89%93%E5%8D%B0",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "二维码",
+					"pathName": "pages/first/first",
+					"query": "num=000BBF7350021C00",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "点餐",
+					"pathName": "pages/diancan/diancan",
+					"query": "num=000BBF7350021C00",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "得实云打印卡包",
+					"pathName": "pages/cardBag/cardBag",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "打印页面",
+					"pathName": "pages/printf/printf",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发票详情",
+					"pathName": "pages/detail_carbag/detail_carbag",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "蓝牙列表",
+					"pathName": "pages/bleList/bleList",
+					"scene": null
+				}
+			]
+		}
+	}
+}

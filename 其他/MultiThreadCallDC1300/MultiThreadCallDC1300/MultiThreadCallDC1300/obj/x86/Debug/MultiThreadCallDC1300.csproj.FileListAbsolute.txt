@@ -1,0 +1,9 @@
+c:\users\50565\documents\visual studio 2010\Projects\MultiThreadCallDC1300\MultiThreadCallDC1300\bin\Debug\MultiThreadCallDC1300.exe
+c:\users\50565\documents\visual studio 2010\Projects\MultiThreadCallDC1300\MultiThreadCallDC1300\bin\Debug\MultiThreadCallDC1300.pdb
+c:\users\50565\documents\visual studio 2010\Projects\MultiThreadCallDC1300\MultiThreadCallDC1300\obj\x86\Debug\MultiThreadCallDC1300.Form1.resources
+c:\users\50565\documents\visual studio 2010\Projects\MultiThreadCallDC1300\MultiThreadCallDC1300\obj\x86\Debug\MultiThreadCallDC1300.Properties.Resources.resources
+c:\users\50565\documents\visual studio 2010\Projects\MultiThreadCallDC1300\MultiThreadCallDC1300\obj\x86\Debug\MultiThreadCallDC1300.csproj.GenerateResource.Cache
+c:\users\50565\documents\visual studio 2010\Projects\MultiThreadCallDC1300\MultiThreadCallDC1300\obj\x86\Debug\MultiThreadCallDC1300.exe
+c:\users\50565\documents\visual studio 2010\Projects\MultiThreadCallDC1300\MultiThreadCallDC1300\obj\x86\Debug\MultiThreadCallDC1300.pdb
+C:\Users\DS030\Desktop\MultiThreadCallDC1300\MultiThreadCallDC1300\MultiThreadCallDC1300\obj\x86\Debug\MultiThreadCallDC1300.exe
+C:\Users\DS030\Desktop\MultiThreadCallDC1300\MultiThreadCallDC1300\MultiThreadCallDC1300\obj\x86\Debug\MultiThreadCallDC1300.pdb

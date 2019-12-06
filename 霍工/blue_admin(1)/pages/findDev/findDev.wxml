@@ -1,0 +1,30 @@
+<view class="containerdev">
+	<view id="nearby" class="section section-big nearby">
+		<view class="title">可配置的设备</view>
+    <view class="shuaxin">下拉刷新</view>
+		<!-- <view class="filters">
+		</view> -->
+    <!-- <button bindtap='config = true'>配置</button>
+    <button  bindtap='config = false'>用户信息</button> -->
+		<view class="shop" wx:for="{{btDevices}}" wx:key="devId">
+			<!-- <navigator url="/page/blecfg/blecfg?devId={{item.devId}}"> -->
+			<!-- <navigator url="/page/home_ex/home?devId={{item.devId}}&devName={{item.name}}"> -->
+					<div class="dev" style="flex-direction:row;" data-device-id="{{item.devId}}"
+   data-name="{{item.name || item.localName}}" data-number="{{item.snNumber}}" bindtap="clickDetail">
+						<div class="name">
+							{{item.name}}
+							<view class="devId">
+								云序号:{{item.snNumber}}
+							</view>
+						</div>
+						<div class="rssi" style="vertical-align:middle">
+							<image src="{{item.img}}"/>
+							{{item.rssi}}
+						</div>				
+					</div>
+			<!-- </navigator> -->
+		</view>
+
+
+	</view>
+</view>

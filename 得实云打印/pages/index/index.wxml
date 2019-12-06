@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<button class='goodbutton'  hover-class="hover" bindtap='BLEPrint'>蓝牙方式打印</button>
+<button class='goodbutton'  hover-class="hover" bindtap='goToPrint'>扫码打印出库单</button>
+<button class='goodbutton'  hover-class="hover" bindtap='ToPrintSail'>扫码绑定DL-630打印</button>

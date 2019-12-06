@@ -1,0 +1,47 @@
+2018-09-10 11:32:30 
+Get TLS_Object  Tid:6480
+
+2018-09-10 11:32:30 
+Printer_Only_Enum_TCP_Printer
+
+2018-09-10 11:32:30 usb://\\?\usb#vid_0471&pid_7003&mi_00#6&118002cc&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-09-10 11:32:30 From:[usb://\\?\usb#vid_0471&pid_7003&mi_00#6&118002cc&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][95]
+2018-09-10 11:33:40 
+delete TLS_Object Tid:6480
+
+2018-09-10 14:40:16 
+Get TLS_Object  Tid:3520
+
+2018-09-10 14:40:16 
+Printer_Only_Enum_TCP_Printer
+
+2018-09-10 14:40:16 
+2018-09-10 14:40:16 From:[][1]
+2018-09-10 14:42:34 
+Printer_Only_Enum_TCP_Printer
+
+2018-09-10 14:42:34 
+2018-09-10 14:42:34 From:[][1]
+2018-09-10 14:42:34 
+Get TLS_Object  Tid:3604
+
+2018-09-10 14:43:31 
+Printer_Only_Enum_TCP_Printer
+
+2018-09-10 14:43:31 
+2018-09-10 14:43:31 From:[][1]
+2018-09-10 14:43:31 
+Get TLS_Object  Tid:12276
+
+2018-09-10 14:50:24 
+Get TLS_Object  Tid:9500
+
+2018-09-10 14:50:28 
+delete TLS_Object  Tid:9500
+
+2018-09-10 14:51:05 
+Get TLS_Object  Tid:6160
+
+2018-09-10 14:56:09 
+Get TLS_Object  Tid:2972
+

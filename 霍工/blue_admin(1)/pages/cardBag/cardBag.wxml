@@ -1,0 +1,93 @@
+<!--pages/cardBag/cardBag.wxml-->
+<!-- <text>pages/cardBag/cardBag.wxml</text> -->
+<view class='page'>
+  <view class="page_top">
+    <image src="../../imgs/cardBag/50_20190916012.png" class="top_img"></image>
+    <view class="logo">
+						<image src="../../imgs/cardBag/50_20190916028.png" class="logo_img"></image>
+		</view>
+    <view class="number">
+      <icon class="icon"><image src="{{printfStatus?'../../imgs/cardBag/dui@2x.png':'../../imgs/cardBag/50_20190916018.png'}}"></image></icon>
+      <text>{{strnum}}</text>
+    </view>
+     <view class='banner'>
+      <swiper class="swiper"style="height:180px;" next-margin="80rpx" current-item-id="" previous-margin="80rpx" bindchange="" indicator-color='rgba(0,0,0,0.3)' indicator-active-color='#fff' autoplay circular interval='3000'>
+      <block wx:for="{{bannerList}}" wx:key="index">
+       <swiper-item>
+          <image src='{{item}}' class='img' mode='' data-id='' bindtap='toRichText'  />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  </view>
+    
+  <view class='container'>
+        <view class="locaUp" bindtap='cardClick'>
+								<image src="../../imgs/cardBag/weixinkabao@2x.png" class="bendi" />
+								<p class="btn_txt">微信卡包</p>
+								<p class="btn_cont"><span>请选择微信卡包中发票进行打印</span></p>
+								<view class="btn_img">
+                     <view class='left'>
+                     <image class="btn_pdf" src='../../imgs/cardBag/mail_hook@2x.png'></image>
+                      <span class="btn_rig">PDF</span>
+                     </view>
+                     <view class='right'>
+                           <image  class="btn_pdf" src='../../imgs/cardBag/mail_hook@2x.png'></image>
+                           <span class="btn_tu">图片</span>
+                     </view>
+                </view>
+								<!-- <input type="file" class="loca_space loca_input" name="" value="" /> -->
+				 </view>
+          <view class="locaUp" bindtap='change'>
+								<image src="../../imgs/cardBag/duanxindayin@2x.png" class="bendi" />
+								<p class="btn_txt">短信打印</p>
+								<p class="btn_cont"><span>请复制短信链接发票进行打印</span></p>
+								<view class="btn_img">
+                     <view class='left'>
+                     <image class="btn_pdf" src='../../imgs/cardBag/orange@2x.png'></image>
+                      <span class="btn_rig">PDF</span>
+                     </view>
+                     <view class='right'>
+                           <image  class="btn_pdf" src='../../imgs/cardBag/orange@2x.png'></image>
+                           <span class="btn_tu">图片</span>
+                     </view>
+                </view>
+								<!-- <input type="file" class="loca_space loca_input" name="" value="" /> -->
+				 </view>
+          <view class='{{showview? "show" : "hide"}} link_c' >
+                      <view class='top'>
+                      <span style="color:{{color}}">{{text}}</span>
+                        <image src='../../imgs/cardBag/close.png' class ="msm_false" bindtap='close'></image>
+                      </view>
+                      <textarea class="msm_print_val" name="" rows="" cols="" data-vlaue=''placeholder="请输入短信链接" bindinput='setValue'></textarea>
+                      <button bindtap='getValue'>确定</button>
+          </view>
+          <view class="locaUp" >
+								<image src="../../imgs/cardBag/bendifapiao@2x.png" class="bendi" bindtap='printimage'/>
+								<p class="btn_txt">本地图片</p>
+								<p class="btn_cont"><span>请选择本地图片进行打印</span></p>
+								<view class="btn_img">
+                     <view class='left'>
+                     <image class="btn_pdf" src='../../imgs/cardBag/dui@2x.png'></image>
+                      <span class="btn_rig">PDF</span>
+                     </view>
+                     <view class='right'>
+                           <image  class="btn_pdf" src='../../imgs/cardBag/dui@2x.png'></image>
+                           <span class="btn_tu">图片</span>
+                     </view>
+                </view>
+								<!-- <input type="file" class="loca_space loca_input" name="" value="" /> -->
+				 </view>
+         <section class="{{errMesg?'locker_hidden ':'locker_warp'}}">
+				    <section class="locker" style="transform: translateY(0%);">
+				    	<section class="locker_ts"><image src="../../imgs/cardBag/50_20190916019.png"></image><text>错误提示</text></section>
+				    	<section class="locker_img"><image src="../../imgs/cardBag/50_20190916024.png"></image></section>
+					    <section class="locker_con">离线</section>
+					    <section id="locker_btn" class="locker_btn" bindtap="istrue">确定</section>
+				    </section>
+				    <section class="locker_blur"></section>
+				</section>
+        <!-- <view class="loadingBox"><image src="../../imgs/cardBag/50_20190916007.gif"></image></view> -->
+  </view>
+
+</view>

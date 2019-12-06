@@ -1,0 +1,80 @@
+
+<!-- <view class="page">
+
+  <view class="body">
+    <view class="searchBtn"  hover-class="hover"  bindtap='goToCfg'>
+      <view class="searchBtnImgBox">
+        <image src="../../imgs/first/icon_lanya.png"></image>
+      </view>
+      <view class="searchBtnText">DP-230L打印</view>
+    </view>
+
+    <view class="searchBtn"  hover-class="hover"  bindtap='goToYunPrint'>
+      <view class="searchBtnImgBox2">
+        <image src="../../imgs/first/cloud.png"></image>
+      </view>
+      <view class="searchBtnText2">DS-1100II 扫码打印</view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <view>版权所有©得实集团</view>
+  </view>
+
+</view> -->
+
+<!-- <view class="page">
+  <view class="icon1" hover-class="hover"  bindtap='goToCfg'>
+    <image  src="../../imgs/first/bluetooth.png" mode="scaleToFill" />
+  </view>
+  <view class="icon1_text">蓝牙打印</view>
+
+  <view class="icon2" hover-class="hover"  bindtap='goToYunPrint'>
+    <image  src="../../imgs/first/cloudprint.png" mode="scaleToFill"/>
+  </view>
+  <view class="icon2_text">得实云打印</view>
+
+  <button class="btn_diancan" bindtap='diancan'>扫码点餐</button>
+  <view class="footer">
+    <view>版权所有©得实集团</view>
+  </view>
+</view>  之前的 -->
+<view class="page">
+  <view >
+    <image src='../../imgs/first/bluetooth_bg.png' class="icon1" hover-class="hover"  bindtap='goToCfg'></image>
+    <image  src="../../imgs/first/bluetooth.png" mode="scaleToFill" class='tu1' />
+  </view>
+  <view class="icon1_text">蓝牙打印</view>
+   <view class='sec1'>针对DP-230L</view>
+
+  <view >
+    <image  src="../../imgs/first/order_bg.png" mode="scaleToFill" class="icon2" hover-class="hover"  bindtap='goToYunPrint'/>
+    <image  src="../../imgs/first/order.png" mode="scaleToFill" class='tu2' />
+
+  </view>
+  <view class="icon2_text">得实云打印</view>
+   <view class='sec2'>DS-1100II</view>
+
+
+  <view class="icon3" hover-class="hover"  bindtap="scanCode">
+    <image  src="../../imgs/first/scancode_bg.png" mode="scaleToFill" class="icon3" hover-class="hover"  bindtap="scanCode"/>
+    <image  src="../../imgs/first/scancode.png" mode="scaleToFill" class='tu3' />
+
+  </view>
+  <view class="icon3_text" >点餐系统</view>
+   <view class='sec3'>扫码点餐</view>
+
+   <!-- 卡包 -->
+<view class="icon4" hover-class="hover"  bindtap="goToWxBag">
+    <image  src="../../imgs/first/scancode_bg.png" mode="scaleToFill" class="icon4" hover-class="hover"  bindtap="goToWxBag"/>
+    <image  src="../../imgs/first/weixinkabao@2x.png" mode="scaleToFill" class='tu4' />
+
+  </view>
+  <view class="icon4_text" >微信卡包</view>
+   <view class='sec4'>微信卡包</view>
+
+   <view class="footer">
+    <view>版权所有©得实集团</view>
+  </view>
+   
+</view>

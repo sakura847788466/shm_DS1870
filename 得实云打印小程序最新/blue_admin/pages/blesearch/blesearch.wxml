@@ -1,0 +1,24 @@
+<view class="blecontainer">
+	<view id="nearby" class="section-big nearby">
+		<view class="title">可用打印机(下拉刷新)</view>
+	
+		<view class="shop" wx:for="{{btDevices}}" wx:key="devId">
+			<!-- <navigator url="/page/blecfg/blecfg?devId={{item.devId}}"> -->
+			<!-- <navigator url="/pages/print/print?devtype=2&devId={{item.devId}}&devName={{item.name}}"> -->
+					<div class="dev" style="flex-direction:row;" bindtap="chooseBle" data-name="{{item.name}}" data-id="{{item.devId}}">
+						<div class="name">
+							{{item.name}}
+							<view class="devId">
+								DevId:{{item.devId}}
+							</view>
+						</div>
+						<div class="rssi" style="vertical-align:middle">
+							<image src="{{item.img}}"/>
+							{{item.rssi}}
+						</div>				
+					</div>
+			<!-- </navigator> -->
+		</view>
+
+	</view>
+</view>

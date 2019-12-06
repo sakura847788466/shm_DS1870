@@ -1,0 +1,59 @@
+/* pages/billlist/billlist.wxss */
+.section-big {
+	padding: 20rpx;
+}
+.section-big .title {
+	position: relative;
+	text-align: center;
+	font-size: 32rpx;
+	font-weight: bold;
+	line-height: 2;
+	margin-bottom: 20rpx;
+}
+
+.nearby {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.nearby .shop {
+	padding: 10rpx 0;
+	border-top: 1rpx solid #efefef;
+}
+
+.nearby .shop  .dev {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:20rpx;
+    border-bottom:2rpx solid #ddd;
+    position: relative;
+}
+
+.nearby .shop  .dev .name {
+	padding-left: 20rpx;
+  width: 65%;
+}
+
+.nearby .shop  .dev .rssi {
+	font-size: 26rpx;
+	padding-right: 20rpx;
+}
+
+.nearby .shop .dev .rssi image {
+	margin: 0 auto;
+	width: 40rpx;
+	height: 40rpx;
+}
+.goodbutton {
+  width: 100%;
+  background-color: #47aaf5;
+  color: white;
+  position: fixed;
+  bottom:0px;
+  border-radius: 0rpx;
+}
+/* 按下变颜色 */
+.hover {
+  background:  rgb(191, 156, 236);
+}

@@ -1,0 +1,129 @@
+<view >
+  <view class='bg_tou'>
+    <image src='../../imgs/diancan/logo.png' class='dian_tou'></image>
+    <view class='hade_tx'>
+      <view class='hade_tx_a'>得实第二美食城</view>
+      <view class='hade_tx_b'>服务宗旨：给您享受般的用餐体验</view>
+    </view>
+  </view>
+  <view>
+    <view class="my_list" id="my_list">
+      <view class="dingdan_zhuangtai">
+        <view id="item" class="{{selected?'sanjiao':''}}" bindtap="selected">点餐</view>
+        <view id="item" class="{{selected1?'sanjiao':''}}" bindtap="selected1">购物车({{carlen}})</view>
+        <view id="item" class="{{selected2?'sanjiao':''}}" bindtap="selected2">商家</view>
+      </view>
+    </view>
+
+
+  <view class="dingdan">
+
+
+    <view id="dingdan_item" class="{{selected?'show':'hidden'}}">
+      <view class='tab'>
+        <view class="navbar">
+          <view class="navbar-item" wx:for="{{navbar}}" wx:key="index" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav" data-id="{{item.typeId}}">
+          <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item.typeName}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 热销 -->
+<scroll-view class="hot-item-container" style="height: {{systemInfo.windowHeight}}px;" scroll-y="true">
+    <view class='cai' wx:for="{{carArray}}" wx:key="index"  wx:key="unique">
+    
+      <image src='{{item.mImage}}' class='cai_tu'></image>
+      
+      <view class='cai_xin'>
+       <navigator url='../../pages/details/logs?mid={{item.mId}}'>
+          <view class='cai_xin_a'>{{item.mName}}</view>
+          <view class='cai_xin_b'>{{item.mSpec}}</view>
+          <view class='cai_xin_c'>￥{{item.mPrice}}</view>
+        </navigator>
+      </view>
+    
+      <span class="car_item_operate">
+        <image src='../../imgs/diancan/jian.png' id="jianhao" data-alpha-beta="{{index}}" data-id='{{item.mId}}' bindtap="carReduce"></image>
+        <span class="car_item_num" data-alpha-beta="{{index}}" bindtap="carRemove">{{item.carNum}}</span>
+        <image src='../../imgs/diancan/jia.png' id="jiahao" data-id='{{item.mId}}' data-alpha-beta="{{index}}" bindtap="carAdd"></image>
+      </span>
+    </view>
+</scroll-view>
+    </view>
+
+
+    <view id="dingdan_item" class="{{selected1?'show':'hidden'}} ">
+      <view class='cai' wx:for="{{cartArray}}"   wx:key="unique"  style='padding:0 30rpx;'>
+        <image src='{{item.mImage}}' class='cai_tu'></image>
+        <view class='cai_xin'>
+          <view class='cai_xin_a'>{{item.mName}}</view>
+          <view class='cai_xin_b'>{{item.carText}}</view>
+          <view class='cai_xin_c'>￥{{item.mPrice}}</view>
+        </view>
+        <span class="car_item_operate">
+          <image src='../../imgs/diancan/jian.png' id="jianhao" data-alpha-beta="{{index}}" bindtap="cartReduce" data-id='{{item.mId}}'></image>
+          <span class="car_item_num" data-alpha-beta="{{index}}" bindtap="cartRemove">{{item.num}}</span>
+          <image src='../../imgs/diancan/jia.png' id="jiahao" data-alpha-beta="{{index}}" bindtap="cartAdd" data-id='{{item.mId}}'></image>
+        </span>
+      </view>
+    </view>
+
+
+    <view id="dingdan_item" class="{{selected2?'show':'hidden'}}">
+    <view style='padding:30rpx 0 0 30rpx'>
+        <view style='font-size:34rpx'>得实第二美食城</view>
+        <view>
+          <image src='../../imgs/diancan/xing.png' id='xing'></image>
+          <image src='../../imgs/diancan/xing.png' id='xing'></image>
+          <image src='../../imgs/diancan/xing.png' id='xing'></image>
+          <image src='../../imgs/diancan/xing.png' id='xing'></image>
+          <image src='../../imgs/diancan/xing.png' id='xing'></image>
+          <text class='dafen'>5.0分</text>
+        </view>
+        <view>
+          <view class='ying_hade'><image src='../../imgs/diancan/clock_fill.png' class='clock_tu'></image>营业时间</view>
+          <view class='ying_hade_a'>周一至周五8:30-21:00，周六、日8：30-23：00</view>
+        </view>
+        <view>
+          <view class='ying_hade'><image src='../../imgs/diancan/coordinates.png' class='clock_tu'></image>地址</view>
+          <view class='ying_hade_a'>广东省广州市黄埔区南翔三路46号得实大厦二楼</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+  <view class='bottom'>
+    <view class='bottom_a'>共选择<text class='shumu'>{{carlen}}</text>样菜品</view>
+    <view class='bottom_b'>
+      <view class='bottom_gong'>共计<text class='yuan'>{{carMoney}}</text>元</view>
+      <view class='bottom_zhe'>折扣<text style='margin-left: 10rpx;'>0.1折</text></view>
+    </view>
+   
+    <view id='jiaru' bindtap='settlement'>提交订单</view>
+  </view>
+  <!-- 弹窗模块 -->
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <view class='product'>
+    <image src='/pages/img/guanbi.png' id='guanbi' bindtap='go'></image>
+      <view class='product_a'>
+        <image src='/pages/img/cai.png' class='gou_tu'></image>
+        <view style='margin-left:40rpx'>
+          <view style='font-size:30rpx;margin:20rpx 0;'>经典烧烤</view>
+          <view style='font-size:26rpx'>已选：单点</view>
+          <view style='color:#fd5854;font-size:30rpx'>
+            ¥ <text style='color:#fd5854;font-size:50rpx'>999</text>
+          </view>
+        </view>
+      </view>     
+    </view>
+   <view style='padding:30rpx;font-size:30rpx;' wx:for="{{navbar_a}}" wx:for-index="idx_a" data-idx="{{idx_a}}">
+    <view>{{item.name}}</view>
+    <view class="navbar_a">
+  <view class="navbar-item_a"  bindtap="swichNav_a" wx:for="{{item.text}}"  wx:for-item="spe">
+    <text class="navbar-text_a {{currentNavbar_a==idx_a ? 'active_a' : ''}}">{{spe}}</text>
+  </view>
+</view>
+   </view>
+   <button id='suer' bindtap='order_take'>确定</button>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+
+ <view class='page'>
+    <view class='tishi'><span>点击发票链接可进行打印预览，调节打印效果</span></view>
+     <view class="con">
+         <view class='title' wx:for="{{linkList}}" wx:key="{{item}}"  animation ="{{animation_abb}}" >
+	            			<view class="print_space_name">短信链接发票</view>
+                    <view class="print_space_money_msm" bindtap='detail'>
+	            				<span class="print_space_money_msm" >链接地址：{{item}}</span>
+	            			</view>
+	            			<view class="sta">状态：{{}}</view>
+                    <image class='close' src='../../imgs/printf/delete.png' data-index="{{index}}"  bindtap="translate" catchtouchmove="preventD"></image>
+                    <image class='duanxin' src='../../imgs/printf/msm.png'></image>
+
+    </view>
+    <!-- 短信打印 -->
+     <view class='hide{{showview? "show" : ""}} link_c' > 
+                      <view class='top'>
+                      <span style="color:{{color}}">{{text}}</span>
+                        <image src='../../imgs/cardBag/close.png' class ="msm_false" bindtap='close'></image>
+                      </view>
+                      <textarea class="msm_print_val" name="" rows="" cols="" data-vlaue=''placeholder="请输入短信链接" bindinput='setValue'></textarea>
+                      <button bindtap='getValue'>确定</button>
+          </view>
+    <view class="mask {{jia?'hide':'show'}}" >
+         <view class="input_loca" bindtap="change" >
+                 <image src="../../imgs/printf/note.png" class=""></image>
+			    </view>
+      <view class="input_wx" >
+                 <image src="../../imgs/printf/weichat.svg" class=""></image>
+			  </view>
+      <view class="input_loca" >
+                 <image src="../../imgs/printf/file.svg" class="" bindtap="printimage"></image>
+			</view>
+    </view>
+    
+   
+     
+     </view>
+     <view class='dibu'>
+        <view class='left'>
+          <span>{{linkList.length}}张</span>
+          <i class="{{linkList.length ==1?'zhangshu':'' ||linkList.length == 2?'level2':'' || linkList.length == 3?'level3':'' ||linkList.length == 4?'level4':'' || linkList.length == 5?'level5':''}}"></i>
+        </view>
+       <view class='cont'>
+          <image src="../../imgs/printf/print.png" bindtap='printf'></image>
+       </view>
+       <view class="right"  >
+          <image src='../../imgs/printf/push.png' animation ="{{animation_add}}" bindtap="translateRote"catchtouchmove="preventD"></image>
+         
+       </view>
+    </view>
+		<section class="{{errStatus?'locker_warp ':'locker_hidden'}}"> 
+    <!-- 限制提示 -->
+				    <section class="locker" style="transform: translateY(0%);">
+				    	<section class="locker_ts"><image src="../../imgs/cardBag/50_20190916019.png"></image><text>错误提示</text></section>
+				    	<section class="locker_img"><image src="../../imgs/cardBag/50_20190916024.png"></image></section>
+					    <section class="locker_con">最多选择5张发票</section>
+					    <section id="locker_btn" class="locker_btn" bindtap="istrue">确定</section>
+				    </section>
+				    <section class="locker_blur"></section>
+			</section>
+
+ </view>

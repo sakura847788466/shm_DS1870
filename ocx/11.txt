@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>测试</title>
+</head>
+
+<body>
+  <object id="DS_1870" style="display:none" classid="clsid:55195bc9-49d4-4d76-81b2-e11249f812c0"></object>
+
+  <span class="ceshi" >测试数据接口</span>
+
+</body>
+<script src="./module/js/jQuery/jquery-1.11.1.js" type="text/javascript"></script>
+<script src="./module/js/base64.js"></script>
+<script src="./module/js/MD5.js"></script>
+<script src="./module/js/uuid.js"></script>
+<script src="./module/js/gbk.js"></script>
+
+<script>
+  // function Appendzero(obj) {
+  //   if (obj < 10) return "0" + "" + obj;
+  //   else return obj;
+  // }
+  var feedback = "";
+  var DS_1870 = document.getElementById('DS_1870');
+  $('.ceshi').on('click', function () {
+        console.log(999)
+        var testData = {
+          "ownPay": 3330,
+          "otherfundPay": 2220,
+          "sex": "男",
+          "accountPay": 1000,
+          "chargeDetail": [{
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "CT费",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "CT费",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }, {
+            "amt": 100,
+            "unit": "元",
+            "remark": "备注",
+            "selfAmt": 0,
+            "std": 100,
+            "chargeName": "ICU材料",
+            "number": 1,
+            "chargeCode": "0801"
+          }],
+          "remark": "备注",
+          "busType": "02",
+          "selfCashPay": 400,
+          "medicalCareType": "城镇居民基本医疗保险",
+          "totalAmt": 1800,
+          "cardNo": "0123456789",
+          "author": "票据编制人",
+          "patientId": "10000",
+          "age": "33",
+          "selfPayAmt": 3000,
+          "fundPay": 1110,
+          "payChannelDetail": [{
+            "payChannelCode": "02",
+            "payChannelValue": 1800
+          }],
+          "listDetail": [{
+            "amt": 100,
+            "unit": "计量单位 ",
+            "remark": "备注",
+            "chrgtype": "挂号费",//费用类型1
+            "std": 50,
+            "name": "药品名称/剂型",
+            "number": 2,
+            "code": "编码2"
+          }, {
+            "amt": 100,
+            "unit": "计量单位 ",
+            "remark": "备注",
+            "chrgtype": "挂号费",
+            "std": 50,
+            "name": "药品名称/剂型",
+            "number": 2,
+            "code": "编码2"
+          }],
+          "medicalInstitution": "综合医院",
+          "busDateTime": "20191115085500010",
+          "cashPay": 0,
+          "payee": "收费员",
+          "cardType": "3101",
+          "otherParameter": [{
+            "infoName": "卡类型",
+            "infoValue": "3101"
+          }, {
+            "infoName": "卡号",
+            "infoValue": "0123456789"
+          }, {
+            "infoName": "医保类型",
+            "infoValue": "城镇居民基本医疗保险"
+          }, {
+            "infoName": "性别",
+            "infoValue": "男"
+          }, {
+            "infoName": "科室",
+            "infoValue": "科室"
+          }, {
+            "infoName": "患者门诊号",
+            "infoValue": "10001"
+          }, {
+            "infoName": "个人账户支付",
+            "infoValue": "1000"
+          }, {
+            "infoName": "个人账户余额",
+            "infoValue": "0"
+          }, {
+            "infoName": "医保统筹基金支付",
+            "infoValue": "1110"
+          }, {
+            "infoName": "其它医保支付",
+            "infoValue": "2220"
+          }, {
+            "infoName": "自费金额",
+            "infoValue": "3330"
+          }, {
+            "infoName": "现金预交款金额",
+            "infoValue": "0"
+          }, {
+            "infoName": "转账预交款金额",
+            "infoValue": "0"
+          }, {
+            "infoName": "支票预交款金额",
+            "infoValue": "0"
+          }, {
+            "infoName": "补交金额(转账)",
+            "infoValue": "0"
+          }, {
+            "infoName": "退还金额(转账)",
+            "infoValue": "0"
+          }, {
+            "infoName": "医疗机构类型",
+            "infoValue": "综合医院"
+          }, {
+            "infoName": "年龄",
+            "infoValue": "33"
+          }, {
+            "infoName": "患者唯一ID",
+            "infoValue": "10000"
+          }, {
+            "infoName": "医保机构编码",
+            "infoValue": "0090"
+          }, {
+            "infoName": "个人自付",
+            "infoValue": "3000"
+          }, {
+            "infoName": "个人现金支付",
+            "infoValue": "400"
+          }, {
+            "infoName": "交款人支付宝账户",
+            "infoValue": "患者支付宝账户"
+          }, {
+            "infoName": "微信支付订单号",
+            "infoValue": "微信支付订单号"
+          }, {
+            "infoName": "02",
+            "infoValue": "100"
+          }, {
+            "infoName": "02",
+            "infoValue": "100"
+          }],
+          "category": "科室",
+          "payer": "测试01",
+          "placeCode": "003",
+          "otherSpecialParameter": [],
+          "patientNo": "10001",
+          "busNo": "20191115000016"
+        }
+        console.log(testData.cardNo + testData.payer)
+        console.log(testData.chargeDetail.length)
+        var ceShi =forV(testData)
+        console.log(ceShi)
+        var str1 = "四川省医疗单位门诊结算票据";
+        var str2 = "001";
+        var str3 = "006";
+        var str4 = testData.payee;
+        var str5 = testData.placeCode;
+        var str6 = "20191118\r\n";
+        var str7 = "收费时间：20191118\r\n"; //收费时间
+        var str8 = "费别";
+        var str9 = "金额";
+        var str10 = "费别";
+        var str11 = "金额";
+        var str12 = "项目";
+        var str13 = "单位";
+        var str14 = "单价";
+        var str15 = "数量";
+        var str16 = "金额";
+        var str17 = "合计:     13";
+        var str18 = "合计(大写):   壹拾叁元整";
+        var str19 = "业务流水号:665237-2";
+        var str20 = "业务标识:挂号 ";
+        var str21 = "打印时间:2019-06-26 13:37:49\r\n";
+        var str22 = '四川省人民医院';
+        var str23 = 'YYL099'
+        var strFor ='';
+
+        var byteArray = new Array();
+        var position = {
+          n1: '50',
+          n2: '0'
+        };
+
+
+        getBinaryArrayData(str1, function (res1) {//票据名称
+          byteArray[0] = 0xD;
+          byteArray[1] = 0x1B;
+          byteArray[2] = 0x40;
+
+
+          byteArray[4] = 27;
+          byteArray[5] = 74;
+          byteArray[6] = 160;
+
+          byteArray[7] = 27; //绝对定位
+          byteArray[8] = 36;
+          byteArray[9] = 108;
+          byteArray[10] = 0;
+          var index = 11;
+
+
+
+          for (let m = 0; m < res1.length; m++) {
+            byteArray[index++] = res1[m];
+          }
+          getBinaryArrayData(str2, function (res2) { //电子票据代码
+
+
+            byteArray[index++] = 27; //绝对定位
+            byteArray[index++] = 36;
+            byteArray[index++] = 42;
+            byteArray[index++] = 1;
+
+
+
+            for (let m = 0; m < res2.length; m++) {
+              byteArray[index++] = res2[m];
+            }
+            getBinaryArrayData(str3, function (res3) { //电子票据号码
+
+
+              byteArray[index++] = 27; //绝对定位
+              byteArray[index++] = 36;
+              byteArray[index++] = 148;
+              byteArray[index++] = 1;
+
+
+
+              for (let m = 0; m < res3.length; m++) {
+                byteArray[index++] = res3[m];
+              }
+              getBinaryArrayData(str4, function (res4) { //收款人
+
+
+                byteArray[index++] = 27; //绝对定位
+                byteArray[index++] = 36;
+                byteArray[index++] = 123;
+                byteArray[index++] = 0;
+
+                byteArray[index++] =27; //跳行间距
+                byteArray[ index++] =74;
+                byteArray[index++] =38;
+
+
+
+                for (let m = 0; m < res4.length; m++) {
+                  byteArray[index++] = res4[m];
+                }
+                getBinaryArrayData(str5, function (res5) { //电子票据检验码
+
+                  byteArray[index++] = 27; //绝对定位
+                  byteArray[index++] = 36;
+                  byteArray[index++] = 44;
+                  byteArray[index++] = 1;
+
+                  
+                  
+
+
+                  for (let m = 0; m < res5.length; m++) {
+                    byteArray[index++] = res5[m];
+                  }
+                  getBinaryArrayData(str6, function (res6) { //开票日期
+
+
+                    byteArray[index++] = 27; //绝对定位
+                    byteArray[index++] = 36;
+                    byteArray[index++] = 146;
+                    byteArray[index++] = 1;
+
+
+
+                    for (let m = 0; m < res6.length; m++) {
+                      byteArray[index++] = res6[m];
+                    }
+                    getBinaryArrayData(str7, function (res7) { //收费时间
+
+                      byteArray[index++] = 27; //绝对定位
+                      byteArray[index++] = 36;
+                      byteArray[index++] = 60;
+                      byteArray[index++] = 0;
+
+                      byteArray[index++] =27; //跳行
+                      byteArray[ index++] =74;
+                      byteArray[index++] =38;
+
+
+
+
+                      for (let m = 0; m < res7.length; m++) {
+                        byteArray[index++] = res7[m];
+                      }
+                      getBinaryArrayData(str8, function (res8) { //费别
+
+                        
+                        byteArray[index++] = 27;
+                        byteArray[index++] = 74;
+                        byteArray[index++] = 27;
+                        
+                        byteArray[index++] = 27; //绝对定位
+                        byteArray[index++] = 36;
+                        byteArray[index++] = 60;
+                        byteArray[index++] = 0;
+
+
+
+                        for (let m = 0; m < res8.length; m++) {
+                          byteArray[index++] = res8[m];
+                        }
+                        getBinaryArrayData(str9, function (res9) { //金额
+
+
+                          byteArray[index++] = 27; //绝对定位
+                          byteArray[index++] = 36;
+                          byteArray[index++] = 90;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res9.length; m++) {
+                            byteArray[index++] = res9[m];
+                          }
+                          getBinaryArrayData(str10, function (res10) { //费别
+
+
+                            byteArray[index++] = 27; //绝对定位
+                            byteArray[index++] = 36;
+                            byteArray[index++] = 126;
+                            byteArray[index++] = 0;
+
+
+
+                            for (let m = 0; m < res10.length; m++) {
+                              byteArray[index++] = res10[m];
+                            }
+                            getBinaryArrayData(str11, function (res11) { //金额
+
+
+                              byteArray[index++] = 27; //绝对定位
+                              byteArray[index++] = 36;
+                              byteArray[index++] = 162;
+                              byteArray[index++] = 0;
+
+
+
+                              for (let m = 0; m < res11.length; m++) {
+                                byteArray[index++] = res11[m];
+                              }
+                              getBinaryArrayData(str12, function (
+                                res12) { //项目
+
+
+                                byteArray[index++] = 27; //绝对定位
+                                byteArray[index++] = 36;
+                                byteArray[index++] = 212;
+                                byteArray[index++] = 0;
+
+
+
+                                for (let m = 0; m < res12.length; m++) {
+                                  byteArray[index++] = res12[m];
+                                }
+                                getBinaryArrayData(str13, function (
+                                  res13) { //单位
+
+
+                                  byteArray[index++] = 27; //绝对定位
+                                  byteArray[index++] = 36;
+                                  byteArray[index++] = 50;
+                                  byteArray[index++] = 1;
+
+
+
+                                  for (let m = 0; m < res13
+                                    .length; m++) {
+                                    byteArray[index++] = res13[m];
+                                  }
+                                  getBinaryArrayData(str14,
+                                    function (res14) { //单价
+
+                                      byteArray[index++] =
+                                        27; //绝对定位
+                                      byteArray[index++] = 36;
+                                      byteArray[index++] = 86;
+                                      byteArray[index++] = 1;
+
+
+
+                                      for (let m = 0; m < res14
+                                        .length; m++) {
+                                        byteArray[index++] =
+                                          res14[m];
+                                      }
+                                      getBinaryArrayData(str15,
+                                        function (res15) { //数量
+
+                                          byteArray[index++] =27; //绝对定位
+                                          byteArray[index++] =36;
+                                          byteArray[index++] =117;
+                                          byteArray[index++] =1;
+
+                                          for (let m = 0; m <res15.length; m++) {
+                                            byteArray[index++] = res15[m];
+                                          }
+                                          getBinaryArrayData(str16,function (res16) { //金额
+
+                                              byteArray[index++] =27; //绝对定位
+                                              byteArray[index++] =36;
+                                              byteArray[index++] =156;
+                                              byteArray[index++] = 1;
+
+                                              for (let m =0; m < res16.length; m++) {
+                                                byteArray[index++] =res16[m];
+                                              }
+                                                /*循环的内容*/
+                                             
+                                                  for(let i =0;i<testData.listDetail.length;i++){
+                                                    console.log(testData.listDetail[i].chrgtype)
+                                                    var str_num = testData.listDetail[i].amt.toString();
+                                                    var number = testData.listDetail[i].number.toString();
+
+                                                    console.log(str_num)
+                                                    getBinaryArrayData(testData.listDetail[i].chrgtype,function (res24) { 
+
+                                                            console.log(res24)
+                                                            byteArray[index++] =27; //绝对定位
+                                                            byteArray[index++] =36;
+                                                            byteArray[index++] =60;
+                                                            byteArray[index++] = 0;
+
+                                                            byteArray[index++] =27;
+                                                            byteArray[index++] =74;
+                                                            byteArray[index++ ] =38;
+
+                                                            for (let m =0; m <res24.length; m++) {
+                                                              byteArray [index++] =res24[m];
+                                                            }
+                                                            getBinaryArrayData(str_num,function (res25) { 
+                                                               console.log("金额"+res25)
+                                                                byteArray[index++] =27; //绝对定位
+                                                                byteArray[index++] =36;
+                                                                byteArray[index++] =90;
+                                                                byteArray[index++] = 0;
+
+
+                                                                for (let m =0; m <res25.length; m++) {
+                                                                  byteArray[index++] =res25[m];
+                                                                }
+                                                                getBinaryArrayData(testData.listDetail[i].chrgtype,function (res26) { 
+                                                               console.log("项目"+res26)
+                                                                byteArray[index++] =27; //绝对定位
+                                                                byteArray[index++] =36;
+                                                                byteArray[index++] =212;
+                                                                byteArray[index++] = 0;
+
+
+                                                                for (let m =0; m <res26.length; m++) {
+                                                                  byteArray[index++] =res26[m];
+                                                                }
+                                                                getBinaryArrayData(testData.listDetail[i].unit,function (res27) { 
+                                                               console.log("单位"+res27)
+                                                                byteArray[index++] =27; //绝对定位
+                                                                byteArray[index++] =36;
+                                                                byteArray[index++] =50;
+                                                                byteArray[index++] = 1;
+
+
+                                                                for (let m =0; m <res27.length; m++) {
+                                                                  byteArray[index++] =res27[m];
+                                                                }
+                                                                getBinaryArrayData(str_num,function (res28) { 
+                                                               console.log("单价"+res28)
+                                                                byteArray[index++] =27; //绝对定位
+                                                                byteArray[index++] =36;
+                                                                byteArray[index++] =86;
+                                                                byteArray[index++] = 1;
+
+
+                                                                for (let m =0; m <res28.length; m++) {
+                                                                  byteArray[index++] =res28[m];
+                                                                }
+                                                                getBinaryArrayData(number,function (res29) { 
+                                                               console.log("数量"+res29)
+                                                                byteArray[index++] =27; //绝对定位
+                                                                byteArray[index++] =36;
+                                                                byteArray[index++] =117;
+                                                                byteArray[index++] = 1;
+
+
+                                                                for (let m =0; m <res29.length; m++) {
+                                                                  byteArray[index++] =res29[m];
+                                                                }
+                                                                getBinaryArrayData(str_num,function (res30) { 
+                                                               console.log("金额"+res30)
+                                                                byteArray[index++] =27; //绝对定位
+                                                                byteArray[index++] =36;
+                                                                byteArray[index++] =156;
+                                                                byteArray[index++] = 1;
+
+
+                                                                for (let m =0; m <res30.length; m++) {
+                                                                  byteArray[index++] =res30[m];
+                                                                }
+                                                              });
+                                                              });
+                                                              });
+                                                              });
+                                                              });
+                                                          });
+                                                        });
+
+                                                  }
+                                                /*--------------循环内容----------------------*/
+
+                                              getBinaryArrayData(str17,function (res17) { //合计
+
+                   
+                                                    byteArray[index++] =27; //绝对定位
+                                                    byteArray[index++] =36;
+                                                    byteArray[index++] =60;
+                                                    byteArray[index++] = 0;
+
+
+                                                    byteArray[index++] =27;
+                                                    byteArray[ index++] =74;
+                                                    byteArray[index++] =140;
+
+                                                    byteArray[index++] =27;
+                                                    byteArray[index++] =74;
+                                                    byteArray[index++ ] =165;
+
+                                                    for (let m =0; m <res17.length; m++) {
+                                                      byteArray [index++] =res17[m];
+                                                    }
+
+                                                getBinaryArrayData(str18,function (res18) { //合计(大写)
+                                                  byteArray[index++] =27; //跳行间距
+                                                  byteArray[ index++] =74;
+                                                  byteArray[index++] =38;
+
+                                                  byteArray[index++] =27; //绝对定位
+                                                  byteArray[ index++] =36;
+                                                  byteArray[ index++] =60;
+                                                  byteArray[index++] =0;
+                                                          for (let m =0; m <res18.length; m++) {
+                                                            byteArray[index++] =res18[m];
+                                                          }
+                                                          getBinaryArrayData(str19,function (res19) { //业务流水
+                                                            byteArray[index++] =27; //跳行间距
+                                                            byteArray[ index++] =74;
+                                                            byteArray[index++] =38;
+
+
+                                                            byteArray[index++] =27; //绝对定位
+                                                            byteArray[ index++] =36;
+                                                            byteArray[ index++] =60;
+                                                            byteArray[index++] =0;
+                                                          for (let m =0; m <res19.length; m++) {
+                                                            byteArray[index++] =res19[m];
+                                                          }
+                                                          getBinaryArrayData(str20,function (res20) { //业务标识
+                                                            byteArray[index++] =27; //绝对定位
+                                                            byteArray[ index++] =36;
+                                                            byteArray[ index++] =210;
+                                                            byteArray[index++] =0;
+                                                          for (let m =0; m <res20.length; m++) {
+                                                            byteArray[index++] =res20[m];
+                                                          }
+                                                          getBinaryArrayData(str21,function (res21) { //打印时间
+                                                            byteArray[index++] =27; //绝对定位
+                                                            byteArray[ index++] =36;
+                                                            byteArray[ index++] =50;
+                                                            byteArray[index++] =1;
+
+
+
+                                                          for (let m =0; m <res21.length; m++) {
+                                                            byteArray[index++] =res21[m];
+                                                          }
+                                                          getBinaryArrayData(str22,function (res22) { 
+                                                            byteArray[index++] =27; //绝对定位
+                                                            byteArray[ index++] =36;
+                                                            byteArray[ index++] =119;
+                                                            byteArray[index++] =0;
+
+
+
+                                                          for (let m =0; m <res22.length; m++) {
+                                                            byteArray[index++] =res22[m];
+                                                          }
+                                                          getBinaryArrayData(str23,function (res23) { 
+                                                            byteArray[index++] =27; //绝对定位
+                                                            byteArray[ index++] =36;
+                                                            byteArray[ index++] =151;
+                                                            byteArray[index++] =1;
+
+
+                                                            // byteArray[index++] =0x0C;
+
+
+
+                                                          for (let m =0; m <res23.length; m++) {
+                                                            byteArray[index++] =res23[m];
+                                                          }
+                                                            byteArray[index++] =0x0C;
+
+                                                          const arrayBuffer =new Uint8Array(byteArray)
+                                                          console.log(arrayBuffer)
+                                                          // const base64 = btoa(String.fromCharCode.apply(
+                                                          //   null, arrayBuffer));
+                                                          // console.log(base64)
+                                                          // Bytes2HexString(arrayBuffer);
+                                                          //ocx打印
+                                                        });
+                                                  });
+                                            });
+                                        });
+                                    });
+                                });
+                              });
+                            });
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+});
+});
+         
+
+        })
+         //字节数组转十六进制字符串，对负值填坑
+         function Bytes2HexString(arrBytes) {
+            var str = "";
+            for (var i = 0; i < arrBytes.length; i++) {
+              var tmp;
+              var num = arrBytes[i];
+              if (num < 0) {
+                //此处填坑，当byte因为符合位导致数值为负时候，需要对数据进行处理
+                tmp = (255 + num + 1).toString(16);
+              } else {
+                tmp = num.toString(16);
+              }
+              if (tmp.length == 1) {
+                tmp = "0" + tmp;
+              }
+              str += tmp;
+            }
+            console.log("转换的" + str)
+            WEB_print(str) //打印
+
+          }
+
+          function WEB_print(data) {
+            console.log(data)
+            feedback = DS_1870.PrintData(data);
+            console.log(feedback) //打印状态
+          }
+
+          function getBinaryArrayData(text, resultCallBack) {
+
+            var buffer = new Array(sizeOfGbk(text));
+            var indexDV = 0;
+            for (var i = 0; i < text.length; ++i) {
+              if (text.charCodeAt(i) > 0xff) { // charCOdeAt返回指定位置的unicode 代码  跟bg2313差不多
+                var utfStr = text.charCodeAt(i).toString(16);
+                var gbkStr = utf2gbOne(utfStr);
+
+                var highByte = parseInt(gbkStr.substring(0, 2), 16);
+                var lowByte = parseInt(gbkStr.substring(2, 4), 16);
+                buffer[indexDV++] = highByte;
+                buffer[indexDV++] = lowByte;
+
+              } else {
+                buffer[indexDV++] = text.charCodeAt(i);
+              }
+            }
+            resultCallBack(buffer);
+          }
+
+          function sizeOfGbk(str) {
+            var total = 0,
+              charCode,
+              i,
+              len;
+            for (i = 0, len = str.length; i < len; i++) {
+              charCode = str.charCodeAt(i);
+              if (charCode <= 0xff) {
+                total += 1;
+              } else {
+                total += 2;
+              }
+            }
+            return total;
+          }
+
+          function getCodeStr() {
+            return codeStr
+          }
+
+          function utf2gbOne(utfCode) {
+            var codeStr = getCodeStr();
+            var gbkCode;
+            var utfStart;
+            var gbkStart = 0;
+
+            utfStart = new Number(codeStr.indexOf(utfCode.toLowerCase()));
+            if (utfStart != -1) {
+              gbkStart = utfStart - 5;
+              gbkCode = codeStr.substring(gbkStart, gbkStart + 4);
+            } else {
+              gbkCode = "a1a1";
+            }
+
+            return gbkCode;
+          }
+        function forV(item) {
+          var strA = [];
+          var strO =[];
+          console.log(item.listDetail.length)
+          for (var j = 0; j < item.listDetail.length; j++) {
+
+              str= ""+item.listDetail[j].chrgtype+"";//类型1
+              strOne = ""+item.listDetail[j].amt+"";//金额
+              strA.push(str)
+              strO.push(strOne)
+              
+          }
+          return strA ,strOne;
+        }
+</script>
+
+</html>

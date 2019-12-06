@@ -1,0 +1,65 @@
+<!--page/print/print.wxml-->
+
+<view class="container">
+  <view class="view-title">
+    <text class = "devName" style="flex:4">{{devtext}}</text>
+    <text style="flex:8"> {{strnum}} </text>
+  </view>
+  <text class="title">产品出库单</text>
+  <view class="view1">
+    <text style="flex:2">编号：</text>
+    <input class="inputAddr"  style="flex:8" value="{{strdanhao}}" bindinput='mbianhao'/>
+  </view>
+
+  <view class="view1">
+    <text style="flex:2">提货人：</text>
+    <input class="inputAddr"  style="flex:8" value="{{tihuoname}}" bindinput='mtihuo'/>
+  </view>
+
+  <view class="view1">
+    <text style="flex:2">库管员：</text>
+    <input class="inputAddr"  style="flex:8" value="{{kuguanyuan}}" bindinput='mkuguan'/>
+  </view>
+
+  <view class="viewitem">
+   <view class="view2">
+    <text class="titleHead" style="flex:2">型号：</text>
+    <input  class="input" style="flex:8" value="{{xinghao}}" bindinput='mxinghao'/>
+  </view>
+
+  <view class="view2">
+    <text class="titleHead" style="flex:2">品名：</text>
+    <input  class="input" style="flex:8" value="{{goodName}}" bindinput='mgoodname'/>
+  </view>
+
+  <view class="view2">
+    <text class="titleHead" style="flex:2">数量：</text>
+    <input  class="input" style="flex:8" value="{{amount}}" bindinput='mAmount'/>
+  </view>
+
+  <view class="view2">
+    <text class="titleHead" style="flex:2">包装：</text>
+    <input  class="input" style="flex:8" value="{{baozhuang}}" bindinput='mbaozhuang'/>
+  </view>
+
+  <view class="viewadd">
+    <image class ="imageSet" src="../../imgs/add.png" bindtap='addItem'></image>
+    添加数据
+  </view>
+  </view>
+  
+  <view class="view3">
+    <!-- <button class='toPrint' hover-class="hover" bindtap='yulandata'>查看数据</button>
+    <button class='toPrint' hover-class="hover" bindtap='DS1100print'>打印</button> -->
+    <view class="btnmodel" bindtap='DS1100print'>
+      <image class='imgV' src="../../imgs/chukudan/dayin@3x.png"/>
+      <view class='fontInfo'>打印</view>
+    </view>
+
+    <view class="btnmodel" bindtap='yulandata'>
+      <image class='imgV' src="../../imgs/chukudan/chakan@3x.png"/>
+      <view class='fontInfo'>查看数据</view>
+    </view>
+  </view>
+</view>
+  

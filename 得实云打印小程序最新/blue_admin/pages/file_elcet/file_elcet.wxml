@@ -1,0 +1,5 @@
+<!--pages/file_elcet/file_elcet.wxml-->
+
+<!-- <web-view src="{{webUrl}}" bindmessage="bindmessage" bindload="bindload" ></web-view> -->
+<web-view src="{{webUrl}}" bindload="bindmessage" ></web-view>
+

@@ -1,0 +1,25 @@
+{
+  "pages": [
+
+    "pages/first/first",
+    "pages/index/index",
+    "pages/print/print",
+    "pages/sailbill/sailbill",
+    "pages/blesearch/blesearch",
+    "pages/logs/logs",
+    "pages/itemlist/itemlist",
+    "pages/kaidan/kaidan",
+    "pages/billlist/billlist",
+    "pages/diancan/diancan",
+    "pages/details/logs"
+    
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#0090ff",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efefef",
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "得实云打印"
+  },
+  "sitemapLocation": "sitemap.json"
+}

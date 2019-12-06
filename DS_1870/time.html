@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="start">开始</button>
+    <button id="end">暂停</button>
+    <span class="a">30</span>
+</body>
+<script src="./module/js/jQuery/jquery-1.11.1.js" type="text/javascript"></script>
+<script>
+    var i = $('.a').html();
+
+    //给开始按钮绑定一个点击事件
+    $('#start').on('click', function() {
+        console.log(999)
+        yh();
+    })
+
+    //给结束按钮绑定一个点击事件
+
+    $('#end').on('click', function() {
+        clearTimeout(t); 
+    });
+
+    function yh() {
+        i -= 1; //i每次减一
+        console.log(i);
+        $('.a').html(i)
+        if (i <= 0) {
+            alert("计时时间结束")
+        }; //i=0时结束
+        t = setTimeout(yh, 1000);
+    };
+</script>
+
+</html>

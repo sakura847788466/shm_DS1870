@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="./ApiConfig/apiConfig.js"></script>
+  <title>负载均衡页面</title>
+</head>
+
+<body>
+  <div class="page">
+    <div class="maskT" data-status="false"></div>
+    <div class="el-message-box">
+      <div class="el-message-box__header">
+        <div class="el-message-box__title">
+          <span>提示</span>
+        </div>
+      </div>
+      <div class="el-message-box__content">
+        <div class="el-message-box__message">
+          <p>请输入IP，格式如：http://192.168.11.249:10084</p>
+        </div>
+        <div class="el-message-box__input">
+          <div class="el-input">
+            <input type="text" autocomplete="off" placeholder="" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <div class="el-message-box__errormsg" style="visibility: hidden;">
+          </div>
+        </div>
+      </div>
+      <div class="el-message-box__btns">
+        <!---->
+        <button type="button" class="el-button el-button--default el-button--small el-button--primary ">
+          <!---->
+          <!---->
+          <span class="ipTrue">
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="top">
+        <div class="left" >
+          <div class="title_c">负载均衡页面</div>
+          <div class="switch">
+            <img src="./image/3.png" alt="" data-status='show' class="show_img" style="position:relative;">
+            <img src="./image/2 .png" alt="" data-status='hide' class="hide_img" style="display:none;">
+          </div>
+        </div>
+        <div class="top_content">当前访问IP:http://192.168.11.151</div>
+        <div class="right">
+            <div class="xiuGai">
+                <button style="background-color:#409EFF;color:#fff; " onclick="XiuGai()">IP修改</button>
+              </div>
+              <div class="add">
+                <button style="background-color:#67C23A;color:#fff; font-size: 18px">添加</button>
+              </div>
+              <div class="submit" onclick="submitT()">
+                <button style="font-size: 18px;background-color:#F56C6C;color:#fff; ">提交</button>
+              </div>
+          <!-- <div class="switch">
+            <img src="./image/3.png" alt="" data-status='show' class="show_img" style="position:relative;">
+            <img src="./image/2 .png" alt="" data-status='hide' class="hide_img" style="display:none;">
+          </div> -->
+        </div>
+      </div>
+      <div class="content first">
+        <div class="item-top" style="font-size: 18px">
+          <div>服务器ip</div>
+          <div>控制端口</div>
+          <div>数据端口</div>
+          <div>请求端口</div>
+          <div>状态</div>
+        </div>
+        <!-- 数据渲染 -->
+        <!-- <div class="xiuGai">
+          <button style="background-color:#409eff;color:#fff; " onclick="XiuGai()">ip修改</button>
+        </div>
+        <div class="add">
+          <button style="background-color:#409eff;color:#fff; font-size: 43px">+</button>
+        </div>
+        <div class="submit" onclick="submitT()">
+          <button style="font-size: 18px;background-color:#409eff;color:#fff; ">提交</button>
+        </div> -->
+      </div>
+    </div>
+    <div class="mask" data-status='false'></div>
+    <div class="pageTwo">
+      <div class="content">
+        <!-- <div class="content_top" style="height:30px; width:100%;margin-right:180px;font-size:18px;line-height:30px;padding-left:5px;"> 添加IP</div> -->
+        <div class="item">
+          <div class="item_s">
+            <div class="title"><span>ip</span></div>
+            <input type="text" class="ip ipT" onkeyup="this.value=this.value.replace(/[, ]/g,'')" placeholder="请输入ip" />
+          </div>
+        </div>
+        <div class="item ">
+          <div class="item_s">
+            <div class="title"><span>控制端口</span></div>
+            <input type="text" class="Control_portT" onkeyup="this.value=this.value.replace(/[, ]/g,'')" placeholder="请输入控制端口"/>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item_s">
+            <div class="title"><span>数据端口</span></div>
+            <input type="text" class="data_portT" onkeyup="this.value=this.value.replace(/[, ]/g,'')"placeholder="请输入数据端口" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="item_s">
+            <div class="title"><span>请求端口</span></div>
+            <input type="text" class="request_portT" onkeyup="this.value=this.value.replace(/[, ]/g,'')" placeholder="请输入请求端口" />
+          </div>
+        </div>
+        <div class="isTrue">
+          <button onclick="add()">确定</button>
+        </div>
+        <div class="cancel">
+            <button onclick="cancel()">取消</button>
+          </div>
+        <div class="close">
+          <button>X</button>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

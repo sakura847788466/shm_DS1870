@@ -1,0 +1,22 @@
+<view class="section section-big nearby">
+		<view class="title">出库单信息</view>
+		<view class="shop" wx:for="{{itemlist}}" wx:key="unique">
+				<div class="dev" style="flex-direction:row;">
+						<div class="name">
+							{{item.str1}}
+						</div>
+						<div class="rssi" style="vertical-align:middle">
+							{{item.str2}}
+						</div>
+            <div class="rssi" style="vertical-align:middle">
+							{{item.str3}}
+						</div>
+            <div class="rssi" style="vertical-align:middle">
+							{{item.str4}}
+						</div>
+            <div class="rssi" style="vertical-align:middle">
+							<image chass="image" src="../../imgs/remove.png" bindtap='removeItem' data-index='{{index}}'></image>
+						</div>		
+				</div>
+		</view>
+</view>

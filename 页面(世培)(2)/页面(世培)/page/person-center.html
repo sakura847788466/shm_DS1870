@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/person-center.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/person-center.js"></script>
+  <script type="text/javascript" src="../ApiConfig/apiConfig_p.js"></script>
+
+  <title>性能测试</title>
+</head>
+
+<body>
+  <div class="page">
+    <div class="container">
+      <div class="content">
+        <div class="content_top">
+          <div class="top">tcp性能测试</div>
+        </div>
+        <div class="item">
+          <div class="item_c">
+            <div class="inpList">
+              <div class="inp_item">
+                <span>请求ip</span>
+                <input type="text" value="" class="request_ip">
+              </div>
+              <div class="inp_item">
+                <span>控制端口</span>
+                <input type="text" value="" class="contRoll_port">
+              </div>
+              <div class="inp_item">
+                <span>数据端口</span>
+                <input type="text" value=" " class='data_port'>
+              </div>
+              <div class="inp_item">
+                <span>查询链接数接口</span>
+                <input type="text" value="" class="link_data_port">
+              </div>
+              <div class="inp_item button_item">
+                <span></span>
+                <button onclick="setting()" class="setting">设置</button>
+                <button class="upData" onclick="upData()">修改</button>
+              </div>
+            </div>
+            <div class="inputList-mask"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mask"></div>
+    <div class="option">
+      <div class="option_cc">
+        <div class="option_top">
+          <div class="option_topp">
+            <span>请求连接数</span>
+            <input type="text" class="times" value="">
+          </div>
+        </div>
+        <div class="option_c">
+          <div class="item_t">
+            <button style="background-color:#ffff;border:1px solid black;" class="start" onclick="start()">开始</button>
+            <span style="display: inline-block;height: 40px;width: 120px;"></span>
+            <button style="background-color:#409eff;" onclick="end()">结束</button>
+            <span></span>
+          </div>
+          <div class="item_t">
+            <button class="sN" onclick="successNum()">获取打印成功数</button>
+            <input type="text" class="successNum" value="">
+          </div>
+          <div class="item_t">
+            <button class="sL" onclick="successLink()">成功连接数</button>
+            <input type="text" class="successLink" value="">
+          </div>
+          <div class="item_t">
+            <button class="uP" onclick="successUpData()">主动上传数据</button>
+            <input type="text" class="upDataOnline" value="">
+          </div>
+        </div>
+      </div>
+      <div class="close">
+        <button>X</button>
+      </div>
+    </div>
+    <div class="el-message-box">
+      <div class="el-message-box__header">
+        <div class="el-message-box__title">
+          <span>提示</span>
+        </div>
+      </div>
+      <div class="el-message-box__content">
+        <div class="el-message-box__message">
+          <p>请输入IP，格式如：http://192.168.11.249:10084</p>
+        </div>
+        <div class="el-message-box__input">
+          <div class="el-input">
+            <input type="text" autocomplete="off" placeholder="" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <div class="el-message-box__errormsg" style="visibility: hidden;">
+          </div>
+        </div>
+      </div>
+      <div class="el-message-box__btns">
+        <!---->
+        <button type="button" class="el-button el-button--default el-button--small el-button--primary ">
+          <!---->
+          <!---->
+          <span class="ipTrue">
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

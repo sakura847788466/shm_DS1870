@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DS-1870切刀机控件2015-08-14</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+body {
+	background-color: #FFFFCC;
+}
+.t1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	background-color: #CCCCCC;
+	border: 1px solid #CCCCCC;
+}
+.redfont {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+}
+
+
+-->
+</style>
+</head>
+
+<OBJECT ID="DSPrinterLibOCX" style="display:none" CLASSID = "CLSID:97A8DA99-11C8-4E44-9E5A-14797A3F5C04"> </object>
+
+<body>
+<table width="830" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="3" align="left" valign="middle">
+    	<textarea name="Enum" rows="6" wrap="off" id="Enum" style="width:400px"></textarea>
+    	<input type="button" name="Submit6" value="枚举USB设备" style="height:60px" onclick="GetUSB()" />
+    </td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+
+
+  <tr>
+    <td colspan="4" align="left" valign="middle"><hr /></td>
+  </tr>
+  
+  <tr>
+    <td colspan="3" align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td colspan="4" align="left" valign="middle"> 联 机 端 口 : 
+      <input name="portname" type="text" id="portname" style="width:100px" />
+      (例如：USB001)
+		<input type="button" name="Submit" value="打开设备" style="margin-left:90px" onclick="Open();" />      
+		<input type="button" name="Submit2" value="关闭设备" style="margin-left:90px" onclick="Close();" /></td>
+  </tr>
+  
+  <tr>
+    <td colspan="3" align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4" align="left" valign="middle">打印机状态 : 
+    <input name="state_prn" type="text" class="t1" id="state_prn" style="width:400px" readonly="readonly" />
+    <input type="button" name="Submit3" value="获取机型" style="margin-left:90px" onclick="getmodel();" />
+    </td>
+    
+    
+  </tr>
+  <tr>
+    <td colspan="3" align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+
+
+  <tr><td colspan="4"><hr/></td></tr>
+
+  
+  <tr>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="400" align="left" valign="middle">
+    
+    	<input style="margin:5px" type="button" name="Submit7" value="复位" onclick="Reset()" />
+      <input style="margin:5px" type="button" name="Submit10" value="跳行" onclick="Feed()" />
+      <input style="margin:5px" type="button" name="Submit12" value="换页" onclick="SkipPage()" />
+    	<input style="margin:5px" type="button" name="Submit13" value="回车" onclick="GoToLineHead()" />
+    	<input style="margin:5px" type="button" name="Submit14" value="设置粗体" onclick="FontBold(true)" />
+    	<input style="margin:5px" type="button" name="Submit15" value="取消粗体" onclick="FontBold(false)" />
+			<br />
+      <input style="margin:5px" type="button" name="Submit16" value="设置斜体" onclick="FontItalic(true)" />
+      <input style="margin:5px" type="button" name="Submit17" value="取消斜体" onclick="FontItalic(false)" />
+    </td>
+    
+  	<td></td>
+    
+    <td width="200" align="left" valign="middle"><fieldset><legend>左边界</legend>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="28">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input name="PrLeftMargin" type="text" id="PrLeftMargin" style="width:100px" />
+          <br />单位为:字符列数</td>
+        </tr>
+        
+        <tr>
+          <td height="28" align="left"><input type="button" name="Submit4" value="设置" onclick="LeftMargin();" /></td>
+        </tr>
+      </table>
+    </fieldset> </td>
+    
+    <td width="100" align="left" valign="middle"><fieldset><legend>横向位置</legend>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="28">
+          <input name="PrHPosition" type="text" id="PrHPosition" style="width:100px" />
+          单位为:inch</td>
+        </tr>
+        
+        <tr>
+          <td height="28" align="left"><input type="button" name="Submit4" value="设置" onclick="HPosition();" /></td>
+        </tr>
+      </table>
+    </fieldset>
+    </td>
+    
+  </tr>
+  
+  <tr>
+    <td colspan="4" align="left" valign="middle"><hr /></td>
+  </tr>
+  
+  <tr>
+   
+   <td width="100" align="left" valign="middle"><fieldset><legend>行距</legend>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        
+        <tr>
+          <td height="28"> <input name="PrLineSpace" type="text" id="PrLineSpace"  /></td>
+        </tr>
+        <tr>
+          <td height="28" align="left"><input type="button" name="Submit4" value="设置" onclick="LineSpace();" /></td>
+        </tr>
+      </table>
+    </fieldset>
+    </td>
+    
+    <td width="100" align="left" valign="middle"><fieldset><legend>走纸</legend>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="28">&nbsp;
+          <input name="PrWard" type="text" id="PrWard" style="width:100px" /><br />单位为:inch</td>
+        </tr>
+        
+        <tr>
+          <td height="28" align="left"><input type="button" name="Submit4" value="顺向" onclick="Ward(0);" />
+          <input type="button" name="Submit11" value="逆向" onclick="Ward(1)" /></td>
+        </tr>
+      </table>
+    </fieldset></td>
+    <td width="100" align="left" valign="middle"><fieldset><legend>汉字无级变倍</legend>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="28">横向缩放 : 
+          <input name="chtransfer" type="text" id="chtransfer" style="width:100px" value="24" /><br /><br />
+		  			纵向缩放 : 
+		  		<input name="cvtransfer" type="text" id="cvtransfer" style="width:100px" value="24" /></td>
+        </tr>
+        
+        <tr>
+          <td height="28" align="right"><input type="button" name="Submit11" value="设置" onclick="ChineseCharInfiniteTransfer()" /></td>
+        </tr>
+      </table>
+    </fieldset>
+    </td>
+    
+     <td colspan="2" align="left" valign="middle">测试打印 :
+			<br />
+      <textarea name="PrintData" rows="3" wrap="off" id="PrintData" style="width:200px"></textarea>
+      <br />
+	  	
+      <input type="button" name="Submit5" value="发送" onclick="Print();" />
+      </td>
+    
+    
+  </tr>
+  
+  <tr>
+    <td colspan="4" align="left" valign="middle"><hr /></td>
+  </tr>
+  
+  
+  <tr>
+   
+    <td align="left" valign="middle">条形码参数 : 
+			<br /><br/>
+	
+				宽度：<input name="thewidth" type="text" id="thewidth" style="width:50px" /><br><br>
+				高度：<input name="thehight" type="text" id="thehight" style="width:50px" /><br><br>
+				注释位置：<select name="explanpos" id="explanpos">
+             	 	<option value="1">不打印人工识别字符</option>
+              	<option value="2">打印人工识别字符</option>
+              	
+            	</select><br><br />
+		</td>
+		
+    <td align="left" valign="middle">条形码内容 : <br><br />
+	<input name="BarCode_str" type="text" id="BarCode_str" style="width:150px" /><br><br />
+	<br />
+	<input type="button" name="Submit18" value="条码打印" onclick="BarCode()" />	</td>
+  </tr>
+  
+  <tr>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  
+  
+</table>
+<script type="text/javascript">
+var DSPrinterLibOCX = document.getElementById('DSPrinterLibOCX');
+var feedback = 0;
+
+
+window.onload=function()
+{
+	
+	document.getElementById("portname").value="USB001";//端口
+	document.getElementById("PrLeftMargin").value=0;		//左边界
+	document.getElementById("PrHPosition").value=0;			//绝对横向
+	document.getElementById("PrLineSpace").value=0.5;			//行距
+	document.getElementById("PrWard").value=0.5;			//走纸
+	document.getElementById("chtransfer").value=1;			//无极横向
+	document.getElementById("cvtransfer").value=1;			//无极纵向
+	//打印一维码缺省值
+	document.getElementById("thewidth").value=2;
+	document.getElementById("thehight").value=2;
+	
+	document.getElementById("BarCode_str").value="3234542128";
+	
+	
+} 
+
+
+function GetUSB()	//枚举USB设置
+{
+	document.getElementById("Enum").value = DSPrinterLibOCX.DSEnumPrinter();
+}
+
+
+
+function Open()		//打开设备
+{
+	//oldxu调试通过
+	var pc_portname = document.getElementById("portname").value;
+	feedback = DSPrinterLibOCX.DSOpenPrinter(pc_portname);
+	document.getElementById("state_prn").value = (feedback==0)?"失败":"成功";
+	
+	
+}
+
+function getmodel()	//获取机型
+{
+	//oldxu调试通过
+	var tem=DSPrinterLibOCX.DSGetPrinterModel();
+	document.getElementById("state_prn").value = tem;
+}
+
+function Close()	//关闭设备
+{
+	//oldxu调试通过
+	DSPrinterLibOCX.DSClosePrinter();
+	document.getElementById("state_prn").value = "设备已关闭";
+}
+
+
+
+function Reset()	//打印机复位
+{
+	var re = DSPrinterLibOCX.DSReset();
+	document.getElementById("state_prn").value = re?"复位成功":"复位失败";
+}
+
+function Feed()		//跳行
+{
+	var fe = DSPrinterLibOCX.DSLineFeed();
+	document.getElementById("state_prn").value = fe?"跳行成功":"跳行失败";
+}
+
+function SkipPage()		//换页
+{
+	var nextpage = DSPrinterLibOCX.DSFormFeed();
+	document.getElementById("state_prn").value = nextpage?"换页成功":"换页失败";
+}
+
+function GoToLineHead()		//回车
+{
+	var gotoL = DSPrinterLibOCX.DSCarriageReturn();
+	document.getElementById("state_prn").value = gotoL?"回车成功":"回车失败";
+}
+
+function FontBold(i)	//粗体
+{
+	var setB = DSPrinterLibOCX.DSSetFontBold(i);
+	if(i){
+	document.getElementById("state_prn").value =setB?"设置粗体成功":"设置粗体失败";
+	}else{
+		document.getElementById("state_prn").value =setB?"取消粗体成功":"取消粗体失败";
+	}
+}
+
+function FontItalic(i)		//斜体
+{
+	var setI = DSPrinterLibOCX.DSSetFontItalic(i);
+	if(i){
+	document.getElementById("state_prn").value = setI?"设置斜体成功":"设置斜体失败";
+	}else{
+	document.getElementById("state_prn").value = setI?"取消斜体成功":"取消斜体失败";
+	}
+}
+
+
+function HPosition()	//横向位置
+{
+	var i = document.getElementById("PrHPosition").value;
+	var hpos = DSPrinterLibOCX.DSSetHPosition(i);
+	document.getElementById("state_prn").value = hpos?"绝对横向设置成功":"绝对横向设置失败";
+}
+
+function LineSpace()	//行距
+{
+	
+		var i = document.getElementById("PrLineSpace").value;
+	
+		var getback = DSPrinterLibOCX.DSSetLineSpace(i);
+		document.getElementById("state_prn").value = getback?"行距设置成功":"行距设置失败";
+}
+
+function LeftMargin()	//左边界
+{
+	var i = document.getElementById("PrLeftMargin").value;
+	var getback = DSPrinterLibOCX.DSSetLeftMargin(i);
+	document.getElementById("state_prn").value = getback?"左边界设置成功":"左边界设置失败";
+}
+
+function Ward(i)
+{
+	var k = document.getElementById("PrWard").value;
+	if(i==0)
+	{
+		var forward = DSPrinterLibOCX.DSAdvancePosition(k);
+		document.getElementById("state_prn").value = forward?"顺向走纸成功":"顺向走纸失败";
+	}
+	else
+	{
+		var backward = DSPrinterLibOCX.DSReversePosition(k);
+		document.getElementById("state_prn").value = getback?"逆向走纸成功":"逆向走纸失败";
+	}
+	
+}
+
+function ChineseCharInfiniteTransfer()
+{
+	var i = document.getElementById("chtransfer").value;
+	var j = document.getElementById("cvtransfer").value;
+	var getback = DSPrinterLibOCX.DSScaleCharacters(i,j);
+	document.getElementById("state_prn").value = getback?"无极变倍成功":"无极变倍失败";
+}
+
+//打印条码
+function BarCode()
+{
+
+	var wid=document.getElementById("thewidth").value;
+
+	var hig=document.getElementById("thehight").value;
+
+	var tex = document.getElementById("BarCode_str").value;
+
+	var pos=document.getElementById("explanpos").value;
+	
+	
+	
+	var a = DSPrinterLibOCX.DSPrintCode128(wid,hig,pos,tex);
+	
+	document.getElementById("state_prn").value = (a!=0)?"打印条码成功":"打印条码失败";
+	
+	
+}
+
+
+function Print()	//打印数据
+{
+	
+	var PrintData = document.getElementById("PrintData").value;
+	var i=DSPrinterLibOCX.DSPrintData(PrintData,false);
+	document.getElementById("state_prn").value = i?"打印成功":"打印失败";
+}
+
+
+
+
+</script>
+</body>
+</html>

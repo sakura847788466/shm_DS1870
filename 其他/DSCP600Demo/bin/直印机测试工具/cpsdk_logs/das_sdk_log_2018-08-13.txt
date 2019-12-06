@@ -1,0 +1,147 @@
+2018-08-13 09:47:35 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 09:47:35 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 09:47:35 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 09:47:35 Intel(R) Ethernet Connection I217-LM
+2018-08-13 09:47:35 Intel(R) Wireless-N 7260
+2018-08-13 09:47:35 192.168.199.130
+2018-08-13 09:57:14 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 09:57:14 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 09:57:14 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 09:57:14 Intel(R) Ethernet Connection I217-LM
+2018-08-13 09:57:14 Intel(R) Wireless-N 7260
+2018-08-13 09:57:14 192.168.199.130
+2018-08-13 10:08:15 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 10:08:15 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 10:08:15 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 10:08:15 Intel(R) Ethernet Connection I217-LM
+2018-08-13 10:08:15 Intel(R) Wireless-N 7260
+2018-08-13 10:08:15 192.168.199.130
+2018-08-13 10:39:43 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 10:39:43 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 10:39:43 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 10:39:43 Intel(R) Ethernet Connection I217-LM
+2018-08-13 10:39:43 Intel(R) Wireless-N 7260
+2018-08-13 10:39:43 192.168.199.130
+2018-08-13 10:50:40 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 10:50:40 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 10:50:40 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 10:50:40 Intel(R) Ethernet Connection I217-LM
+2018-08-13 10:50:40 Intel(R) Wireless-N 7260
+2018-08-13 10:50:40 192.168.199.130
+2018-08-13 10:52:46 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 10:52:46 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 10:52:46 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 10:52:46 Intel(R) Ethernet Connection I217-LM
+2018-08-13 10:52:46 Intel(R) Wireless-N 7260
+2018-08-13 10:52:46 192.168.199.130
+2018-08-13 11:02:39 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 11:02:39 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 11:02:39 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 11:02:39 Intel(R) Ethernet Connection I217-LM
+2018-08-13 11:02:39 Intel(R) Wireless-N 7260
+2018-08-13 11:02:39 192.168.199.130
+2018-08-13 11:07:02 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 11:07:02 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 11:07:02 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 11:07:02 Intel(R) Ethernet Connection I217-LM
+2018-08-13 11:07:02 Intel(R) Wireless-N 7260
+2018-08-13 11:07:02 192.168.199.130
+2018-08-13 11:09:04 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 11:09:04 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 11:09:04 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 11:09:04 Intel(R) Ethernet Connection I217-LM
+2018-08-13 11:09:04 Intel(R) Wireless-N 7260
+2018-08-13 11:09:04 192.168.199.130
+2018-08-13 11:09:42 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 11:09:42 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 11:09:42 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 11:09:42 Intel(R) Ethernet Connection I217-LM
+2018-08-13 11:09:42 Intel(R) Wireless-N 7260
+2018-08-13 11:09:42 192.168.199.130
+2018-08-13 11:10:59 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 11:10:59 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 11:10:59 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 11:10:59 Intel(R) Ethernet Connection I217-LM
+2018-08-13 11:10:59 Intel(R) Wireless-N 7260
+2018-08-13 11:10:59 192.168.199.130
+2018-08-13 11:11:56 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 11:11:56 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 11:11:56 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 11:11:56 Intel(R) Ethernet Connection I217-LM
+2018-08-13 11:11:56 Intel(R) Wireless-N 7260
+2018-08-13 11:11:56 192.168.199.130
+2018-08-13 11:13:06 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 11:13:06 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 11:13:06 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 11:13:06 Intel(R) Ethernet Connection I217-LM
+2018-08-13 11:13:06 Intel(R) Wireless-N 7260
+2018-08-13 11:13:06 192.168.199.130
+2018-08-13 11:15:11 WAIT_TIMEOUT£¬ GetLastError
+2018-08-13 11:15:11 poll(2):997
+2018-08-13 11:15:18 poll(1):31
+2018-08-13 11:51:58 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 11:51:58 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 11:51:58 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 11:51:58 Intel(R) Ethernet Connection I217-LM
+2018-08-13 11:51:58 Intel(R) Wireless-N 7260
+2018-08-13 11:51:58 192.168.199.130
+2018-08-13 11:55:39 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 11:55:39 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 11:55:39 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 11:55:39 Intel(R) Ethernet Connection I217-LM
+2018-08-13 11:55:39 Intel(R) Wireless-N 7260
+2018-08-13 11:55:39 192.168.199.130
+2018-08-13 16:10:03 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 16:10:03 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 16:10:03 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 16:10:03 Intel(R) Ethernet Connection I217-LM
+2018-08-13 16:10:03 Intel(R) Wireless-N 7260
+2018-08-13 16:10:03 192.168.0.103
+2018-08-13 16:19:28 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 16:19:28 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 16:19:28 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 16:19:28 Intel(R) Ethernet Connection I217-LM
+2018-08-13 16:19:28 Intel(R) Wireless-N 7260
+2018-08-13 16:19:28 192.168.0.103
+2018-08-13 16:20:39 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-13 16:20:39 usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-13 16:20:39 From:[usb://\\?\usb#vid_2867&pid_1805&mi_00#7&f1fa190&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-13 16:20:39 Intel(R) Ethernet Connection I217-LM
+2018-08-13 16:20:39 Intel(R) Wireless-N 7260
+2018-08-13 16:20:39 192.168.0.103

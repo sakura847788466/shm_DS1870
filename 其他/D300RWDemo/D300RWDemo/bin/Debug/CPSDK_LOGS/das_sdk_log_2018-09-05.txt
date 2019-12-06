@@ -1,0 +1,17 @@
+2018-09-05 16:47:26 
+Get TLS_Object  Tid:12204
+
+2018-09-05 16:49:39 
+delete TLS_Object  Tid:12204
+
+2018-09-05 16:50:07 
+Get TLS_Object  Tid:2136
+
+2018-09-05 16:50:07 
+Printer_Only_Enum_TCP_Printer
+
+2018-09-05 16:50:07 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-09-05 16:50:07 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-09-05 16:50:23 
+delete TLS_Object  Tid:2136
+

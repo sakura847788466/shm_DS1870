@@ -1,0 +1,422 @@
+2018-07-27 11:16:35 
+Get TLS_Object  Tid:2692
+
+2018-07-27 11:16:35 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 11:16:35 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 11:16:35 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 11:16:40 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:16:40 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:16:40 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:40 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:16:40 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:16:42 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:16:42 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:16:42 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:42 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:16:42 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:16:44 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:16:44 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:16:44 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:44 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:16:44 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:16:45 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:16:45 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:16:45 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:45 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:16:45 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:16:46 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:16:46 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:16:46 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:46 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:16:46 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:16:47 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:16:47 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:16:47 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:47 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:16:47 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:16:49 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:16:49 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:16:49 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:49 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:16:49 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:16:53 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:16:53 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:16:53 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:53 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:16:53 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:16:54 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:16:54 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:16:54 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:54 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:16:54 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:16:54 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 11:16:54 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:16:54 DAS_CTL_Printer_Read  *length=64,len:1
+2018-07-27 11:17:00 DAS_CTL_Printer_Read begin *length=100,len:4096
+2018-07-27 11:17:00 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:00 DAS_CTL_Printer_Read  *length=100,len:12
+2018-07-27 11:17:01 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:17:01 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:17:01 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:01 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:17:01 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:17:03 LastReadLength ,[15]
+2018-07-27 11:17:05 DAS_CTL_Printer_Read begin *length=100,len:4096
+2018-07-27 11:17:05 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:05 DAS_CTL_Printer_Read  *length=100,len:10
+2018-07-27 11:17:07 DAS_CTL_Printer_Read begin *length=8,len:4096
+2018-07-27 11:17:07 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:07 DAS_CTL_Printer_Read  *length=8,len:1
+2018-07-27 11:17:10 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 11:17:10 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:10 DAS_CTL_Printer_Read  *length=64,len:2
+2018-07-27 11:17:11 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 11:17:11 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:11 DAS_CTL_Printer_Read  *length=64,len:4
+2018-07-27 11:17:13 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:17:13 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:13 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:17:14 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 11:17:14 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:14 DAS_CTL_Printer_Read  *length=64,len:4
+2018-07-27 11:17:17 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:17:17 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:17:17 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:17 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:17:17 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:17:17 LastReadLength ,[ 2]
+2018-07-27 11:17:22 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:17:22 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:17:22 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:22 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:17:22 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:17:22 LastReadLength ,[ 7]
+2018-07-27 11:17:31 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:17:31 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:17:31 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:31 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:17:31 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:17:31 LastReadLength ,[12]
+2018-07-27 11:17:34 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:17:34 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:17:34 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:17:34 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:17:34 Printer_status[00][02][22][01],Tid:2692
+2018-07-27 11:17:34 LastReadLength ,[11]
+2018-07-27 11:17:36 
+delete TLS_Object  Tid:2692
+
+2018-07-27 11:18:10 
+Get TLS_Object  Tid:6216
+
+2018-07-27 11:18:10 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 11:18:10 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 11:18:10 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 11:18:17 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:18:17 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:18:17 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:18:17 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:18:17 Printer_status[00][02][22][01],Tid:6216
+2018-07-27 11:18:17 LastReadLength ,[ 7]
+2018-07-27 11:18:34 
+Get TLS_Object  Tid:9964
+
+2018-07-27 11:18:34 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 11:18:34 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 11:18:34 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 11:18:37 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:18:37 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:18:37 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:18:37 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:18:37 Printer_status[00][02][22][01],Tid:9964
+2018-07-27 11:18:37 LastReadLength ,[ 7]
+2018-07-27 11:18:42 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:18:42 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:18:42 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:18:42 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:18:42 Printer_status[00][02][22][01],Tid:9964
+2018-07-27 11:18:42 LastReadLength ,[12]
+2018-07-27 11:18:45 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:18:45 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:18:45 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:18:45 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:18:45 Printer_status[00][02][22][01],Tid:9964
+2018-07-27 11:18:45 LastReadLength ,[11]
+2018-07-27 11:18:48 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:18:48 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:18:48 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:18:48 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:18:48 Printer_status[00][02][22][01],Tid:9964
+2018-07-27 11:18:48 LastReadLength ,[ 2]
+2018-07-27 11:18:58 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:18:58 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:18:58 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:18:58 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:18:58 Printer_status[00][02][22][01],Tid:9964
+2018-07-27 11:18:58 LastReadLength ,[ 2]
+2018-07-27 11:20:37 
+Get TLS_Object  Tid:9568
+
+2018-07-27 11:20:37 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 11:20:37 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 11:20:37 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 11:20:41 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:20:41 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:20:41 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:20:41 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:20:41 Printer_status[00][02][22][01],Tid:9568
+2018-07-27 11:20:41 LastReadLength ,[ 2]
+2018-07-27 11:21:21 
+Get TLS_Object  Tid:11056
+
+2018-07-27 11:21:21 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 11:21:21 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 11:21:21 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 11:24:53 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:24:53 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:24:53 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:24:53 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:24:53 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:24:53 LastReadLength ,[ 2]
+2018-07-27 11:24:56 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:24:56 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:24:56 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:24:56 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:24:56 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:24:56 LastReadLength ,[ 4]
+2018-07-27 11:24:59 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:24:59 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:24:59 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:24:59 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:24:59 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:24:59 LastReadLength ,[15]
+2018-07-27 11:25:02 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:25:02 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:25:02 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:25:02 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:25:02 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:25:02 LastReadLength ,[ 4]
+2018-07-27 11:25:05 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:25:05 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:25:05 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:25:05 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:25:05 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:25:05 LastReadLength ,[ 2]
+2018-07-27 11:25:08 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:25:08 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:25:08 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:25:08 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:25:08 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:25:08 LastReadLength ,[ 4]
+2018-07-27 11:25:11 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:25:11 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:25:11 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:25:11 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:25:11 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:25:11 LastReadLength ,[ 4]
+2018-07-27 11:25:13 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:25:13 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:25:13 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:25:13 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:25:13 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:25:13 LastReadLength ,[ 2]
+2018-07-27 11:25:20 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:25:20 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:25:20 CPSDK USB_CreateFile_FAILURE,DevicePath:hid://\\?\hid#vid_2867&pid_1802&mi_01#7&32bd5f00&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030},GetLastError:2
+2018-07-27 11:25:20 DAS_CTL_Printer_Read fretcode:28000012
+2018-07-27 11:25:22 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:25:22 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:25:22 CPSDK USB_CreateFile_FAILURE,DevicePath:hid://\\?\hid#vid_2867&pid_1802&mi_01#7&32bd5f00&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030},GetLastError:2
+2018-07-27 11:25:22 DAS_CTL_Printer_Read fretcode:28000012
+2018-07-27 11:25:26 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:25:26 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:25:28 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:25:28 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:25:28 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:25:29 DAS_CTL_Printer_Read start len:128
+2018-07-27 11:25:29 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 11:25:29 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 11:25:29 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 11:25:29 Printer_status[00][02][22][01],Tid:11056
+2018-07-27 11:25:33 
+delete TLS_Object  Tid:11056
+
+2018-07-27 15:17:00 
+Get TLS_Object  Tid:14272
+
+2018-07-27 15:17:00 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 15:17:00 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 15:17:00 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 15:19:28 
+delete TLS_Object  Tid:14272
+
+2018-07-27 15:51:36 
+Get TLS_Object  Tid:14096
+
+2018-07-27 15:51:36 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 15:51:36 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 15:51:36 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 15:51:53 
+delete TLS_Object  Tid:14096
+
+2018-07-27 17:22:44 
+Get TLS_Object  Tid:5940
+
+2018-07-27 17:22:44 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 17:22:44 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 17:22:44 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 17:23:48 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:23:48 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:23:48 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:23:48 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:23:48 Printer_status[00][02][22][01],Tid:5940
+2018-07-27 17:23:54 
+delete TLS_Object  Tid:5940
+
+2018-07-27 17:24:15 
+Get TLS_Object  Tid:14912
+
+2018-07-27 17:24:15 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 17:24:15 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 17:24:15 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 17:24:19 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:24:19 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:24:19 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:24:19 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:24:19 Printer_status[00][02][22][01],Tid:14912
+2018-07-27 17:28:02 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:28:02 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:28:02 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:28:02 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:28:02 Printer_status[00][02][02][00],Tid:14912
+2018-07-27 17:28:03 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:28:03 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:28:03 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:28:03 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:28:03 Printer_status[00][02][02][00],Tid:14912
+2018-07-27 17:28:03 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:28:03 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:28:03 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:28:03 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:28:03 Printer_status[00][02][02][00],Tid:14912
+2018-07-27 17:28:32 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:28:32 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:28:32 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:28:32 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:28:32 Printer_status[00][02][22][01],Tid:14912
+2018-07-27 17:28:32 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 17:28:32 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:28:32 DAS_CTL_Printer_Read  *length=64,len:1
+2018-07-27 17:28:37 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 17:28:37 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:28:37 DAS_CTL_Printer_Read  *length=64,len:4
+2018-07-27 17:30:27 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:30:27 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:30:27 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:30:27 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:30:27 Printer_status[00][02][02][01],Tid:14912
+2018-07-27 17:30:27 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 17:30:27 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:30:27 DAS_CTL_Printer_Read  *length=64,len:1
+2018-07-27 17:30:48 
+delete TLS_Object  Tid:14912
+
+2018-07-27 17:31:39 
+Get TLS_Object  Tid:6432
+
+2018-07-27 17:31:39 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 17:31:39 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 17:31:39 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 17:32:04 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:32:04 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:32:04 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:32:04 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:32:04 Printer_status[00][02][22][01],Tid:6432
+2018-07-27 17:32:04 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 17:32:04 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:32:04 DAS_CTL_Printer_Read  *length=64,len:1
+2018-07-27 17:32:19 
+delete TLS_Object  Tid:6432
+
+2018-07-27 17:32:43 
+Get TLS_Object  Tid:3992
+
+2018-07-27 17:32:43 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 17:32:43 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 17:32:43 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 17:32:52 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:32:52 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:32:52 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:32:52 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:32:52 Printer_status[00][02][22][01],Tid:3992
+2018-07-27 17:32:52 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 17:32:52 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:32:52 DAS_CTL_Printer_Read  *length=64,len:1
+2018-07-27 17:32:57 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:32:57 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:32:57 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:32:57 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:32:57 Printer_status[00][02][22][01],Tid:3992
+2018-07-27 17:32:57 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 17:32:57 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:32:57 DAS_CTL_Printer_Read  *length=64,len:1
+2018-07-27 17:35:29 
+Get TLS_Object  Tid:1072
+
+2018-07-27 17:35:29 
+Printer_Only_Enum_TCP_Printer
+
+2018-07-27 17:35:29 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-07-27 17:35:29 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-07-27 17:35:32 CPSDK SDK Version:1.1.0.8
+2018-07-27 17:35:49 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:35:49 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:35:49 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:35:49 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:35:49 Printer_status[00][02][22][01],Tid:1072
+2018-07-27 17:35:51 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:35:51 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:35:51 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:35:51 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:35:51 Printer_status[00][02][22][01],Tid:1072
+2018-07-27 17:36:03 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:36:03 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:36:03 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:36:03 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:36:03 Printer_status[00][02][22][01],Tid:1072
+2018-07-27 17:36:03 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 17:36:03 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:36:03 DAS_CTL_Printer_Read  *length=64,len:1
+2018-07-27 17:36:08 DAS_CTL_Printer_Read start len:128
+2018-07-27 17:36:08 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-07-27 17:36:08 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:36:08 DAS_CTL_Printer_Read  *length=128,len:4
+2018-07-27 17:36:08 Printer_status[00][02][22][01],Tid:1072
+2018-07-27 17:36:08 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-07-27 17:36:08 DAS_ReadData_Ext fretcode=       0,[0]
+2018-07-27 17:36:08 DAS_CTL_Printer_Read  *length=64,len:1
+2018-07-27 17:36:15 
+delete TLS_Object  Tid:1072
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Qrcode Test</title>
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./logo.js"></script>
+    <script type="text/javascript">
+      //创建二维码
+      function createQRCode(id, url, width, height, src) {
+        $('#' + id).empty()
+        jQuery('#' + id).qrcode({
+          render: 'canvas',
+          text: url,
+          width: width, //二维码的宽度
+          height: height, //二维码的高度
+          imgWidth: width / 4, //图片宽
+          imgHeight: height / 4, //图片高
+          src: src //图片中央的二维码
+        })
+      }
+
+      function init() {
+        createQRCode('qrcode', '测试', 220, 220, 'img/logo.png')
+        $('#qrcode').css('display', 'none')
+        var pxData = null
+        var $lis = $('li')
+
+        var canvasA = $('canvas')[0]
+        var cxtA = canvasA.getContext('2d')
+        // cxtA.drawImage(img, 0, 0, canvasA.width, canvasA.height);
+        var imgDataA = cxtA.getImageData(0, 0, canvasA.width, canvasA.height)
+        console.log(imgDataA)
+        pxData = imgDataA.data //获取每一个像素
+        console.log(pxData)
+
+        $('canvas').on('click', function(e) {
+          //获取鼠标位置
+          var positionX =
+            e.pageX -
+            $(this).offset().left -
+            parseFloat($(this).css('border-left-width'))
+          console.log(positionX)
+          var positionY =
+            e.pageY -
+            $(this).offset().top -
+            parseFloat($(this).css('border-top-width'))
+          //当前位置对应的成员
+          console.log(positionY)
+          var imgdata = positionY * canvasA.width + positionX
+          // console.log(imgdata)
+          var rr = parseInt(4 * imgdata + 0)
+          var gg = parseInt(4 * imgdata + 1)
+          var bb = parseInt(4 * imgdata + 2)
+
+          console.log(rr)
+          console.log(gg)
+          console.log(bb)
+
+          //获得rgb值
+          var r = pxData[rr]
+          console.log(r)
+          var g = pxData[gg]
+          console.log(g)
+          var b = pxData[bb]
+          console.log(b)
+          var grey = 0.3 * r + 0.59 * g + 0.11 * b //灰度公式
+          $('#col').css(
+            'backgroundColor',
+            'rgba(' + r + ',' + g + ',' + b + ')'
+          )
+          $lis.eq(0).text('RGB:(' + r + ',' + g + ',' + b + ')')
+          $lis
+            .eq(1)
+            .text(
+              '十六进制:#' + r.toString(16) + g.toString(16) + b.toString(16)
+            )
+        })
+      }
+    </script>
+  </head>
+
+  <body onLoad="init()">
+    <h1>rbg提取</h1>
+    <div id="qrcode"></div>
+    <p class="col-lg-6 col-md-6" style="text-align: left;">
+      <a id="download" download="qrcode.jpg"></a>
+    </p>
+    <ul>
+      <li>RGB:(0,0,0)</li>
+      <li>十六进制:#000000</li>
+    </ul>
+  </body>
+</html>

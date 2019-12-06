@@ -1,0 +1,271 @@
+/* .log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+.list {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:20rpx;
+    border-bottom:2rpx solid #ddd;
+    position: relative;
+}
+
+.page {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  background: rgb(240, 240, 240)
+}
+.icon1{
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:150px;
+  height:150px;
+  top: 10%;
+  border-radius: 50%;
+
+}
+.icon1 image{
+   width:100%;
+   height:100%;
+}
+.icon1_text{
+  position:fixed;
+  width:100px;
+  height:60rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  top: 25%;
+}
+.icon2{
+  position:fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:150px;
+  height:150px;
+  top: 45%;
+  border-radius: 50%;
+
+}
+.icon2 image{
+   width:105%;
+   height:105%;
+}
+.icon2_text{
+  position:fixed;
+  width:100px;
+  height:60rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  top: 60%;
+}
+.footer {
+  position:fixed;
+  bottom: 20rpx;
+  font-size: 16px;
+  color: #333;
+} */
+
+.mainpage{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  background: #f0f0f0;
+}
+.showprint{
+  margin: 20rpx 0;
+  width: 90%;
+  height: 6%;
+  background: #fff;
+  border-radius:20px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showkaidan{
+  margin: 20rpx 0;
+  width: 90%;
+  height: 30%;
+  background: #f0f0f0;
+  border-radius: 10rpx;
+  display:flex;
+  flex-direction:column;
+}
+.title1{
+  font-size: 35rpx;
+  font-style:normal;
+  padding: 10rpx 20rpx;
+  font-weight:550;
+  color: #2D99F4;
+
+}
+.kaidanbtns{
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+  padding: 0rpx;
+}
+.btnkaidan{
+  width: 50%;
+  height: 75%;
+  text-align: center;
+  display: flex;
+  flex-direction:column;
+  margin: 0rpx 20rpx;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 15rpx;
+}
+.imgH{
+  width:50%;
+  height:40%;
+  margin-bottom: 10%;
+
+  display: flex;
+  justify-content: center;
+}
+.imgV{
+  width:25%;
+  height:50%;
+  margin-bottom: 10%;
+
+  display: flex;
+  justify-content: center;
+}
+.imgzheng{
+  width:30%;
+  height:40%;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
+}
+.fontInfo{
+  font-size: 36rpx;
+  font-style:normal;
+  font-weight:550;
+  color: #000;
+}
+.showmodel{
+  width: 90%;
+  height: 40%;
+  border-radius: 10rpx;
+}
+.modelbtns{
+  height: 50%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+
+}
+
+.btnmodel{
+  width: 50%;
+  height: 80%;
+  text-align: center;
+  flex-direction:column;
+  display: flex;
+  margin: 0rpx 20rpx;
+  padding-top: 20rpx;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 15rpx;
+}
+.img{
+  float:left;
+  width:55rpx;
+  height:55rpx;
+}
+.bangdingInfo{
+  font-size: 36rpx;
+  font-style:normal;
+  margin-left: 10rpx;
+  font-weight:550;
+  color: #3fa5f3;
+}
+.goodbutton {
+  width: 100%;
+  background-color: #47aaf5;
+  color: white;
+  position: fixed;
+  bottom:0px;
+  border-radius: 0rpx;
+}
+ 
+/* 按下变颜色 */
+.hover {
+  background:  rgb(191, 156, 236);
+}
+
+.commodity_screen{
+  background-color:rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  opacity:0.5;
+  position: fixed;
+  z-index: 666;
+  bottom:0;  
+}
+.catalog_area{
+  min-height: 900rpx;
+  max-height: 900rpx;
+  width: 100%;
+  position: fixed;
+  z-index: 888;
+  bottom:0;
+}
+.bg_fff{
+  background-color: #ffffff;
+}
+.display-block{
+  display:block !important;
+}
+.display-none{
+  display: none !important;
+}
+.cancel{
+  width: 40rpx;
+  height:40rpx;
+  position: absolute;
+  top:20rpx;
+  right:20rpx;
+}
+.imgview{
+  width: 83%;
+  height:78%;
+  margin: 60rpx;
+  display:flex;
+  box-sizing:border-box;
+  position:fixed;
+}
+.showimg{
+  width: 100%;
+  height:100%;
+}

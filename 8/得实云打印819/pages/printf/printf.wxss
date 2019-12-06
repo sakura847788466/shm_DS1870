@@ -1,0 +1,154 @@
+/* pages/printf/printf.wxss */
+.page{
+  background-color:#f8f6f6e7;
+  height:80%;
+}
+.tishi span{
+  display: block;
+  color:#ff3266;
+  height:20px;
+  margin-top:9px;
+  text-align: center;
+  background-color: #fff;
+  line-height:20px;
+}
+
+.title{
+    overflow: hidden;
+    width: 88%;
+    height: 112px;
+    margin: 11px auto;
+    padding-left: 10%;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 0 1px darkgrey;
+    background-color:#fffbe9;
+}
+.print_space_name{
+  margin-top:10px;
+}
+.print_space_money_msm{
+  display:inline-block;
+  font-size:14px;
+  color:#888888;
+  margin-top:3px;
+}
+.sta{
+  margin-top:20px;
+  color:#888888;
+  font-size:14px;
+
+}
+.close{
+position:absolute;
+top:0;
+right:0;
+width:32px;
+height:32px;
+background-size:100%;
+background-repeat:no-repeat;
+background-position:center;
+border-radius:50%;
+
+}
+.duanxin{
+position:absolute;
+top:5px;
+left:3px;
+width:32px;
+height:32px;
+background-size:100%;
+background-repeat:no-repeat;
+background-position:center;
+border-radius:50%;
+
+}
+
+.dibu{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height:75px;
+  position:fixed;
+  left:0;
+  bottom: 0;
+  width:100%;
+}
+
+.left{
+  flex:1;
+  width:100%;
+  height:100%;
+}
+.left span{
+    position: absolute;
+    top: 31%;
+    left: 2%;
+    width: 112.5px;
+    /* margin-left:; */
+    text-align: center;
+    color: dimgrey;
+    font-size:12px;
+}
+.left .zhangshu{
+    width: 17.5px;
+    height: 7.5px;
+    background: #66ff6d;
+    position: absolute;
+    left: 15%;
+    top: 58%;
+    border-top-left-radius: 7.5px;
+    border-top-right-radius: 7.5x;
+    margin-right: -10px;
+    transform-origin: bottom;
+    transition: 0.5s;
+}
+.cont{
+  flex:1;
+}
+.right{
+  flex:1;
+}
+
+.cont image{
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: #ff3266;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 4px solid #ff3266;
+    transform: translateY(-2px);
+}
+.right image{
+     display: block;
+    width: 30px;
+    height: 30px;
+    margin: 28px auto;
+}
+
+
+/* //弹出层 */
+.mask{
+  height:200px;
+  width:50px;
+  position:absolute;
+  bottom:75px;
+  right:29px; 
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mask image{
+  height:40px;
+  width:40px;
+}
+.hide{
+  visibility: hidden;
+}
+
+.show{
+  visibility: block;
+}

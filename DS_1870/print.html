@@ -1,0 +1,306 @@
+<div class="invoicMain">
+    <div class="invoiceHeader">
+        <ul class="headerLeft">
+            <li>
+                <!-- <img src="./qrcode.png" alt=""> -->
+            </li>
+            <li>
+                <label>机器编号：</label><span></span>
+            </li>
+        </ul>
+        <div class="headerMiddle">
+            <h1 onclick="printDemo()">XX增值税专用发票</h1>
+            <div class="line"></div>
+        </div>
+        <ul class="headerRight">
+            <li>
+                <label> 发票代码： </label><span>111111</span>
+            </li>
+            <li>
+                <label> 发票号码： </label><span>111111</span>
+            </li>
+            <li>
+                <label> 开票日期： </label><span>111111</span>
+            </li>
+            <li>
+                <label> 校&nbsp;&nbsp;验&nbsp;&nbsp;码： </label><span>111111</span>
+            </li>
+        </ul>
+    </div>
+    <div class="invoiceBody">
+        <div class="userInfo">
+            <div class="buy">购买方</div>
+            <ul>
+                <li>
+                    <label>名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</label><span>11111</span>
+                </li>
+                <li>
+                    <label>纳税人识别号：</label><span>11111</span>
+                </li>
+                <li>
+                    <label>地址、&nbsp;&nbsp;&nbsp;电话：</label><span>11111</span>
+                </li>
+                <li>
+                    <label>开户行及账号：</label><span>11111</span>
+                </li>
+            </ul>
+            <div class="password">密码区</div>
+            <div class="pwdInfo">aaa</div>
+        </div>
+        <div>
+            <table class="GoodsTable" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="width: 24%">货物或应税劳务、服务名称</td>
+                    <td style="width: 10%">规格型号</td>
+                    <td style="width: 7%">单位</td>
+                    <td style="width: 10%">数量</td>
+                    <td style="width: 10%">单价</td>
+                    <td style="width: 16%">金额</td>
+                    <td style="width: 7%">税率</td>
+                    <td style="width: 16%; border-right: none;">税额</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+
+                <tr class="total">
+                    <td>合计</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="GoodsTotal">
+                    <td>价税合计(大写)</td>
+                    <td colspan="7">
+                        <div style="width: 100%;display:flex">
+                            <div type="text" style="width: 60%">11</div>
+
+                            <div type="text" style="width: 30%"> (小写)11</div>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            <div class="userInfo">
+                <div class="buy">购买方</div>
+                <ul>
+                    <li>
+                        <label>名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</label><span>11111</span>
+                    </li>
+                    <li>
+                        <label>纳税人识别号：</label><span>11111</span>
+                    </li>
+                    <li>
+                        <label>地址、&nbsp;&nbsp;&nbsp;电话：</label><span>11111</span>
+                    </li>
+                    <li>
+                        <label>开户行及账号：</label><span>11111</span>
+                    </li>
+                </ul>
+                <div class="password">备注</div>
+                <div class="pwdInfo">aaa</div>
+            </div>
+        </div>
+        <!-- <ul class="goodsInfo">
+          <li>
+              <div class="name">货物或应税劳务、服务名称 </div>
+              <div class="spec"> 规格型号 </div>
+              <div class="unit"> 单位 </div>
+              <div class="qty"> 数量</div>
+              <div class="price"> 单价 </div>
+              <div class="money"> 金额 </div>
+              <div class="taxRate">税率 </div>
+              <div class="taxAmount">税额 </div>
+          </li>
+      </ul> -->
+    </div>
+    <ul class="invoicetFooter">
+        <li>
+            <label>收款人：</label>
+        </li>
+        <li>
+            <label>复核：</label>
+        </li>
+        <li>
+            <label>开票人：</label>
+        </li>
+        <li>
+            <label>销售方：（章）</label>
+        </li>
+    </ul>
+</div>
+
+<script src="./module/js/jQuery/jquery-1.11.1.js"></script>
+<script src="./module/js/base64.js"></script>
+<script src="./module/js/gbk.js"></script>
+<script>
+    function printDemo() {
+        // console.log(codeStr)
+        	//* 1.判断浏览器是否支持localStorage这个属性
+		if(!window.localStorage) {
+			alert("当前浏览器不支持localStorage，请升级您的浏览器，以支持localStorage！");
+		} else {
+			console.log("您是我见过最潮流的了，您的浏览器支持localStorage！");
+			//* 写逻辑代码。。。
+		}
+        var num1 = '88'
+        var strAddress = '广州得实电子信息科技有限公司'
+
+        var str1 = "                                                 四川省财政电子票据\n"
+        var str2 = "                                               CHINA WELFARE LOTTERY\n\n"
+        var str3 = "票据名称：四川省医疗卫生单位门诊票据                电子票据代码：5106090                电子票据号码：002045876\n" +
+            "收款单位：向代林                                    电子票据检验码：4fa78                电子票据开票日期：2019-11-12\n"
+
+        var str4 =
+            "费别      金额        费别        金额            项目                 单位            单价         数量           金额\n" +
+            "         检查      1260.00     检查        1200        全自动免疫组织染色检查    次             160           6             960\n" +
+            "         合计:      1630";
+
+
+        var byteArray = new Array();
+        getBinaryArrayData(str1, function(res1) {
+            console.log(res1.length)
+            console.log(str1)
+            byteArray[0] = 0xD;
+            byteArray[1] = 0x1B;
+            byteArray[2] = 0x40;
+            byteArray[3] = 27; //居中
+            byteArray[4] = 97;
+            byteArray[5] = 1;
+            byteArray[6] = 27; //字体样式
+            byteArray[7] = 33;
+            byteArray[8] = 0x38;
+            var index = 9;
+            byteArray[index++] = 27; //行距
+            byteArray[index++] = 51;
+            byteArray[index++] = 70;
+            for (let i = 0; i < res1.length; i++) {
+                byteArray[index++] = res1[i];
+            }
+            getBinaryArrayData(str2, function(res2) {
+                byteArray[index++] = 27;
+                byteArray[index++] = 33;
+                byteArray[index++] = 8;
+                for (let j = 0; j < res2.length; j++) {
+                    byteArray[index++] = res2[j];
+                }
+
+                getBinaryArrayData(str3, function(res3) {
+                    // console.log(res3.length)
+                    byteArray[index++] = 27;
+                    byteArray[index++] = 33;
+                    byteArray[index++] = 0;
+                    byteArray[index++] = 27;
+                    byteArray[index++] = 97;
+                    byteArray[index++] = 0;
+                    for (let k = 0; k < res3.length; k++) {
+                        byteArray[index++] = res3[k];
+                    }
+                    getBinaryArrayData(str4, function(res4) {
+                        //  console.log(res4.length)
+                        byteArray[index++] = 27;
+                        byteArray[index++] = 33;
+                        byteArray[index++] = 8;
+                        for (let m = 0; m < res4.length; m++) {
+                            byteArray[index++] = res4[m];
+                        }
+                        byteArray[index++] = 29;
+                        byteArray[index++] = 86;
+                        byteArray[index++] = 0;
+                        const arrayBuffer = new Uint8Array(byteArray)
+                        console.log(arrayBuffer)
+                        const base64 = btoa(String.fromCharCode.apply(null, arrayBuffer));
+                        console.log(base64)
+                        $.ajax({
+                            url: 'https://yun.dascomyun.cn/15_printapi/v2.0/cloud_print',
+                            contentType: 'application/json', // 默认值,
+                            type: "POST",
+                            data: JSON.stringify({
+                                "number": '000BBF7350021C00',
+                                "data": base64
+                            }),
+                            success: function(res) {
+                                console.log(res.data)
+                            },
+                            fail: function(res) {
+                                console.log(res.data)
+                            }
+                        })
+                    });
+                });
+            });
+        });
+    }
+
+
+    function getBinaryArrayData(text, resultCallBack) {
+
+        var buffer = new Array(sizeOfGbk(text));
+        console.log(buffer)
+        var indexDV = 0;
+        for (var i = 0; i < text.length; ++i) {
+            if (text.charCodeAt(i) > 0xff) { // charCOdeAt返回指定位置的unicode 代码  跟bg2313差不多
+                var utfStr = text.charCodeAt(i).toString(16);
+                var gbkStr = utf2gbOne(utfStr);
+
+                var highByte = parseInt(gbkStr.substring(0, 2), 16);
+                var lowByte = parseInt(gbkStr.substring(2, 4), 16);
+                buffer[indexDV++] = highByte;
+                buffer[indexDV++] = lowByte;
+
+            } else {
+                buffer[indexDV++] = text.charCodeAt(i);
+            }
+        }
+        resultCallBack(buffer);
+    }
+
+    function sizeOfGbk(str) {
+        var total = 0,
+            charCode,
+            i,
+            len;
+        for (i = 0, len = str.length; i < len; i++) {
+            charCode = str.charCodeAt(i);
+            if (charCode <= 0xff) {
+                total += 1;
+            } else {
+                total += 2;
+            }
+        }
+        return total;
+    }
+
+    function getCodeStr() {
+        return codeStr
+    }
+
+    function utf2gbOne(utfCode) {
+        var codeStr = getCodeStr();
+        var gbkCode;
+        var utfStart;
+        var gbkStart = 0;
+
+        utfStart = new Number(codeStr.indexOf(utfCode.toLowerCase()));
+        if (utfStart != -1) {
+            gbkStart = utfStart - 5;
+            gbkCode = codeStr.substring(gbkStart, gbkStart + 4);
+        } else {
+            gbkCode = "a1a1";
+        }
+
+        return gbkCode;
+    }
+</script>

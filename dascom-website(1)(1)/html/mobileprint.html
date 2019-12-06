@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>上门取件</title>
+    <link rel="stylesheet" href="../css/mobileprint.css" />
+  </head>
+  <body>
+    <header>
+      <div>&lt;</div>
+      <div>我要寄件</div>
+      <div></div>
+    </header>
+    <section>
+      <div>
+        <label>寄件人</label>
+        <input type="text" placeholder="请填写寄件人" value="李小明"/>
+      </div>
+      <div>
+        <label>寄件人地址</label>
+        <input type="text" placeholder="请填写寄件人地址" value="广东省汕头市南澳县云澳镇37号"/>
+      </div>
+      <div>
+        <label>寄件人联系电话</label>
+        <input type="text" placeholder="请填写寄件人联系电话" value="13267308164"/>
+      </div>
+      <div>
+        <label>寄件人公司</label>
+        <input type="text" placeholder="请填写寄件人公司" value="无"/>
+      </div>
+      <div>
+        <label>收件人</label>
+        <input type="text" placeholder="请填写收件人" value="黄鑫"/>
+      </div>
+      <div>
+        <label>收件人地址</label>
+        <input type="text" placeholder="请填写收件人地址" value="广东省肇庆市高要区府前大街104号"/>
+      </div>
+      <div>
+        <label>收件人联系电话</label>
+        <input type="text" placeholder="请填写收件人联系电话" value="18865423415"/>
+      </div>
+      <div>
+        <label>收件人公司</label>
+        <input type="text" placeholder="请填写收件人公司"value="无" />
+      </div>
+      <div>
+        <label>备注</label>
+        <input type="text" placeholder="请填写备注" value="无" />
+      </div>
+    </section>
+    <footer id="saveBtn">
+      下单
+    </footer>
+    <div id="poup">
+      下单成功
+    </div>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script>
+      $(function() {
+        $("#saveBtn").on("click", function() {
+          $("#poup").css("display", "block");
+        });
+      });
+    </script>
+  </body>
+</html>

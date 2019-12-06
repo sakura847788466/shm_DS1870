@@ -1,0 +1,19 @@
+1.获取请求服务接口ip:port  GET
+192.168.11.249:10084/nginx/getUpdateHttp
+
+2.获取控制ip:port  GET
+192.168.11.249:10084/nginx/getUpdateNetty
+
+3.获取数据ip:port  GET
+192.168.11.249:10084/nginx/getUpdateNettyData
+
+4.设置ip:port  POST
+192.168.11.249:10084/nginx/setNginxConfig
+参数:
+JSON
+
+{
+	"serverData":["192.168.11.2:30003","192.168.11.2:40003"],
+	"controllData":["192.168.11.2:30001","192.168.11.2:40001"],
+	"dataData":["192.168.11.2:30002","192.168.11.2:40002"]
+}

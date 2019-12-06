@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>测试</title>
+</head>
+
+<body>
+  <span class="ceshi" onclick="print()">测试数据接口</span>
+
+</body>
+<script src="./module/js/jQuery/jquery-1.11.1.js" type="text/javascript"></script>
+<script src="./module/js/base64.js"></script>
+<script src="./module/js/MD5.js"></script>
+<script src="./module/js/uuid.js"></script>
+<script src="./module/js/gbk.js"></script>
+
+<script>
+  // function Appendzero(obj) {
+  //   if (obj < 10) return "0" + "" + obj;
+  //   else return obj;
+  // }
+  $('.ceshi').on('click', function () {
+    console.log(999)
+    var testData = {
+      "ownPay": 3330,
+      "otherfundPay": 2220,
+      "sex": "男",
+      "accountPay": 1000,
+      "chargeDetail": [{
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "CT费",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "CT费",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }, {
+        "amt": 100,
+        "unit": "元",
+        "remark": "备注",
+        "selfAmt": 0,
+        "std": 100,
+        "chargeName": "ICU材料",
+        "number": 1,
+        "chargeCode": "0801"
+      }],
+      "remark": "备注",
+      "busType": "02",
+      "selfCashPay": 400,
+      "medicalCareType": "城镇居民基本医疗保险",
+      "totalAmt": 1800,
+      "cardNo": "0123456789",
+      "author": "票据编制人",
+      "patientId": "10000",
+      "age": "33",
+      "selfPayAmt": 3000,
+      "fundPay": 1110,
+      "payChannelDetail": [{
+        "payChannelCode": "02",
+        "payChannelValue": 1800
+      }],
+      "listDetail": [{
+        "amt": 100,
+        "unit": "计量单位 ",
+        "remark": "备注",
+        "chrgtype": "费用类型1",
+        "std": 50,
+        "name": "药品名称/剂型",
+        "number": 2,
+        "code": "编码2"
+      }, {
+        "amt": 100,
+        "unit": "计量单位 ",
+        "remark": "备注",
+        "chrgtype": "费用类型1",
+        "std": 50,
+        "name": "药品名称/剂型",
+        "number": 2,
+        "code": "编码2"
+      }, {
+        "amt": 100,
+        "unit": "计量单位 ",
+        "remark": "备注",
+        "chrgtype": "费用类型1",
+        "std": 50,
+        "name": "药品名称/剂型",
+        "number": 2,
+        "code": "编码2"
+      }, {
+        "amt": 100,
+        "unit": "计量单位 ",
+        "remark": "备注",
+        "chrgtype": "费用类型1",
+        "std": 50,
+        "name": "药品名称/剂型",
+        "number": 2,
+        "code": "编码2"
+      }, {
+        "amt": 100,
+        "unit": "计量单位 ",
+        "remark": "备注",
+        "chrgtype": "费用类型1",
+        "std": 50,
+        "name": "药品名称/剂型",
+        "number": 2,
+        "code": "编码2"
+      }, {
+        "amt": 100,
+        "unit": "计量单位 ",
+        "remark": "备注",
+        "chrgtype": "费用类型1",
+        "std": 50,
+        "name": "药品名称/剂型",
+        "number": 2,
+        "code": "编码2"
+      }, {
+        "amt": 100,
+        "unit": "计量单位 ",
+        "remark": "备注",
+        "chrgtype": "费用类型1",
+        "std": 50,
+        "name": "药品名称/剂型",
+        "number": 2,
+        "code": "编码2"
+      }, {
+        "amt": 100,
+        "unit": "计量单位 ",
+        "remark": "备注",
+        "chrgtype": "费用类型1",
+        "std": 50,
+        "name": "药品名称/剂型",
+        "number": 2,
+        "code": "编码2"
+      }],
+      "medicalInstitution": "综合医院",
+      "busDateTime": "20191115085500010",
+      "cashPay": 0,
+      "payee": "收费员",
+      "cardType": "3101",
+      "otherParameter": [{
+        "infoName": "卡类型",
+        "infoValue": "3101"
+      }, {
+        "infoName": "卡号",
+        "infoValue": "0123456789"
+      }, {
+        "infoName": "医保类型",
+        "infoValue": "城镇居民基本医疗保险"
+      }, {
+        "infoName": "性别",
+        "infoValue": "男"
+      }, {
+        "infoName": "科室",
+        "infoValue": "科室"
+      }, {
+        "infoName": "患者门诊号",
+        "infoValue": "10001"
+      }, {
+        "infoName": "个人账户支付",
+        "infoValue": "1000"
+      }, {
+        "infoName": "个人账户余额",
+        "infoValue": "0"
+      }, {
+        "infoName": "医保统筹基金支付",
+        "infoValue": "1110"
+      }, {
+        "infoName": "其它医保支付",
+        "infoValue": "2220"
+      }, {
+        "infoName": "自费金额",
+        "infoValue": "3330"
+      }, {
+        "infoName": "现金预交款金额",
+        "infoValue": "0"
+      }, {
+        "infoName": "转账预交款金额",
+        "infoValue": "0"
+      }, {
+        "infoName": "支票预交款金额",
+        "infoValue": "0"
+      }, {
+        "infoName": "补交金额(转账)",
+        "infoValue": "0"
+      }, {
+        "infoName": "退还金额(转账)",
+        "infoValue": "0"
+      }, {
+        "infoName": "医疗机构类型",
+        "infoValue": "综合医院"
+      }, {
+        "infoName": "年龄",
+        "infoValue": "33"
+      }, {
+        "infoName": "患者唯一ID",
+        "infoValue": "10000"
+      }, {
+        "infoName": "医保机构编码",
+        "infoValue": "0090"
+      }, {
+        "infoName": "个人自付",
+        "infoValue": "3000"
+      }, {
+        "infoName": "个人现金支付",
+        "infoValue": "400"
+      }, {
+        "infoName": "交款人支付宝账户",
+        "infoValue": "患者支付宝账户"
+      }, {
+        "infoName": "微信支付订单号",
+        "infoValue": "微信支付订单号"
+      }, {
+        "infoName": "02",
+        "infoValue": "100"
+      }, {
+        "infoName": "02",
+        "infoValue": "100"
+      }],
+      "category": "科室",
+      "payer": "测试01",
+      "placeCode": "003",
+      "otherSpecialParameter": [],
+      "patientNo": "10001",
+      "busNo": "20191115000016"
+    }
+    console.log(testData.cardNo + testData.payer)
+    console.log(testData.chargeDetail.length)
+
+    var str1 = "四川省财政电子票据\n"
+    var str2 = "CHINA WELFARE LOTTERY\n\n";
+    var str3 = "票据名称:测试";
+    var str4 = "电子票据代码:001";
+    var str5 = "电子票据号码：006\n";
+    var str6 = "收款单位：" + testData.payee + "";
+    var str7 = " 电子票据检验码：" + testData.placeCode + "";
+    var str8 = "电子票据开票日期：" + testData.busDateTime + "\n";
+    var str9 = "业务流水号:665237-2";
+    var str10 = "业务标识:挂号 ";
+    var str11 = "打印时间:2019-06-26 13:37:49\n";
+    var str12 = "金额";
+    var str13 = "费别";
+    var str14 = "金额";
+    var str15 = "费别";
+    var str16 = "项目";
+    var str17 = "单位";
+    var str18 = "单价";
+    var str19 = "数量";
+    var str20 = "金额";
+    var str21 = "合计:         13";
+    var sr22= "合计(大写):   壹拾叁元整";
+
+
+    var byteArray = new Array();
+    var position = {
+      n1: '10',
+      n2: '5'
+    };
+    getBinaryArrayData(str1, function (res1) {
+
+      byteArray[0] = 0xD; //初始化
+      byteArray[1] = 0x1B;
+      byteArray[2] = 0x40;
+
+      byteArray[index++] = 27; //设置打印模式 粗体
+      byteArray[index++] = 33;
+      byteArray[index++] = 8;
+      var index = 9;
+      byteArray[index++] = 27; //行距
+      byteArray[index++] = 51;
+      byteArray[index++] = 70;
+
+
+      for (let i = 0; i < res1.length; i++) {
+        byteArray[index++] = res1[i];
+      }
+      getBinaryArrayData(str2, function (res2) {
+
+        byteArray[index++] = 27; //居中
+        byteArray[index++] = 97;
+        byteArray[index++] = 1;
+
+        byteArray[index++] = 27; //设置打印模式  粗体
+        byteArray[index++] = 33;
+        byteArray[index++] = 8;
+
+      
+
+        for (let j = 0; j < res2.length; j++) {
+          byteArray[index++] = res2[j];
+        }
+
+        getBinaryArrayData(str3, function (res3) {
+          // console.log(res3.length)
+          byteArray[0] = 27;
+          byteArray[1] = 36;
+          byteArray[2] =  20;
+          byteArray[3] = 40;
+
+          console.log(position.n2)
+          console.log(byteArray[3])
+
+          byteArray[index++] = 27;
+          byteArray[index++] = 33;
+          byteArray[index++] = 0;
+
+          byteArray[index++] = 27;
+          byteArray[index++] = 97;
+          byteArray[index++] = 0;
+
+         
+          for (let k = 0; k < res3.length; k++) {
+            byteArray[index++] = res3[k];
+          }
+          getBinaryArrayData(str4, function (res4) {
+            // console.log(res3.length)
+            byteArray[0] = 27;
+            byteArray[1] = 36;
+            byteArray[2] = position.n1 + 180;
+            byteArray[3] = position.n2 + 40;
+
+            byteArray[index++] = 27;
+            byteArray[index++] = 33;
+            byteArray[index++] = 0;
+
+            byteArray[index++] = 27;
+            byteArray[index++] = 97;
+            byteArray[index++] = 0;
+
+            for (let k = 0; k < res4.length; k++) {
+              byteArray[index++] = res4[k];
+            }
+            getBinaryArrayData(str5, function (res5) {
+              //  console.log(res4.length)
+
+              byteArray[0] = 27;
+              byteArray[1] = 36;
+              byteArray[2] = position.n1 + 340;
+              byteArray[3] = position.n2 + 40;
+
+              byteArray[index++] = 27;
+              byteArray[index++] = 33;
+              byteArray[index++] = 8;
+
+              byteArray[index++] = 29;
+              byteArray[index++] = 86;
+              byteArray[index++] = 0;
+
+
+
+              for (let m = 0; m < res5.length; m++) {
+                byteArray[index++] = res5[m];
+              }
+              getBinaryArrayData(str6, function (res6) {
+                //  console.log(res4.length)
+                byteArray[0] = 27;
+                byteArray[1] = 36;
+                byteArray[2] = position.n1 + 20;
+                byteArray[3] = position.n2 + 70;
+
+                byteArray[index++] = 27;
+                byteArray[index++] = 33;
+                byteArray[index++] = 8;
+
+                byteArray[index++] = 29;
+                byteArray[index++] = 86;
+                byteArray[index++] = 0;
+
+
+                for (let m = 0; m < res6.length; m++) {
+                  byteArray[index++] = res6[m];
+                }
+                getBinaryArrayData(str7, function (res7) {
+                  //  console.log(res4.length)
+
+                  byteArray[0] = 27;
+                  byteArray[1] = 36;
+                  byteArray[2] = position.n1 + 180;
+                  byteArray[3] = position.n2 + 70;
+
+                  byteArray[index++] = 27;
+                  byteArray[index++] = 33;
+                  byteArray[index++] = 8;
+
+                  byteArray[index++] = 29;
+                  byteArray[index++] = 86;
+                  byteArray[index++] = 0;
+
+
+                  for (let m = 0; m < res7.length; m++) {
+                    byteArray[index++] = res7[m];
+                  }
+                  getBinaryArrayData(str8, function (res8) {
+                    //  console.log(res4.length)
+
+                    byteArray[0] = 27;
+                    byteArray[1] = 36;
+                    byteArray[2] = position.n1 + 340;
+                    byteArray[3] = position.n2 + 70;
+
+                    byteArray[index++] = 27;
+                    byteArray[index++] = 33;
+                    byteArray[index++] = 8;
+
+                    byteArray[index++] = 29;
+                    byteArray[index++] = 86;
+                    byteArray[index++] = 0;
+
+                    for (let m = 0; m < res8.length; m++) {
+                      byteArray[index++] = res8[m];
+                    }
+                    getBinaryArrayData(str9, function (res9) {
+                      //  console.log(res4.length)
+
+                      byteArray[0] = 27;
+                      byteArray[1] = 36;
+                      byteArray[2] = position.n1 + 20;
+                      byteArray[3] = position.n2 + 90;
+
+                      byteArray[index++] = 27;
+                      byteArray[index++] = 33;
+                      byteArray[index++] = 8;
+
+                      byteArray[index++] = 29;
+                      byteArray[index++] = 86;
+                      byteArray[index++] = 0;
+
+                      for (let m = 0; m < res9.length; m++) {
+                        byteArray[index++] = res9[m];
+                      }
+                      getBinaryArrayData(str10, function (res10) {
+                        //  console.log(res4.length)
+
+                        byteArray[0] = 27;
+                        byteArray[1] = 36;
+                        byteArray[2] = position.n1 + 180;
+                        byteArray[3] = position.n2 + 90;
+
+                        byteArray[index++] = 27;
+                        byteArray[index++] = 33;
+                        byteArray[index++] = 8;
+
+                        byteArray[index++] = 29;
+                        byteArray[index++] = 86;
+                        byteArray[index++] = 0;
+
+
+
+                        for (let m = 0; m < res10.length; m++) {
+                          byteArray[index++] = res10[m];
+                        }
+                        getBinaryArrayData(str11, function (res11) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 340;
+                          byteArray[3] = position.n2 + 90;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res11.length; m++) {
+                            byteArray[index++] = res11[m];
+                          }
+
+                          getBinaryArrayData(str12, function (res12) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 20;
+                          byteArray[3] = position.n2 + 110;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res12.length; m++) {
+                            byteArray[index++] = res12[m];
+                          }
+                          getBinaryArrayData(str13, function (res13) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 80;
+                          byteArray[3] = position.n2 + 110;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res12.length; m++) {
+                            byteArray[index++] = res12[m];
+                          }
+                          getBinaryArrayData(str13, function (res13) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 140;
+                          byteArray[3] = position.n2 + 110;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res13.length; m++) {
+                            byteArray[index++] = res13[m];
+                          }
+                          getBinaryArrayData(str14, function (res14) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 200;
+                          byteArray[3] = position.n2 + 110;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res13.length; m++) {
+                            byteArray[index++] = res13[m];
+                          }
+                          getBinaryArrayData(str14, function (res14) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 260;
+                          byteArray[3] = position.n2 + 110;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res14.length; m++) {
+                            byteArray[index++] = res14[m];
+                          }
+                          getBinaryArrayData(str15, function (res15) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 320;
+                          byteArray[3] = position.n2 + 110;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res15.length; m++) {
+                            byteArray[index++] = res15[m];
+                          }
+                          getBinaryArrayData(str16, function (res16) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 380;
+                          byteArray[3] = position.n2 + 110;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res16.length; m++) {
+                            byteArray[index++] = res16[m];
+                          }
+                          getBinaryArrayData(str17, function (res17) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 440;
+                          byteArray[3] = position.n2 + 110;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res17.length; m++) {
+                            byteArray[index++] = res17[m];
+                          }
+                          getBinaryArrayData(str18, function (res18) {
+                          //  console.log(res4.length)
+                          byteArray[0] = 27;
+                          byteArray[1] = 36;
+                          byteArray[2] = position.n1 + 500;
+                          byteArray[3] = position.n2 + 110;
+
+                          byteArray[index++] = 27;
+                          byteArray[index++] = 33;
+                          byteArray[index++] = 8;
+
+                          byteArray[index++] = 29;
+                          byteArray[index++] = 86;
+                          byteArray[index++] = 0;
+
+
+
+                          for (let m = 0; m < res18.length; m++) {
+                            byteArray[index++] = res18[m];
+                          }
+                          
+                          const arrayBuffer = new Uint8Array(byteArray)
+                          console.log(arrayBuffer)
+                          const base64 = btoa(String.fromCharCode.apply(
+                            null, arrayBuffer));
+                          console.log(base64)
+                          jQuery.support.cors = true;
+                          // $.ajax({
+                          //   url: 'https://yun.dascomyun.cn/15_printapi/v2.0/cloud_print',
+                          //   contentType: 'application/json', // 默认值,
+                          //   type: "POST",
+                          //   data: JSON.stringify({
+                          //     "number": '000BBF7350021C00',
+                          //     "data": base64
+                          //   }),
+                          //   success: function (res) {
+                          //     console.log(res.data)
+                          //   },
+                          //   fail: function (res) {
+                          //     console.log(res.data)
+                          //   }
+                          // })
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+});
+});
+});
+});
+});
+});
+      });
+    });
+
+
+    function getBinaryArrayData(text, resultCallBack) {
+
+      var buffer = new Array(sizeOfGbk(text));
+      var indexDV = 0;
+      for (var i = 0; i < text.length; ++i) {
+        if (text.charCodeAt(i) > 0xff) { // charCOdeAt返回指定位置的unicode 代码  跟bg2313差不多
+          var utfStr = text.charCodeAt(i).toString(16);
+          var gbkStr = utf2gbOne(utfStr);
+
+          var highByte = parseInt(gbkStr.substring(0, 2), 16);
+          var lowByte = parseInt(gbkStr.substring(2, 4), 16);
+          buffer[indexDV++] = highByte;
+          buffer[indexDV++] = lowByte;
+
+        } else {
+          buffer[indexDV++] = text.charCodeAt(i);
+        }
+      }
+      resultCallBack(buffer);
+    }
+
+    function sizeOfGbk(str) {
+      var total = 0,
+        charCode,
+        i,
+        len;
+      for (i = 0, len = str.length; i < len; i++) {
+        charCode = str.charCodeAt(i);
+        if (charCode <= 0xff) {
+          total += 1;
+        } else {
+          total += 2;
+        }
+      }
+      return total;
+    }
+
+    function getCodeStr() {
+      return codeStr
+    }
+
+    function utf2gbOne(utfCode) {
+      var codeStr = getCodeStr();
+      var gbkCode;
+      var utfStart;
+      var gbkStart = 0;
+
+      utfStart = new Number(codeStr.indexOf(utfCode.toLowerCase()));
+      if (utfStart != -1) {
+        gbkStart = utfStart - 5;
+        gbkCode = codeStr.substring(gbkStart, gbkStart + 4);
+      } else {
+        gbkCode = "a1a1";
+      }
+
+      return gbkCode;
+    }
+
+  })
+
+  function forV(item) {
+    var str5 = '';
+    console.log(item.listDetail.length)
+    for (var j = 0; j < item.listDetail.length; j++) {
+
+      str5 += "" + item.listDetail[j].chrgtype + "    " + item.listDetail[j].amt +
+        "     " + item.listDetail[j].chrgtype + "    " + item.listDetail[j].amt + "   " + item.chargeDetail[j]
+        .chargeName + "         " + item.chargeDetail[j].unit + "160     9     1\n"
+
+    }
+    return str5;
+  }
+</script>
+
+</html>

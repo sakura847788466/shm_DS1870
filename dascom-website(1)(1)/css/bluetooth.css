@@ -1,0 +1,447 @@
+@import "./reset.css";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 14px;
+}
+body {
+  font: 14px "Microsoft YaHei", "ArialMT", "黑体", Helvetica, sans-serif,
+    "Microsoft YaHei";
+  background-color: #1365a1;
+}
+img {
+  display: block;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* 头部开始 */
+header {
+  display: flex;
+  margin-bottom: 50px;
+  width: 1200px;
+  height: 186px;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 186px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /* background-image: linear-gradient(135deg, #6bfafd, #2ca9ff); */
+  background-image: linear-gradient(135deg, #62ccfe, #2e8eff);
+}
+.logoImg {
+  width: 68px;
+  height: 68px;
+  background: url("../imgs/logo.png") no-repeat;
+}
+.logoText {
+  margin-top: 30px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  color: #fff;
+}
+nav {
+  position: relative;
+  margin-top: 40px;
+  height: 100px;
+  width: 990px;
+  background-color: #fff;
+}
+nav > ul {
+  margin-left: 100px;
+  display: flex;
+  width: 600px;
+}
+nav > ul > li {
+  width: 120px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+nav > ul > li > a {
+  color: #666;
+  padding-bottom: 4px;
+  font-size: 16px;
+}
+nav > ul > li:hover {
+  background: rgba(0, 149, 255, 0.1);
+  cursor: pointer;
+}
+nav > ul > li:hover a {
+  color: #0095ff;
+  border-bottom: 2px solid #0095ff;
+}
+.followUs {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 20px;
+  top: 10px;
+  height: 80px;
+}
+.qrCode {
+  margin-right: 10px;
+  width: 80px;
+  height: 80px;
+  background: url("../imgs/QR code.png") no-repeat;
+}
+.text-content > p {
+  font-size: 16px;
+  text-align: center;
+  color: #0095ff;
+}
+/* 头部结束 */
+/* 介绍 开始 */
+.introduce-box {
+  border-radius: 20px;
+  background: #fff;
+  /* width: 100%;
+  height: auto; */
+  overflow: hidden;
+}
+.cover {
+  width: 100%;
+  height: 476px;
+  background: cyan;
+  /* opacity: 0.2; */
+  background: url("../imgs/square.png") no-repeat right top;
+}
+.cover-box {
+  padding-top: 230px;
+  padding-left: 70px;
+}
+.cover-box .cover-title {
+  font-size: 40px;
+  color: #0095ff;
+  margin-bottom: 10px;
+}
+.cover-english-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.cover-description {
+  color: #666;
+}
+.introduction {
+  width: 100%;
+  height: 420px;
+  background: url("../imgs/bluetooth01bg.png") no-repeat;
+  background-size: cover;
+  padding-top: 54px;
+}
+.introduction-textBox {
+  /* margin-top: 70px; */
+  margin-left: 680px;
+}
+.introduction-textBox > h4 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #0095ff;
+}
+.introduction-textBox > h4:first-child {
+  margin-top: 0;
+}
+.introduction-textBox > p,
+.introduction-textBox > p > a {
+  font-size: 16px;
+  color: #666666;
+}
+.introduction-textBox > p > a:hover {
+  text-decoration: underline;
+}
+.process {
+  width: 100%;
+  height: 422px;
+}
+.process-imgBox {
+  padding-top: 98px;
+  display: flex;
+  width: 938px;
+  margin-left: 100px;
+  justify-content: space-between;
+}
+.process-imgBox > div:nth-child(1) {
+  margin-top: 10px;
+}
+.process-imgBox > div:nth-child(1),
+.process-imgBox > div:nth-child(1) > img {
+  width: 624px;
+  height: 172px;
+}
+.process-imgBox > div:nth-child(2),
+.process-imgBox > div:nth-child(2) > img {
+  width: 224px;
+  height: 190px;
+}
+.process-textBox {
+  margin-top: 62px;
+  text-align: center;
+  color: #666666;
+  font-size: 18px;
+}
+.tutorial {
+  padding-top: 50px;
+  display: flex;
+  width: 100%;
+  height: 470px;
+  background: url("../imgs/bluetooth03bg.png") no-repeat;
+  background-size: cover;
+}
+.tutorial-imgBox {
+  margin-left: 98px;
+}
+.tutorial-imgBox,
+.tutorial-imgBox > img {
+  display: inline-block;
+  width: 462px;
+  height: 420px;
+}
+.tutorial-textBox {
+  display: inline-block;
+  margin-top: 100px;
+  margin-left: 104px;
+  width: 364px;
+}
+.tutorial-textBox > h4 {
+  margin-bottom: 24px;
+  color: #0095ff;
+  font-size: 28px;
+}
+.tutorial-textBox > h5 {
+  margin-bottom: 26px;
+  color: #333;
+  font-size: 20px;
+}
+.tutorial-textBox > p {
+  word-wrap: break-word;
+}
+.tutorial-textBox > p,
+.tutorial-textBox > p > a {
+  color: #666;
+  font-size: 16px;
+  line-height: 24px;
+}
+.tutorial-textBox > p > a:hover {
+  text-decoration: underline;
+}
+.call-process {
+  display: flex;
+  padding-top: 16px;
+  /* padding-right: 120px; */
+  width: 100%;
+  height: 646px;
+}
+.call-process-imgBox {
+  margin-left: 240px;
+}
+.call-process-imgBox,
+.call-process-imgBox > img {
+  width: 346px;
+  height: 620px;
+}
+.call-process-leftbox {
+  margin-top: 48px;
+  margin-left: 60px;
+}
+.call-process-title {
+  margin-bottom: 58px;
+  color: #0095ff;
+  font-size: 28px;
+}
+.call-process-chinese {
+  position: relative;
+  padding-top: 50px;
+  padding-left: 38px;
+  padding-right: 34px;
+  width: 496px;
+  height: 246px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 26px;
+  background: #0095ff;
+}
+.call-process-chinese > p:first-child {
+  margin-bottom: 28px;
+}
+.call-process-code {
+  position: absolute;
+  top: 194px;
+  left: 128px;
+  padding-top: 54px;
+  padding-left: 90px;
+  width: 496px;
+  height: 160px;
+  line-height: 26px;
+  color: #666;
+  background: #f6fafc;
+  z-index: 10;
+}
+.plugin-introduction {
+  padding-top: 40px;
+  width: 100%;
+  height: 480px;
+  background: url("../imgs/bluetooth03bg.2.png") no-repeat;
+  background-size: cover;
+}
+.plugin-introduction-title {
+  margin-bottom: 40px;
+  text-align: center;
+  color: #fafafa;
+  font-size: 28px;
+}
+.plugin-introduction-bottom {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* width: 780px; */
+  /* padding-left: 172px;
+  padding-right: 172px; */
+  /* padding: 0 90px; */
+}
+.plugin-introduction-bottom > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 288px; */
+  width: 33.33%;
+}
+.plugin-introduction-bottom > div:nth-child(3n) {
+  margin-right: 0;
+}
+.plugin-introduction-bottom > div > div:first-child,
+.plugin-introduction-bottom > div > div:first-child > img {
+  width: 92px;
+  height: 92px;
+}
+.plugin-introduction-bottom > div > div:nth-child(2) {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  color: #fafafa;
+  font-size: 18px;
+}
+.matching {
+  width: 100%;
+  height: 470px;
+}
+.matching-title {
+  padding-top: 60px;
+  padding-left: 60px;
+  padding-bottom: 40px;
+  font-size: 24px;
+  color: #0095ff;
+}
+.matching-bottom {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  width: 950px;
+  height: 292px;
+  background: url("../imgs/bluetooth_printmodel.png") no-repeat;
+  background-size: cover;
+}
+.matching-bottom > div {
+  /* width: 370px; */
+  /* text-align: center; */
+}
+.matching-bottom > div:first-child {
+  margin-right: 400px;
+}
+.matching-bottom h4 {
+  /* margin: 46px auto; */
+  font-size: 30px;
+  color: #0095ff;
+}
+.matching-bottom p {
+  /* margin: 46px auto; */
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 22px;
+}
+.matching-bottom-left > h4 {
+  margin-top: 46px;
+}
+.matching-bottom-left > p:first-child {
+  margin-top: 46px;
+}
+.matching-bottom-right > h4 {
+  margin-bottom: 46px;
+}
+.video {
+  margin-bottom: 40px;
+  padding-top: 62px;
+  display: flex;
+
+  width: 100%;
+  height: 420px;
+  background: #fafafa;
+}
+.video-box {
+  margin-left: 106px;
+  width: 520px;
+  height: 294px;
+  /* background: #0095ff; */
+}
+.video-box video{
+  width: 520px;
+  height: 294px;
+}
+.video-text-box {
+  margin-left: 80px;
+
+}
+.video-text-box > h6 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 20px;
+}
+.video-text-box > div > div,
+.video-text-box > div > div > img {
+  width: 66px;
+  height: 48px;
+  line-height: 48px;
+  
+}
+.video-text-box > div > div:nth-child(2){
+ width:auto;
+ margin-left: 20px;
+ color:#666;
+ /* height: 48px; */
+ 
+ 
+}
+.video-text-box > div{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+/* 介绍 结束 */
+
+/* 尾部 开始*/
+footer {
+  margin-top: 50px;
+  margin-bottom: 56px;
+  width: 100%;
+  height: 68px;
+  line-height: 68px;
+  text-align: center;
+  color: #666666;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+/* 尾部结束 */

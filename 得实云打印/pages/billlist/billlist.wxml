@@ -1,0 +1,18 @@
+<!--pages/billlist/billlist.wxml-->
+<view class="section section-big nearby">
+		<view class="title">订单信息</view>
+		<view class="shop" wx:for="{{billlist}}" wx:key="unique">
+				<div class="dev" style="flex-direction:row;">
+						<div class="name">
+							{{item.str1}}
+						</div>
+						<div class="rssi" style="vertical-align:middle">
+							{{item.str2}}
+						</div>
+            <div class="rssi" style="vertical-align:middle">
+							<image chass="image" src="../../imgs/remove.png" bindtap='removeItem' data-index='{{index}}'></image>
+						</div>		
+				</div>
+		</view>
+    <button class='goodbutton'  hover-class="hover" bindtap='printdingdan'>打印</button>
+</view>

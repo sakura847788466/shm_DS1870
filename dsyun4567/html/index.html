@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<meta name="description" content="得实云打印">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title class="title">得实云打印</title>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<script type="text/javascript" src="../js/vendor/flexible.js"></script>
+		<script data-main="../js/main.js" src="../js/vendor/require.js" defer async></script>
+		<script type="text/javascript" src="../js/base64.js"></script>
+	</head>
+
+	<body>
+
+		<!--内容开始--每个div就是一个页面 -->
+		<section class="com">
+
+			<!-- 主页 开始-->
+			<div class="com_section index">
+				<!-- 头部logo 开始 -->
+				<div class="logo">
+					<img src="../img/public/logo.png" />
+					<!-- 设备信息 开始: 设备编号 设备状态 -->
+        <div class="ber_top">
+          <ul>
+            <li class="munber_sty">
+              <div class="munber"></div>
+              <div class="icon icon-right">
+                <img class="munber_img" src="../img/public/dui@2x.png">
+              </div>
+            </li>
+            <li class="status_sty">
+              <div class="munber_status"></div>
+              <!--<div class="icon status_img">
+                <img class="ber_top_img" src="../img/public/printx.png">
+              </div>-->
+            </li>
+          </ul>
+        </div>
+				</div>
+
+				<!-- 头部logo 结束 -->
+
+				<!--首页轮播图 开始-->
+				<!--<div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="" src-data="../img/banner/banner-1.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="" src-data="../img/banner/banner-3.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="" src-data="../img/banner/banner-2.png" />
+          </div>
+        </div>
+      </div>-->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="" src-data="../img/banner/lunbo1@2x.png" /></div>
+						<div class="swiper-slide"><img src="" src-data="../img/banner/lunbo2@2x.png" /></div>
+						<div class="swiper-slide"><img src="" src-data="../img/banner/lunbo3@2x.png" /></div>
+					</div>
+				</div>
+				<!--首页轮播图 结束-->
+
+				<div class="main animated fadeInDown">
+
+					<!-- 设备信息 结束 -->
+
+					<!-- 菜单栏: 本地发票 短信打印 微信卡包-->
+					<div class="all_btn">
+						<div class="btn_top">
+							<div class="locaUp">
+								<img src="../img/public/bendifapiao@2x.png" class="bendi"/>
+								<p class="btn_txt">本地发票</p>
+								<p class="btn_cont"><span>请选择本地文件中发票进行打印</span></p>
+								<p class="btn_img"><i class="btn_pdf"></i><span class="btn_rig">PDF</span><i class="btn_pdf"></i><span>图片</span></p>
+								<input type="file" class="loca_space loca_input" name="" value="" />
+							</div>
+							<div class="msm">
+								<img src="../img/public/duanxindayin@2x.png" class="duanxin"/>
+								<p class="btn_txt">短信打印</p>
+								<p class="btn_cont"><span>请复制发票链接短信进行打印</span></p>
+								<p class="btn_img"><i class="btn_dx"></i><span class="btn_rig">自动识别</span><i class="btn_dx"></i><span>智能兼容</span></p>
+								<p class="input_msm_function img_dx"></p>
+							</div>
+							<div class="wechat">
+								<img src="../img/public/weixinkabao@2x.png" class="weixin"/>
+								<p class="btn_txt">微信卡包</p>
+								<p class="btn_cont"><span>请选择微信卡包中发票进行打印</span></p>
+								<p class="btn_img"><i class="btn_wx"></i><span class="btn_rig">发票归集</span><i class="btn_wx"></i><span>快速打印</span></p>
+								<p class="input_wx_function img_wx"></p>
+							</div>
+						</div>
+					</div>
+					<!-- 菜单栏: 本地发票 短信打印 微信卡包-->
+
+				</div>
+
+			</div>
+			<!-- 主页 结束-->
+
+			<!-- 打印页面开始-->
+			<div class="com_section print">
+				<ul class="print_space_list">
+					<!--<li class="print_space_list_loca">
+          <div class="print_space_name">名字</div>
+          <div class="">
+            <span class="print_space_money">金额：￥13.5</span><span class="print_space_dateTime">时间：2018年11月24日</span>
+          </div>
+          <div class="print_space_buyName">抬头：购买方名字</div>
+          <div class="sta">状态：</div>
+          <div class="print_space_delete"></div>
+        </li>-->
+
+				</ul>
+			</div>
+			<!-- 打印页面结束-->
+
+		</section>
+		<!--从这里开始是控件 -->
+
+		<!--打印界面的上传控件-->
+		<div class="aj_input">
+			<ul class="print_footer">
+				<li class="print_len">
+					<i class="level0"></i>
+				</li>
+				<li class="print_btn"><img src="../img/public/print.png" onclick="return false"/></li>
+				<li class="push_btn">
+					<i class="input_blur"> <img class="input_blur_img" src="../img/public/push.png" onclick="return false"/></i>
+					<div class="input_loca">
+						<input type="file" class="loca_space" name="" id="" value="" /> 本地发票
+					</div>
+					<div class="input_wx input_wx_function">
+						微信发票
+					</div>
+					<div class="input_msm input_msm_function">
+						短信打印
+					</div>
+
+				</li>
+			</ul>
+			<div class="print_blur">
+				<div class="print_blur_txt">
+					发票正在打印中，请稍等
+				</div>
+				<div class="btn aj_print_btn">
+					继续打印
+				</div>
+			</div>
+		</div>
+
+		<!--遮罩层控件-->
+		<section class="maskLayer"></section>
+		<!--遮罩层结束-->
+
+		<!-- 抽屉弹窗控件开始-->
+		<!--抽屉控件已经做成动态加载的了，在ux里面找  lockers  -->
+		<!-- <section class="alert_warp">
+      <ul class="alert_main">
+        <li class="alert_title">提示</li>
+        <li class="alert_con"></li>
+        <li class="alert_choose">
+          <div class="alert_false">取消</div>
+          <div class="alert_true">确认</div>
+        </li>
+      </ul>
+	  </section> -->
+		<!-- 抽屉弹窗控件结束-->
+
+		<!-- 打印预览控件开始-->
+		<section class="print_img_preview">
+			<ul class="print_img_preview_con">
+				<li class="preview" style="width: 30%;"> <img class="preview_img" src="" /></li>
+				<li class="method">
+					<div class="clear">清除发票页面广告<img src="../img/left.jpg" id="quxiao" onclick="return false"/></div>
+					<div class="nongdu">打印浓度<span class="try-by" id="tryby">4</span>
+						<ul class="click_data_try">
+							<li data-try="110">1</li>
+							<li data-try="135">2</li>
+							<li data-try="152">3</li>
+							<li class="try_in" data-try="178">4</li>
+							<li data-try="200">5</li>
+							<li data-try="210">6</li>
+							<li data-try="220">7</li>
+						</ul>
+					</div>
+					<!--<div class="quxiao"><span class="rotate">去广告</span></div>-->
+					<div class="img_cancel"><span class="rotate">取消</span></div>
+					<div class="img_save"><span class="rotate">保存</span></div>
+
+				</li>
+				<!--<li class="preview"> <img class="preview_img" src="" /></li>-->
+
+			</ul>
+		</section>
+		<!-- 打印预览控件结束-->
+
+		<!--短信打印添加控件开始 -->
+		<section class="msm_print_box">
+			<ul class="msm_print_con">
+				<li class="msm_prin_ttitle">
+					请输入短信链接
+				</li>
+				<li class="msm_prin_text">
+					<textarea class="msm_print_val" name="" rows="" cols=""></textarea>
+				</li>
+				<li class="msm_prin_btn">
+
+					<div class="msm_true">确定</div>
+					<span class="blurs"></span>
+				</li>
+				<li>
+					<div class="msm_false"></div>
+				</li>
+			</ul>
+		</section>
+		<!--短信打印添加控件结束 -->
+
+		<!-- 隐藏域开始-->
+		<section style="display: none; opacity: 0;">
+			<div id="domian"></div>
+			<!--图片转换的时候用来做一个完成的标示 -->
+			<div id="printmian">true</div>
+			<div id="printover">true</div>
+			<div id="entrance"></div>
+			<div id="printToImage">true</div>
+		</section>
+		<!--隐藏域结束-->
+
+		<!--<footer class="foot_info">得实云打印</footer>-->
+	</body>
+
+</html>

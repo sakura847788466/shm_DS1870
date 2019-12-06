@@ -1,0 +1,28 @@
+2018-09-26 10:48:13 
+Printer_All_Enum_Printer
+
+2018-09-26 10:48:15 usb://\\?\usb#vid_0471&pid_7003&mi_00#6&118002cc&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-09-26 10:48:15 From:[usb://\\?\usb#vid_0471&pid_7003&mi_00#6&118002cc&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][95]
+2018-09-26 10:48:15 
+Get TLS_Object  Tid:3716
+
+2018-09-26 10:49:25 
+Get TLS_Object  Tid:10144
+
+2018-09-26 10:49:25 
+Printer_All_Enum_Printer
+
+2018-09-26 10:49:26 usb://\\?\usb#vid_0471&pid_7003&mi_00#6&118002cc&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-09-26 10:49:26 From:[usb://\\?\usb#vid_0471&pid_7003&mi_00#6&118002cc&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][95]
+2018-09-26 10:49:28 DAS_CTL_Printer_Read begin *length=64,len:4096
+2018-09-26 10:49:28 DAS_ReadData_Ext fretcode=       0,[997]
+2018-09-26 10:49:28 DAS_CTL_Printer_Read  *length=64,len:3
+2018-09-26 10:50:25 
+Get TLS_Object  Tid:3340
+
+2018-09-26 10:50:26 
+delete TLS_Object  Tid:3340
+
+2018-09-26 10:50:35 
+delete TLS_Object Tid:10144
+

@@ -1,0 +1,96 @@
+2018-08-15 16:57:56 
+Get TLS_Object  Tid:14192
+
+2018-08-15 16:57:56 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-15 16:57:56 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-15 16:57:56 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-15 16:58:02 DAS_CTL_Printer_Read start len:128
+2018-08-15 16:58:02 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-08-15 16:58:03 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:03 DAS_CTL_Printer_Read  *length=128,len:4
+2018-08-15 16:58:03 Printer_status[00][02][22][01],Tid:14192
+2018-08-15 16:58:04 DAS_CTL_Printer_Read begin *length=100,len:4096
+2018-08-15 16:58:04 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:04 DAS_CTL_Printer_Read  *length=100,len:12
+2018-08-15 16:58:11 DAS_CTL_Printer_Read start len:128
+2018-08-15 16:58:11 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-08-15 16:58:11 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:11 DAS_CTL_Printer_Read  *length=128,len:4
+2018-08-15 16:58:11 Printer_status[00][02][22][01],Tid:14192
+2018-08-15 16:58:11 LastReadLength ,[15]
+2018-08-15 16:58:30 DAS_CTL_Printer_Read start len:128
+2018-08-15 16:58:30 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-08-15 16:58:30 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:30 DAS_CTL_Printer_Read  *length=128,len:4
+2018-08-15 16:58:30 Printer_status[00][02][22][01],Tid:14192
+2018-08-15 16:58:30 LastReadLength ,[ 7]
+2018-08-15 16:58:33 DAS_CTL_Printer_Read start len:128
+2018-08-15 16:58:33 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-08-15 16:58:33 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:33 DAS_CTL_Printer_Read  *length=128,len:4
+2018-08-15 16:58:33 Printer_status[00][02][22][01],Tid:14192
+2018-08-15 16:58:33 LastReadLength ,[12]
+2018-08-15 16:58:36 DAS_CTL_Printer_Read start len:128
+2018-08-15 16:58:36 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-08-15 16:58:36 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:36 DAS_CTL_Printer_Read  *length=128,len:4
+2018-08-15 16:58:36 Printer_status[00][02][22][01],Tid:14192
+2018-08-15 16:58:36 LastReadLength ,[11]
+2018-08-15 16:58:39 DAS_CTL_Printer_Read start len:128
+2018-08-15 16:58:39 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-08-15 16:58:39 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:39 DAS_CTL_Printer_Read  *length=128,len:4
+2018-08-15 16:58:39 Printer_status[00][02][22][01],Tid:14192
+2018-08-15 16:58:39 LastReadLength ,[ 2]
+2018-08-15 16:58:42 DAS_CTL_Printer_Read start len:128
+2018-08-15 16:58:42 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-08-15 16:58:42 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:42 DAS_CTL_Printer_Read  *length=128,len:4
+2018-08-15 16:58:42 Printer_status[00][02][22][01],Tid:14192
+2018-08-15 16:58:42 LastReadLength ,[15]
+2018-08-15 16:58:45 DAS_CTL_Printer_Read start len:128
+2018-08-15 16:58:45 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-08-15 16:58:45 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:45 DAS_CTL_Printer_Read  *length=128,len:4
+2018-08-15 16:58:45 Printer_status[00][02][22][01],Tid:14192
+2018-08-15 16:58:45 LastReadLength ,[ 4]
+2018-08-15 16:58:48 DAS_CTL_Printer_Read start len:128
+2018-08-15 16:58:48 DAS_CTL_Printer_Read begin *length=128,len:4096
+2018-08-15 16:58:48 DAS_ReadData_Ext fretcode=       0,[0]
+2018-08-15 16:58:48 DAS_CTL_Printer_Read  *length=128,len:4
+2018-08-15 16:58:48 Printer_status[00][02][22][01],Tid:14192
+2018-08-15 16:58:48 LastReadLength ,[ 4]
+2018-08-15 16:59:36 CPSDK SDK Version:1.1.0.8
+2018-08-15 16:59:48 
+delete TLS_Object  Tid:14192
+
+2018-08-15 18:21:53 
+Get TLS_Object  Tid:14252
+
+2018-08-15 18:21:53 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-15 18:21:53 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-15 18:21:53 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-15 18:22:04 DAS_DATA_Printer_WRITE usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-15 18:22:04 DAS_DATA_Printer_WRITE OK
+2018-08-15 18:22:28 DAS_DATA_Printer_WRITE usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-15 18:22:28 DAS_DATA_Printer_WRITE OK
+2018-08-15 18:22:48 
+delete TLS_Object  Tid:14252
+
+2018-08-15 18:25:42 
+Get TLS_Object  Tid:12668
+
+2018-08-15 18:25:42 
+Printer_Only_Enum_TCP_Printer
+
+2018-08-15 18:25:42 usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-15 18:25:42 From:[usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}][94]
+2018-08-15 18:25:45 DAS_DATA_Printer_WRITE usb://\\?\usb#vid_2867&pid_1802&mi_00#6&7201d4a&0&0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}
+2018-08-15 18:25:45 DAS_DATA_Printer_WRITE OK
+2018-08-15 18:26:33 
+delete TLS_Object  Tid:12668
+

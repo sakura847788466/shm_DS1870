@@ -1,0 +1,63 @@
+
+<!-- <view class="page">
+
+  <view class="body">
+    <view class="searchBtn"  hover-class="hover"  bindtap='goToCfg'>
+      <view class="searchBtnImgBox">
+        <image src="../../imgs/first/icon_lanya.png"></image>
+      </view>
+      <view class="searchBtnText">DP-230L打印</view>
+    </view>
+
+    <view class="searchBtn"  hover-class="hover"  bindtap='goToYunPrint'>
+      <view class="searchBtnImgBox2">
+        <image src="../../imgs/first/cloud.png"></image>
+      </view>
+      <view class="searchBtnText2">DS-1100II 扫码打印</view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <view>版权所有©得实集团</view>
+  </view>
+
+</view> -->
+
+<!-- <view class="page">
+  <view class="icon1" hover-class="hover"  bindtap='goToCfg'>
+    <image  src="../../imgs/first/bluetooth.png" mode="scaleToFill" />
+  </view>
+  <view class="icon1_text">蓝牙打印</view>
+
+  <view class="icon2" hover-class="hover"  bindtap='goToYunPrint'>
+    <image  src="../../imgs/first/cloudprint.png" mode="scaleToFill"/>
+  </view>
+  <view class="icon2_text">得实云打印</view>
+
+  <button class="btn_diancan" bindtap='diancan'>扫码点餐</button>
+  <view class="footer">
+    <view>版权所有©得实集团</view>
+  </view>
+</view>  之前的 -->
+<view class="page">
+  <view class="icon1" hover-class="hover"  bindtap='goToCfg'>
+    <image  src="../../imgs/first/saoma.png" mode="scaleToFill" />
+  </view>
+  <view class="icon1_text">蓝牙打印</view>
+
+  <view class="icon2" hover-class="hover"  bindtap='goToYunPrint'>
+    <image  src="../../imgs/first/dayin.png" mode="scaleToFill"/>
+  </view>
+  <view class="icon2_text"  bindtap="scanCode">扫码打印</view>
+
+  <view class="icon3" hover-class="hover"  bindtap="scanCode">
+    <image  src="../../imgs/first/diancan.png" mode="scaleToFill"/>
+  </view>
+  <view class="icon3_text" >点餐系统</view>
+   <!-- <button type="primary" class='btn' bindtap="scanCode">点餐系统</button> -->
+
+   <view class="footer">
+    <view>版权所有©得实集团</view>
+  </view>
+   
+</view>

@@ -1,0 +1,13 @@
+/**index.wxss**/
+.goodbutton {
+  margin-top: 250rpx;
+  width: 80%;
+  background-color: #0090ff;
+  color: white;
+  border-radius: 98rpx;
+}
+ 
+/* 按下变颜色 */
+.hover {
+  background:  rgb(191, 156, 236);
+}

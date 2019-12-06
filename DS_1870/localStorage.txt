@@ -1,0 +1,82 @@
+ var ip = window.localStorage.getItem('ip')
+    // window.localStorage.removeItem('ip');
+    if(ip !== null){ //存在
+      $.messager.alert("提示",'ip存在'+ip)
+      $('.el-message-box').css('display', 'none')
+      $('.maskT').css('opacity', '0')
+      $('.maskT').css('z-index', '-1000')
+      $('.con_cc').on('click', function() {
+        //点击进入之后直接执行进卡   点击进卡
+        $('.maskInfo').show()
+        $('.maskInfo').animate({
+            height: '700px',
+            width: '900px'
+        })
+        yh() //执行计时
+        $('.con_tL').css('display', 'none')
+        setTimeout(function() {
+            WEB_OcxTest(ip, pageNo); //链接ocx 延时两秒执行
+        }, 2000)
+
+    })
+    }else if(ip == null){//不存在
+      // $.messager.alert("提示",'本地ip不存在')
+      $('.el-button--small').on('click', function() {
+
+        var ip = $('.el-input__inner').val()
+        if (ip == '') {
+            $.messager.alert('提示', '请先设置ip')
+        } else {
+            $('.el-message-box').css('display', 'none')
+            $('.maskT').css('opacity', '0')
+            $('.maskT').css('z-index', '-1000')
+            $('.con_cc').on('click', function() {
+             window.localStorage.setItem('ip',ip)
+             var ip = window.localStorage.getItem('ip');
+                //点击进入之后直接执行进卡   点击进卡
+                $('.maskInfo').show()
+                $('.maskInfo').animate({
+                    height: '700px',
+                    width: '900px'
+                })
+                yh() //执行计时
+                $('.con_tL').css('display', 'none')
+                setTimeout(function() {
+                    WEB_OcxTest(ip, pageNo); //链接ocx 延时两秒执行
+                }, 2000)
+
+            })
+        }
+
+    })
+
+    //退卡
+    $('.outCard').on('click', function(res) {
+        WEB_MoveCard()
+    })
+
+    $('.data').click(function() {
+        $('#cc').show()
+    })
+
+    // 日历事件
+    $('#cc').calendar({
+        current: new Date(),
+        months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+        weeks: ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+    })
+
+
+    $('#cc').calendar({
+        onSelect: function(date) {
+            var bgnDate = new Date()
+            var time = bgnDate.getFullYear() + "" + (bgnDate.getMonth() + 1) + "" + "0" + "" + bgnDate.getDate() + "" + bgnDate.getHours() + "" + bgnDate.getMinutes() + "" + bgnDate.getSeconds() + "" + bgnDate.getMilliseconds()
+            $('.data').val(time)
+            $('#cc').hide()
+        }
+    })
+    }else{
+      return false;
+    }
+    
+})

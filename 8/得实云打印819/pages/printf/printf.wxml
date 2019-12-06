@@ -1,0 +1,41 @@
+<!--pages/printf/printf.wxml-->
+<!-- <text>pages/printf/printf.wxml</text>
+ -->
+ <view class='page'>
+    <view class='tishi'><span>点击发票链接可进行打印预览，调节打印效果</span></view>
+    <view class='title' animation ="{{animation}}">
+	            			<view class="print_space_name">短信链接发票</view>
+                    <view class="print_space_money_msm">
+	            				<span class="print_space_money_msm" bindtap='detail'>链接地址：{{link}}</span>
+	            			</view>
+	            			<view class="sta">状态：{{status}}</view>
+                    <image class='close' src='../../imgs/printf/delete.png' bindtap="translate"></image>
+                    <image class='duanxin' src='../../imgs/printf/msm.png'></image>
+
+    </view>
+    <view class="mask {{jia?'hide':'show'}}">
+         <view class="input_loca" >
+                 <image src="../../imgs/printf/note.png" class=""></image>
+			    </view>
+      <view class="input_wx" >
+                 <image src="../../imgs/printf/weichat.svg" class=""></image>
+			  </view>
+      <view class="input_loca" >
+                 <image src="../../imgs/printf/file.svg" class="" bindtap="printimage"></image>
+			</view>
+    </view>
+    
+    <view class='dibu'>
+       <view class='left'>
+        <span>1张</span>
+        <i class="zhangshu"></i>
+       </view>
+       <view class='cont'>
+          <image src="../../imgs/printf/print.png" bindtap='printf'></image>
+       </view>
+       <view class="right">
+          <image src='../../imgs/printf/push.png' bindtap="add"></image>
+         
+       </view>
+    </view>
+ </view>

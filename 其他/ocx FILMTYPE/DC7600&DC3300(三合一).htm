@@ -1,0 +1,1209 @@
+﻿﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>直印机&转印机</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+body {
+	background-color: #EEE5DE
+}
+.t1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	background-color: #CCCCCC;
+	border: 1px solid #CCCCCC;
+}
+
+.bluefont {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FF00FF;
+}
+
+
+-->
+</style>
+<script type="text/javascript" >
+
+    var bold = null;
+    var italic  = null;
+    var underline  = null;
+
+    var fonttype  = null;
+    var fontsize  = null;
+    var QR_content  = null;
+    var PIC_content  = null;
+    var ocx = null;
+    var text_content = null;
+
+    window.onload=function()
+    {
+        ocx = document.getElementById("DS600OCX");
+        try {
+            ocx.DS600ClosePrinter();
+        }
+        catch (e) {
+            alert("ocx控件加载失败！");
+        }
+        getSystemFonts();
+        typeChange();
+
+    }
+    function typeChange(){
+        var type = document.getElementById("type").value;
+        switch(type) {
+            case "0"://直印机 功能包括直印机三合一、卡片读写、三合一移动位置、COM口
+                document.getElementById("reader3300").style.display="";//直印机三合一读写卡片操作
+                document.getElementById("cardRWFunction").style.display="";//卡片读写
+                document.getElementById("reader转印机").style.display="none";//转印机三合一读卡器卡片操作
+                document.getElementById("readerfw").style.display="none";//直印机非接读卡器卡片操作
+                document.getElementById("m1Function").style.display="";//m1 s50卡操作
+                document.getElementById("3in1Function").style.display = "";//三合一读卡器移动位置
+                document.getElementById("readerCom").style.display="";//读卡器COM口
+                document.getElementById("toCardReader").style.display="";//三合一进卡
+                break;
+            case "1"://转印机 功能包括转印机三合一、卡片读写、三合一移动位置、COM口
+                document.getElementById("reader3300").style.display="none";//直印机三合一读写卡片操作
+                document.getElementById("cardRWFunction").style.display="";//卡片读写
+                document.getElementById("reader转印机").style.display="";//转印机三合一读卡器卡片操作
+                document.getElementById("readerfw").style.display="none";//直印机非接读卡器卡片操作
+                document.getElementById("m1Function").style.display="";//m1 s50卡操作
+                document.getElementById("3in1Function").style.display = "";//三合一读卡器移动位置
+                document.getElementById("readerCom").style.display="";//读卡器COM口
+                document.getElementById("toCardReader").style.display="";//三合一进卡
+                break;
+            case "2"://直印机非接 功能包括非接读卡器卡片操作、m1操作
+                document.getElementById("reader3300").style.display="none";//直印机三合一读写卡片操作
+                document.getElementById("cardRWFunction").style.display="";//卡片读写
+                document.getElementById("reader转印机").style.display="none";//转印机三合一读卡器卡片操作
+                document.getElementById("readerfw").style.display="";//直印机非接读卡器卡片操作
+                document.getElementById("m1Function").style.display="";//m1 s50卡操作
+                document.getElementById("3in1Function").style.display = "none";//三合一读卡器移动位置
+                document.getElementById("readerCom").style.display="none";//读卡器COM口
+				document.getElementById("toCardReader").style.display="none";//三合一进卡
+                document.getElementById("DC转印机FW").style.display="none";//转印机非接卡片操作
+                document.getElementById("直印机FW").style.display="";//直印机非接卡片操作
+                break;
+			case "3": //转印机 非接 功能包括非接读卡器卡片操作、M1操作
+				document.getElementById("reader3300").style.display="none";//直印机 三合一读写卡片操作
+                document.getElementById("cardRWFunction").style.display="";//卡片读写
+                document.getElementById("reader转印机").style.display="none";//转印机 三合一读卡器卡片操作
+                document.getElementById("readerfw").style.display="";//直印机非接读卡器卡片操作
+                document.getElementById("m1Function").style.display="";//m1 s50卡操作
+                document.getElementById("3in1Function").style.display = "none";//三合一读卡器移动位置
+                document.getElementById("readerCom").style.display="none";//读卡器COM口
+				document.getElementById("toCardReader").style.display="none";//三合一进卡
+				document.getElementById("DC转印机FW").style.display="";//转印机非接卡片操作
+				document.getElementById("直印机FW").style.display="none";//直印机非接卡片操作
+				break;
+        }
+    }
+    function getErrLvl()
+    {
+        var QR_ERRLVL = document.getElementById("QR_ERRLVL");
+        var length = QR_ERRLVL.length;
+        for(var i=0;i<length;i++)
+        {
+            if(QR_ERRLVL[i].selected==true)
+            {
+                return parseInt(QR_ERRLVL[i].value);
+            }
+        }
+    }
+    function output(str)
+    {
+        var o = document.getElementById("Enum");
+        if(str.length>0){
+            o.innerText = (str + "\r\n" )+o.innerText ;
+        }
+        var s = o.innerText;
+        if(s.length>4096){
+            s.substring(0,4096);
+            o.innerText = s;
+        }
+        if(str == "cls")
+            o.innerText = "";
+    }
+    function EnumDev() {
+        document.getElementById("printerList").innerHTML = "";
+        ocx.DS600SetIOTimeout(1000, 1000);
+        var pterList = ocx.DS600EnumPrinter(3);
+        var obj = eval('(' + pterList + ')'); //由传出的字串转为JSON对象
+        if (obj.RtnCode == 0) {
+            output("枚举成功");
+            var pterArr = obj.PrinterList.split("\r\n");
+            var pterNum = obj.NumberOfPrinters;
+            if (pterNum) {
+                var printerListSelect = document.getElementById("printerList");
+                for (var i = 0; i < pterNum; ++i) {
+                    var pterItem = pterArr[i];
+                    output(pterItem);
+                    var newOp = document.createElement("OPTION");
+                    newOp.text = pterItem;
+                    newOp.value = i;
+                    printerListSelect.options.add(newOp);
+                }
+            }
+            else {
+                output("但未枚举到打印机");
+            }
+        }
+        else {
+            output("枚举失败");
+        }
+        ocx.DS600SetIOTimeout(3000, 3000);
+    }
+
+    function OpenDev() {
+        var RE = 0;
+        var index = document.getElementById("printerList").selectedIndex;
+        var printer_val = document.getElementById("printerList").options(index).text;
+        var type = document.getElementById("type").value;
+        if (RE = ocx.DS600OpenPrinter(printer_val)) {
+            output("打开失败");
+            return;
+        }
+        else {
+            if (type == "0") {
+                type = "直印机";
+            }else if(type == "1"){
+                type = "转印机";
+            }else if(type == "2") {
+                type = "直印机RF";
+            }else if(type == "3"){
+                type = "DC转印机RF";
+            }
+            ocx.DSSetPrinterType(type);
+            output("打开成功");
+            openState.value = "打开";
+            return;
+        }
+    }
+
+    function CloseDev()
+    {
+        ocx.DS600ClosePrinter();
+        output("关闭成功");
+        openState.value = "关闭";
+    }
+    function AddText(){//添加文本 include name,socialNumber,cardId,date
+        var RE = 0;
+        var name = document.getElementById("tv_name").value;
+        var cardId = document.getElementById("tv_id").value;
+        var date = document.getElementById("tv_date").value;
+        if(name.length == 0 || cardId.length == 0 || date.length == 0){
+            output("文本为空，请重新输入!");
+            return;
+        }
+        //next is put it into canvas in order
+        //function param include xPos,yPos,Width,height,data,use mm as unit
+        var x = 0;
+        var y = 0;
+        var ret = 0;
+        var f = false;
+        f = ocx.DS600DrawInSession();
+        if(!f) {
+            var type = document.getElementById("type").value;
+            if("0" == type || "2"== type)
+                ocx.D300CDrawSetCardRect(85.6, 53.98);
+            else if("1" == type || "3" == type)
+                ocx.DS600DrawSetCardRect(85.6, 53.98);
+            var ret = ocx.DS600BeginDraw();
+            if(!ret)output("图像初始化成功!");
+            else output("图像未初始化成功!");
+        }
+        var x,y;
+        x = document.getElementById("tv_name_x").value;
+        y = document.getElementById("tv_name_y").value;
+        ret = ocx.DS600DrawText(x,y,30,4,"姓名:"+name);if(ret != 0){output("添加文本名字失败!");return;}
+        x = document.getElementById("tv_id_x").value;
+        y = document.getElementById("tv_id_y").value;
+        ret = ocx.DS600DrawText(x,y,55,4,"卡号"+cardId);if(ret != 0){output("添加文本卡号失败!");return;}
+        x = document.getElementById("tv_date_x").value;
+        y = document.getElementById("tv_date_y").value;
+        ret = ocx.DS600DrawText(x,y,55,4,"发卡日期:"+date);if(ret != 0){output("添加文本日期失败!");return;}
+        if(0 == ret){
+            output("添加文本成功!");
+            return;
+        }else{
+            output("添加文本失败!");
+            return;
+        }
+
+    }
+    function SetTextDecorate(){//设置字体风格 include bold/italic/underline
+        var bold = document.getElementById("text_bold").checked==true?true:false;
+        var italic = document.getElementById("text_italic").checked==true?true:false;
+        var underline = document.getElementById("text_underline").checked==true?true:false;
+        var ret = ocx.DS600DrawSetTextDecorate(bold,italic,underline);
+        if(0 == ret){
+            output("设置字体风格成功!");
+            return;
+        }else{
+            output("设置字体风格失败!");
+            return;
+        }
+    }
+    function SetTextDirection(){//设置文本格式 include landScape/reverse/autoLineFeed
+        var landScape = document.getElementById("text_landScape").checked==true?true:false;
+        var reverse = document.getElementById("text_reverseSequence").checked==true?true:false;
+        var autoLineFeed = document.getElementById("text_autoLineFeed").checked==true?true:false;
+        var layDown = document.getElementById("text_layDown").checked==true?true:false;
+        var ret = ocx.DS600DrawSetTextDirection(landScape,reverse,autoLineFeed,layDown);
+        if(0 == ret){
+            output("设置文本格式成功!");
+            return;
+        }else{
+            output("设置文本格式失败!");
+            return;
+        }
+    }
+    function SetTextFont(){//设置字体字号 include fontName/fontSize
+        var font = document.getElementById("fnameSelector").value;
+        var size = document.getElementById("text_size").value;
+        var ret = ocx.DS600DrawSetFont(font,size);
+        if(0 == ret){
+            output("设置字体字号成功!");
+            return;
+        }else{
+            output("设置字体字号失败!");
+            return;
+        }
+    }
+    function SetTextSpacing(){
+        var lineSpacing = document.getElementById("text_lineSpacing").value;
+        var charSpacing = document.getElementById("text_charSpacing").value;
+        var ret = ocx.DS600DrawSetSpacing(lineSpacing,charSpacing);
+        if(0 == ret){
+            output("设置字体间距成功!");
+            return;
+        }else{
+            output("设置字体间距失败!");
+            return;
+        }
+    }
+    function SetTextColor(){//设置字体颜色 include R/G/B
+        var r = document.getElementById("text_R").value;
+        var g = document.getElementById("text_G").value;
+        var b = document.getElementById("text_B").value;
+        var ret = ocx.DS600DrawSetTextColor(r,g,b);
+        if(0 == ret){
+            output("设置字体颜色成功!");
+            return;
+        }else{
+            output("设置字体颜色成功!");
+            return;
+        }
+    }
+    function AddPic(){//添加图片 include x,y,w,h,path
+        var path = fileField.value;
+        if(path.length == 0) {
+            output("没有选择图片");
+            return;
+        }
+        var f = false;
+        f = ocx.DS600DrawInSession();
+        if(!f) {
+            var type = document.getElementById("type").value;
+            if("0" == type || "2" == type)
+                ocx.D300CDrawSetCardRect(85.6, 53.98);
+            else if("1" == type || "3" == type)
+                ocx.DS600DrawSetCardRect(85.6, 53.98);
+            var ret = ocx.DS600BeginDraw();
+            if(!ret)output("图像初始化成功!");
+            else output("图像未初始化成功!");
+        }
+        var x = 0;
+        var y = 0;
+        x = document.getElementById("pic_x").value;
+        y = document.getElementById("pic_y").value;
+        var ret = ocx.DS600DrawImage(x,y,20, 25,path,false);
+        if(ret == 0){
+            output("添加图像成功!");
+            return;
+        }else{
+            output("添加图像失败!");
+            return;
+        }
+    }
+    var H = null;
+    function OpenReader(){//打开读卡器
+        var type = document.getElementById("type").value;
+        var loadlib = ocx.DS600LoadReaderLib();
+
+        if(loadlib !=0)
+        {
+            output("加载dcrf32.dll失败！");
+            return;
+        }
+        if(!(H == null || H ==0))
+        {
+            var re = ocx.DS600CloseReader(H);
+            if(re != 0)
+                output("关闭读卡器失败");
+            H = null;
+        }
+        var COM = document.getElementById("text_com").value;
+        if(COM.length != 0)
+            H = ocx.DS600OpenReaderFast(COM);
+        else {
+            if(type == "0")
+                H = ocx.D300COpenReader();
+            else if(type == "1" || type == "2" || type == "3")
+                H = ocx.DS600OpenReader();
+        }
+        if(H == 0)
+        {
+            output("打开读卡器失败");
+            return;
+        }
+
+        output("打开读卡器成功");
+    }
+    function ToCardReader(){//进卡到读卡器
+        if(H==null || H==0)
+        {
+            output("读卡器未打开");
+            return;
+        }
+        var RE = 0;
+        var type = document.getElementById("type").value;
+        var ret = null;
+        switch(type){
+            case "0"://直印机
+                    ret = ocx.D300CToCardReader(H);
+                break;
+            case "1"://DS转印机
+                    ret = ocx.DS600ToCardReader(H);
+                break;
+        }
+        if(RE == ret){
+            output("进卡到读卡位成功!");
+            return;
+        }else{
+            output("进卡到读卡位失败!");
+            return;
+        }
+    }
+    function ResetCard(){//接触式CPU卡复位 include H,slot
+        if(H==null || H==0)
+        {
+            output("读卡器未打开");
+            return;
+        }
+        var slot = document.getElementById("slot").value;
+        var slot_val = null;
+        switch(slot){
+            case "0":
+                slot_val = 0x0c;break;
+            case "1":
+                slot_val = 0x0b;break;
+            case "10":
+                slot_val = 0x00;break;
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+                output("卡槽不匹配");
+                return;
+        }
+        var RE = 0;
+        var ret = null;
+        var type = document.getElementById("type").value;
+        switch(type) {
+            case "0"://直印机
+			case "2":
+                ret = ocx.D300CResetUserCard(H,slot_val);break;
+            case "1"://转印机
+			case "3":
+                ret = ocx.DS600ResetUserCard(H,slot_val);break;
+        }
+        var obj = eval('(' + ret + ')'); //由传出的字串转为JSON对象
+        if (obj.RtnCode == 0){
+            output(obj.ResetInfo);
+            output("复位cpu卡成功!");
+            return;
+        }else{
+            output("复位cpu卡失败!");
+            return;
+        }
+    }
+    var curPsamSlot = -1;
+    function psamReset(){
+        if(H==null || H==0)
+        {
+            output("读卡器未打开");
+            return;
+        }
+        var slot = document.getElementById("slot").value;
+        var slot_val = null;
+        switch(slot){
+            case "2":
+                slot_val = 0x0d;break;
+            case "3":
+                slot_val = 0x0e;break;
+            case "4":
+                slot_val = 0x0f;break;
+            case "5":
+                slot_val = 0x11;break;
+            case "6":
+                slot_val = 0x12;break;
+            case "7":
+                slot_val = 0x13;break;
+            case "8":
+                slot_val = 0x14;break;
+            case "9":
+                slot_val = 0x15;break;
+            case "0":
+            case "1":
+            case "10":
+                output("卡槽不匹配");
+                return;
+        }
+        var RE = 0;
+        var ret = null;
+        var type = document.getElementById("type").value;
+        switch(type) {
+            case "0"://直印机
+                ret = ocx.DS600ResetPsam(H,slot_val);break;
+            case "1"://转印机
+			case "2":
+                ret = ocx.DS600ResetPsam(H,slot_val);break;
+        }
+        var obj = eval('(' + ret + ')'); //由传出的字串转为JSON对象
+        if (obj.RtnCode == 0){
+            output("复位PSAM卡成功!");
+            output(obj.ResetInfo);
+            return;
+        }else{
+            output("复位PSAM卡失败!");
+            return;
+        }
+    }
+    function CloseReader(){//关闭读卡器
+        if(!(H == null || H ==0))
+        {
+            var re = ocx.DS600CloseReader(H);
+            if(re == 0)
+                output("关闭读卡器成功");
+            else
+                output("关闭读卡器失败");
+            H = null;
+            return;
+        }
+        output("读卡器没有打开");
+    }
+    function BackToPrinter(){//出卡到打印机 直印机
+        var type = document.getElementById("type").value;
+        if("0" != type)return;
+        var ret = ocx.D300CBackToPrinter(H);
+        if(0 == ret){
+            output("出卡到打印机成功!");
+            return;
+        }else{
+            output("出卡到打印机失败!");
+            return;
+        }
+    }
+    function MoveCard(){//移动卡片 直印机
+        var pos = document.getElementById("movePos").value;
+        var pos_val = 0;
+        switch(pos){
+            case "0":
+                    pos_val = 0x00;
+                break;
+            case "1":
+                    pos_val = 0x01;
+                break;
+            case "2":
+                    pos_val = 0x02;
+                break;
+        }
+        var ret = ocx.D300CCardMove(H,pos_val);
+        if(0 == ret){
+            output("移动卡片成功!");
+            return;
+        }else{
+            output("移动卡片失败!");
+            return;
+        }
+    }
+    function ToGood3300(){
+        var type = document.getElementById("type").value;
+        if("0" != type)return;
+        var ret = ocx.D300CToGood(H);
+        if(0 == ret){
+            output("退卡到好卡口成功!");
+            return;
+        }else{
+            output("退卡到好卡口失败!");
+            return;
+        }
+    }
+    function ToBad3300(){
+        var type = document.getElementById("type").value;
+        if("0" != type)return;
+        var ret = ocx.D300CToBad(H);
+        if(0 == ret){
+            output("退卡到坏卡口成功!");
+            return;
+        }else{
+            output("退卡到坏卡口失败!");
+            return;
+        }
+    }
+    function ToPrint(){//送卡到打印位 转印机
+        var type = document.getElementById("type").value;
+        if("1" != type)return;
+        var ret = ocx.DS600BackToPrinter(H);
+        if(0 == ret){
+            output("退卡到打印位成功!");
+            return;
+        }else{
+            output("退卡到打印位失败!");
+            return;
+        }
+    }
+    function ToGood(){//送卡到好卡口 转印机三合一
+        var type = document.getElementById("type").value;
+        if("1" != type)return;
+        var ret = ocx.DS600ToGood(H);
+        if(0 == ret){
+            output("退卡到好卡口成功!");
+            return;
+        }else{
+            output("退卡到好卡口失败!");
+            return;
+        }
+    }
+    function ToBad(){//送卡到坏卡口 转印机三合一
+        var type = document.getElementById("type").value;
+        if("1" != type)return;
+		//var ret = ocx.DS600BackToPrinter(H);
+        ret = ocx.DS600ToBad(H);
+        if(0 == ret){
+            output("退卡到坏卡口成功!");
+            return;
+        }else{
+            output("退卡到坏卡口失败!");
+            return;
+        }
+    }
+	function ToGoodFW(){//送卡到好卡口 转印机非接
+        var type = document.getElementById("type").value;
+        if("3" != type)return;
+        var ret = ocx.DS600EjectCard(H,0);
+        if(0 == ret){
+            output("退卡到好卡口成功!");
+            return;
+        }else{
+            output("退卡到好卡口失败!");
+            return;
+        }
+    }
+    function ToBadFW(){//送卡到坏卡口 转印机非接
+        var type = document.getElementById("type").value;
+        if("3" != type)return;
+        ret = ocx.DS600EjectCard(H,1);
+        if(0 == ret){
+            output("退卡到坏卡口成功!");
+            return;
+        }else{
+            output("退卡到坏卡口失败!");
+            return;
+        }
+    }
+    function print(){
+        var f = false;
+        var type = document.getElementById("type").value;
+        f = ocx.DS600DrawInSession();
+        if(!f) {
+            var type = document.getElementById("type").value;
+            if("0" == type || "2" == type)
+                ocx.D300CDrawSetCardRect(85.6, 53.98);
+            else if("1" == type || "3" == type)
+                ocx.DS600DrawSetCardRect(85.6, 53.98);
+            var ret = ocx.DS600BeginDraw();
+            if(!ret)output("图像初始化成功!");
+            else output("图像未初始化成功!");
+        }
+        var ret = 0;
+        switch(type){
+            case "0"://直印机
+            case "2":
+                var result = ocx.D300CEndDraw("front");
+                var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+                ret = ocx.D300CPrintImage(obj.imgPath,"",0,0,0,0,0,0,false);
+                break;
+            case "1"://转印机
+            case "3":
+                var result = ocx.DS600EndDraw("front");
+                var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+                ret = ocx.DS600PrintImage(obj.imgPath,"",0,0,0,0,0,0,false);
+                break;
+        }
+        if(0 == ret){
+            output("打印成功!");
+            return;
+        }else{
+            output("打印失败!");
+            return;
+        }
+
+    }
+
+    function ADPUExchange(){
+        if(H==null || H ==0)
+        {
+            output("读卡器未打开");
+            return;
+        }
+        var apdu = document.getElementById("tv_input").value;
+        if(apdu.length == 0 || apdu.length%2 !=0)
+        {
+            output("指令格式错");
+            return;
+        }
+        var rapdulen = 0;
+        var cardT = document.getElementById("cardType").value;//0 -cpu 1-psam
+        var slot = document.getElementById("slot2").value;
+        var slot_val = null;
+        switch(slot){
+            case "0":
+                if(cardT == "0")slot_val = 0x0c;break;
+            case "1":
+                if(cardT == "0")slot_val = 0x0b;break;
+            case "2":
+                if(cardT == "1")slot_val = 0x0d;break;
+            case "3":
+                if(cardT == "1")slot_val = 0x0e;break;
+            case "4":
+                if(cardT == "1")slot_val = 0x0f;break;
+            case "5":
+                if(cardT == "1")slot_val = 0x11;break;
+            case "6":
+                if(cardT == "1")slot_val = 0x12;break;
+            case "7":
+                if(cardT == "1")slot_val = 0x13;break;
+            case "8":
+                if(cardT == "1")slot_val = 0x14;break;
+            case "9":
+                if(cardT == "1")slot_val = 0x15;break;
+            case "10":
+                slot_val = 0x00;break;
+        }
+        if(cardT == "0")
+        {
+            var RE = ocx.DS600ExchangeAPDU(H,slot_val,apdu);
+            RE = eval('(' +  RE  + ')');//由传出的字串转为JSON对象
+            if(RE.RtnCode != 0)
+            {
+                output("指令发送失败");
+                return;
+            }
+            output("指令发送成功");
+            output(RE.rapdu);
+        }
+        else
+        {
+            RE = ocx.DS600ExchangeAPDU(H,slot_val,apdu);
+			RE = eval('(' +  RE  + ')');//由传出的字串转为JSON对象
+            if(RE.RtnCode != 0)
+            {
+                output("指令发送失败");
+                return;
+            }
+            output("指令发送成功");
+            output(RE.rapdu);
+        }
+    }
+    function getSystemFonts()
+    {
+        var cnt = dlgHelper.fonts.count
+        var oDropDown = document.all.fnameSelector;
+        for (var i = 1; i < cnt; i++)
+        {
+            var aOptions = oDropDown.options;
+            var oOption = document.createElement("OPTION");
+            aOptions.add(oOption);
+            oOption.text = dlgHelper.fonts(i);
+            oOption.value = dlgHelper.fonts(i)+'';
+            if(oOption.value=="宋体")
+                oOption.selected="selected";
+        }
+
+    }
+    function enumCOM(){
+        var COM = ocx.DSEnumSerialScanner();
+        document.getElementById("text_com").value = COM;
+    }
+    function previewImg(){
+        var f = false;
+        var type = document.getElementById("type").value;
+        f = ocx.DS600DrawInSession();
+        if(!f) {
+            var type = document.getElementById("type").value;
+            if("0" == type || "2" == type)
+                ocx.D300CDrawSetCardRect(85.6, 53.98);
+            else if("1" == type || "3" == type)
+                ocx.DS600DrawSetCardRect(85.6, 53.98);
+            var ret = ocx.DS600BeginDraw();
+            if(!ret)output("图像初始化成功!");
+            else output("图像未初始化成功!");
+        }
+        var ret = 0;
+        switch(type){
+            case "0"://直印机
+            case "2":
+                var result = ocx.D300CEndDraw("front");
+                var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+                output(obj.imgPath);
+                output("预览图像路径为：");
+                break;
+            case "1"://转印机
+            case "3":
+                var result = ocx.DS600EndDraw("front");
+                var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+                output(obj.imgPath);
+                output("预览图像路径为：");
+                break;
+        }
+    }
+
+    function ToIC(){//直印机非接进卡到读卡位
+        var ret = ocx.D300CToIc();
+        if(!ret){
+            output("进卡到读卡位成功!");
+        }else{
+            output("进卡到读卡位失败!");
+        }
+        return;
+    }
+	function printBegin(){//转印机非接进卡到读卡位
+        var ret = ocx.DS600PrintBegin();
+        if(!ret){
+            output("进卡到读卡位成功!");
+        }else{
+            output("进卡到读卡位失败!");
+        }
+        return;
+    }
+    function ToPrintPos(){//非接出卡到打印位
+        var ret = ocx.D300CToPrintPos();
+        if(!ret){
+            output("出卡到打印位成功!");
+        }else{
+            output("出卡到打印位失败!");
+        }
+        return;
+    }
+    function EjectCard(){//非接出卡到标准卡槽
+        var ret = ocx.D300CEjectCard();
+        if(!ret){
+            output("出卡到标准卡槽成功!");
+        }else{
+            output("出卡到标准卡槽失败!");
+        }
+        return;
+    }
+    function M1Read(){//非接读卡
+        if(H==null || H ==0)
+        {
+            output("读卡器未打开");
+            return;
+        }
+        var addr = document.getElementById("M1area").value;
+        addr = addr*4;
+        if(document.getElementById("area0").checked) {
+            var result = ocx.DS600_dc_read(H, addr+0);
+            var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+            if (0 == obj.RtnCode) {
+                output("卡块0读取成功!");
+                document.getElementById("tv_area0").value = obj.data;
+            } else {
+                output("卡块0读取失败!");
+            }
+        }
+        if(document.getElementById("area1").checked) {
+            var result = ocx.DS600_dc_read(H, addr+1);
+            var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+            if (0 == obj.RtnCode) {
+                output("卡块1读取成功!");
+                document.getElementById("tv_area1").value = obj.data;
+            } else {
+                output("卡块1读取失败!");
+            }
+        }
+        if(document.getElementById("area2").checked) {
+            var result = ocx.DS600_dc_read(H, addr+2);
+            var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+            if (0 == obj.RtnCode) {
+                output("卡块2读取成功!");
+                document.getElementById("tv_area2").value = obj.data;
+            } else {
+                output("卡块2读取失败!");
+            }
+        }
+        if(document.getElementById("area3").checked) {
+            var result = ocx.DS600_dc_read(H, addr+3);
+            var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+            if (0 == obj.RtnCode) {
+                output("卡块3读取成功!");
+                var rec = obj.data;
+                document.getElementById("tv_area3").value = "------------"+rec.substring(12,rec.length);
+                //document.getElementById("tv_area3").value = obj.data;
+            } else {
+                output("卡块3读取失败!");
+            }
+        }
+        return;
+    }
+    function M1Write(){//非接写卡
+        if(H==null || H ==0)
+        {
+            output("读卡器未打开");
+            return;
+        }
+        var addr = document.getElementById("M1area").value;
+        addr = addr*4;
+        if(document.getElementById("area0").checked) {
+            var data0 = document.getElementById("tv_area0").value;
+            var result = ocx.DS600_dc_write(H, addr+0,data0);
+            if (0 == result) {
+                output("卡块0写入成功!");
+            } else {
+                output("卡块0写入失败!");
+            }
+        }
+        if(document.getElementById("area1").checked) {
+            var data1 = document.getElementById("tv_area1").value;
+            var result = ocx.DS600_dc_write(H, addr+1,data1);
+            if (0 == result) {
+                output("卡块1写入成功!");
+            } else {
+                output("卡块1写入失败!");
+            }
+        }
+        if(document.getElementById("area2").checked) {
+            var data2 = document.getElementById("tv_area2").value;
+            var result = ocx.DS600_dc_write(H, addr+2,data2);
+            if (0 == result) {
+                output("卡块2写入成功!");
+            } else {
+                output("卡块2写入失败!");
+            }
+        }
+        if(document.getElementById("area3").checked) {
+            var data3 = document.getElementById("tv_area3").value;
+            var result = ocx.DS600_dc_write(H, addr+3,data3);
+            if (0 == result) {
+                output("卡块3写入成功!");
+            } else {
+                output("卡块3写入失败!");
+            }
+        }
+        return;
+    }
+    function M1GetSN(){//非接获取卡号
+        var result = ocx.DS600_dc_card_hex(H,1);
+        var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+        if (0 == obj.RtnCode) {
+            output("卡号读取成功!");
+            document.getElementById("tv_M1_sn").value = obj.snrstr;
+        } else {
+            output("卡号读取失败!");
+        }
+    }
+    function Reset(){//非接初始化打印机
+        var result = ocx.DS600Reset();
+        if (0 == result) {
+            output("初始化成功!");
+        } else {
+            output("初始化失败!");
+        }
+    }
+    function M1Authentication(){//M1卡认证
+        if(H==null || H ==0)
+        {
+            output("读卡器未打开");
+            return;
+        }
+        var addr = document.getElementById("M1area").value;
+        var pass = document.getElementById("tv_M1_pass").value;
+        var mode = 0;
+		var kt = document.getElementById("keyType").value;
+        if(kt == "keyA")
+            mode = 0x00;
+        else if(kt == "keyB")
+            mode = 0x04;
+        var result = ocx.DS600_dc_authentication_pass(H,mode,addr,pass);
+        if (0 == result) {
+            output("M1卡认证成功!");
+        } else {
+            output("M1卡认证失败!");
+        }
+    }
+	function SetFilmType(){
+		var type = document.getElementById("type").value;
+		var filmType = document.getElementById("filmtype").value;
+        var ret = 0;
+        switch(type){
+            case "0"://直印机
+            case "2":
+                var result = ocx.D300CSetFilmType(filmType);
+                var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+                if(obj.RtnCode == 0)
+					output("设置色带类型成功!");
+				else
+					output("设置色带类型失败!");
+                break;
+            case "1"://转印机
+            case "3":
+                var result = ocx.DS600SetFilmType(filmType);
+                var obj = eval('(' + result + ')'); //由传出的字串转为JSON对象
+                if(obj.RtnCode == 0)
+					output("设置色带类型成功!");
+				else
+					output("设置色带类型失败!");
+                break;
+        }
+	}
+</script>
+</head>
+<OBJECT id="dlgHelper" CLASSID="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b" width="0px" height="0px"></OBJECT>
+<object id="DS600OCX" style="display:none" CLASSID = "CLSID:006309DF-84B1-45BF-8777-6799DE537FFF"></object>
+
+<body>
+<table width="1024" border="0" align="top" cellpadding="0" cellspacing="0">
+  <tr>
+    	<td  valign="top">
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        结果输出：<br/>
+    		<textarea class="t1" readOnly="true" name="Enum" rows="13" wrap="off" id="Enum" style="width:380px"></textarea>
+            <br/><br/>
+            <button onclick = "output('cls')">清屏</button>&nbsp;&nbsp;
+   	 	</td>
+        <td  align="left" valign="top" style="padding-left:20px">
+            <div id="basicFunction">
+        打印机列表：<select id="printerList" style="width:203px">
+				</select>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="Enum" value="枚举设备" style="margin-left:40px" onclick="EnumDev();" />  <br/>
+			    打 开 状 态 : 
+			    <input name="openState" type="text" id="openState" class="t1" style="width:100px"   readOnly="true" value="关闭"/>
+            请选择打印机类型进行操作：<select id="type" onchange="typeChange();">
+                <option value="0">直印机</option>
+                <option value="1">转印机</option>
+				<option value="2">直印机带非接</option>
+				<option value="3">转印机带非接</option>
+            </select>
+				<input type="button" name="Submit" value="打开设备" style="margin-left:40px" onclick="OpenDev();" />      
+				<input type="button" name="Submit2" value="关闭设备" style="margin-left:40px" onclick="CloseDev();" />
+				<br/>
+				<br/>
+				设置色带类型:&nbsp;&nbsp;&nbsp;<select id="filmtype">
+				<option value="0">YMCK</option>
+                <option value="1">YMCKK</option>
+				<option value="2">YMCK_HalfPanel</option>
+				<option value="3">YMCKK_HalPanel</option>
+				<option value="4">YMCKO</option>
+				<option value="5">YMCKH</option>
+				<option value="6">YMCFK</option>
+				<option value="7">YMCKI</option>
+				<option value="8">YMCKIKI</option>
+				<option value="9">YMCKU</option>
+				<option value="10">K</option>
+				</select>
+				<input type="button" name="setFilmType" value="设置色带类型" style="margin-left:10px" onclick="SetFilmType();" />
+                <hr />
+            </div>
+            <div id="settingFunction">
+                设置字体风格：&nbsp;&nbsp;&nbsp;&nbsp;<input id="text_bold" type="checkbox" />粗体&nbsp;
+                <input id="text_italic" type="checkbox" />斜体&nbsp;
+                <input id="text_underline" type="checkbox" />下划线&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="setDecorate" value="设置字体风格" onclick="SetTextDecorate();" /><br /><br />
+                设置文本格式：&nbsp;&nbsp;&nbsp;&nbsp;<input id="text_landScape" type="checkbox" />竖排&nbsp;
+                <input id="text_reverseSequence" type="checkbox" />反向&nbsp;
+                <input id="text_autoLineFeed" type="checkbox" />自动换行&nbsp;
+                <input id="text_layDown" type="checkbox" />平躺字体&nbsp;
+                <input type="button" name="setDirection" value="设置文本格式" onclick="SetTextDirection();" /><br /><br />
+                字体名:<select id='fnameSelector' style='width:100px'></select>&nbsp;&nbsp;
+                大小：<input id="text_size" value="14" style="width:48px" type="text" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" name="setFont" value="设置字体字号" onclick="SetTextFont();" /><br /><br />
+                行间距：<input id="text_lineSpacing" value="0" style="width:50px" type="text" />&nbsp;&nbsp;
+                字间距：<input id="text_charSpacing" value="1" style="width:48px" type="text" />&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" name="setSpacing" value="设置字体间距" onclick="SetTextSpacing();" /><br /><br />
+                R：<input id="text_R" value="0" style="width:50px" type="text" />&nbsp;&nbsp;
+                G：<input id="text_G" value="0" style="width:50px" type="text" />&nbsp;&nbsp;
+                B：<input id="text_B" value="0" style="width:46px" type="text" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" name="setColor" value="设置字体颜色" onclick="SetTextColor();" /><br /><br />
+            </div>
+            <div id="inputFunction">
+                姓名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id = "tv_name"  style="width:300px" value=""/>
+                x:<input type="text" id = "tv_name_x"  style="width:30px" value="24"/>mm&nbsp;
+                y:<input type="text" id = "tv_name_y"  style="width:30px" value="13.5"/>mm
+                <br/><br/>
+				卡号：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id = "tv_id"  style="width:300px" value=""/>
+                x:<input type="text" id = "tv_id_x"  style="width:30px" value="24"/>mm&nbsp;
+                y:<input type="text" id = "tv_id_y"  style="width:30px" value="23.5"/>mm<br/><br/>
+				发卡日期：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id = "tv_date"  style="width:300px" value=""/>
+                x:<input type="text" id = "tv_date_x"  style="width:30px" value="24"/>mm&nbsp;
+                y:<input type="text" id = "tv_date_y"  style="width:30px" value="28.5"/>mm
+                &nbsp;&nbsp;
+                <button onclick = "AddText()">添加</button><br/><br/>
+				图像：&nbsp;&nbsp;
+				<input type="file" name="fileField" class="file" id="fileField" style="width:355px" onchange="document.getElementById('fileField').value=this.value" />
+                x:<input type="text" id = "pic_x"  style="width:30px" value="5"/>mm&nbsp;
+                y:<input type="text" id = "pic_y"  style="width:30px" value="15"/>mm
+                <button onclick = "AddPic()">添加</button>&nbsp;&nbsp;
+            </div>
+				<br/>
+                <button onclick = "previewImg()">打印预览</button>&nbsp;&nbsp;
+                <button onclick = "print()">打印</button>
+                <hr/>
+            <div id="readerFunction">
+                <div id="readerCom">
+                    读卡器COM口：<input id="text_com" value="" style="width:50px" type="text" />&nbsp;&nbsp;<input type="button" name="enumCom" value="枚举读卡器COM口"  onclick="enumCOM();" /><br/><br/>
+                </div>
+                <input type="button" name="openReader" value="打开读卡器"  onclick="OpenReader();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" id="toCardReader" name="toCardReader" value="进卡"  onclick="ToCardReader();" />&nbsp;&nbsp;&nbsp;
+                卡槽:<select id="slot">
+                    <option value="0">附卡座/接触式CPU1卡座</option>
+                    <option value="1">接触式CPU2卡座</option>
+                    <option value="2">SAM1卡座</option>
+                    <option value="3">SAM2卡座</option>
+                    <option value="4">SAM3卡座</option>
+                    <option value="5">SAM4卡座</option>
+                    <option value="6">SAM5卡座</option>
+                    <option value="7">SAM6卡座/ESAM芯片</option>
+                    <option value="8">SAM7卡座</option>
+                    <option value="9">SAM8卡座</option>
+                    <option value="10">非接触式卡槽0</option>
+                </select>&nbsp;&nbsp;<input type="button" name="resetCard" value="cpu卡复位"  onclick="ResetCard();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" name="psamreset" value="PSAM卡复位"  onclick="psamReset();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" name="closeReader" value="关闭读卡器"  onclick="CloseReader();" />&nbsp;&nbsp;&nbsp;
+                <br/><br/>
+            </div>
+            <div id="3in1Function">
+                移动位置：<select id="movePos">
+                    <option value="0">移动到磁条卡操作位置</option>
+                    <option value="1">移动到接触卡操作位置</option>
+                    <option value="2">移动到非接触卡操作位置</option>
+                </select>
+                <input type="button" name="3300moveCard" value="移动卡片"  onclick="MoveCard();" /><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+                <hr />
+                <div id="reader3300">
+                直印机三合一读卡器卡片操作：
+                <input type="button" name="3300toPrint" id="3300toPrint" value="出卡到打印机"  onclick="BackToPrinter();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" name="3300toGood"  id="3300toGood" value="退卡到好卡口"  onclick="ToGood3300();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" name="3300toBad"  id="3300toBad" value="退卡到坏卡口"  onclick="ToBad3300();" />&nbsp;&nbsp;&nbsp;
+                <br/><br/>
+                <hr/>
+                    </div>
+                <div id="reader转印机">
+                <br />
+                转印机三合一读卡器卡片操作：
+                <input type="button" name="转印机toPrint" id="转印机toPrint" value="退卡到打印位"  onclick="ToPrint();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" name="转印机toGood" id = "转印机toGood" value="退卡到好卡口"  onclick="ToGood();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" name="转印机toBad" id="转印机toBad" value="退卡到坏卡口"  onclick="ToBad();" />&nbsp;&nbsp;&nbsp;
+                <br/><br/>
+                <hr />
+                </div>
+            </div>
+            <div id="cardRWFunction">
+                卡片读写：<br/>
+                目标卡:<select id="cardType">
+                            <option value="0">cpu卡</option>
+                            <option value="1">PSAM卡</option>
+                        </select>
+                卡槽:<select id="slot2">
+                <option value="0">附卡座/接触式CPU1卡座</option>
+                <option value="1">接触式CPU2卡座</option>
+                <option value="2">SAM1卡座</option>
+                <option value="3">SAM2卡座</option>
+                <option value="4">SAM3卡座</option>
+                <option value="5">SAM4卡座</option>
+                <option value="6">SAM5卡座</option>
+                <option value="7">SAM6卡座/ESAM芯片</option>
+                <option value="8">SAM7卡座</option>
+                <option value="9">SAM8卡座</option>
+                <option value="10">非接触式卡槽0</option></select><br/><br/>
+                发送APDU指令:<input type="text" id = "tv_input"  style="width:300px" value="0084000004"/>&nbsp;&nbsp;&nbsp;
+                <input type="button" name="sendCmd" value="发送指令"  onclick="ADPUExchange();" />&nbsp;&nbsp;&nbsp;<br/><br/>
+                <br/><br/>
+                <hr />
+            </div>
+            <div id="readerfw">
+                <br />
+                非接读卡器卡片操作：<br/>
+				<div id="DC转印机FW">
+                转印机:<input type="button" name="3300toIC" id="3300Reset" value="初始化打印机"  onclick="Reset();" />&nbsp;&nbsp;&nbsp;
+				<input type="button" name="3300toIC" id="转印机printBegin" value="进卡"  onclick="printBegin();" />&nbsp;&nbsp;&nbsp;
+				<input type="button" name="转印机toGood" id = "转印机toGood2" value="退卡到好卡口"  onclick="ToGoodFW();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" name="转印机toBad" id="转印机toBad2" value="退卡到坏卡口"  onclick="ToBadFW();" />&nbsp;&nbsp;&nbsp;<br/>
+				</div>
+				<div id="直印机FW">
+                直印机:<input type="button" name="3300toIC" id="3300toIC" value="进卡到读卡位"  onclick="ToIC();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" name="3300toPrintPos"  id="3300toPrintPos" value="出卡到打印位"  onclick="ToPrintPos();" />&nbsp;&nbsp;&nbsp;
+                <input type="button" name="3300EjectCard"  id="3300EjectCard" value="出卡到标准卡槽"  onclick="EjectCard();" />&nbsp;&nbsp;&nbsp;
+				</div>
+                <br/><br/>
+                <hr />
+            </div>
+            <div id="m1Function">
+                <br />
+                M1 S50卡片操作：<br/>选择扇区：<select id="M1area">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                        </select>&nbsp;&nbsp;
+                
+				密码类型：<select id="keyType">
+                            <option value="keyA">keyA</option>
+                            <option value="keyB">keyB</option>
+                        </select>&nbsp;&nbsp;
+                密码：<input type="text" id = "tv_M1_pass"  style="width:300px" value=""/><input type="button" name="authentication" value="认证"  onclick="M1Authentication();" />
+                <br/><br/>
+
+
+                块0：<input type="text" id = "tv_area0"  style="width:300px" value=""/><input id="area0"   type="checkbox" />&nbsp;&nbsp;&nbsp;<br/>
+                块1：<input type="text" id = "tv_area1"  style="width:300px" value=""/><input id="area1"   type="checkbox" />&nbsp;&nbsp;&nbsp;<input type="button" name="read" value="读卡"  onclick="M1Read();" />&nbsp;&nbsp;&nbsp;<br/>
+                块2：<input type="text" id = "tv_area2"  style="width:300px" value=""/><input id="area2"   type="checkbox" />&nbsp;&nbsp;&nbsp;<input type="button" name="write" value="写卡"  onclick="M1Write();" />&nbsp;&nbsp;&nbsp;<br/>
+                块3：<input type="text" id = "tv_area3"  style="width:300px" value=""/><input id="area3"   type="checkbox" />&nbsp;&nbsp;&nbsp;<br/>
+                注：KeyA在任何情况下均不可读出
+                <br/><br/>
+                卡号：<input type="text" id = "tv_M1_sn"  style="width:300px" value="" />&nbsp;&nbsp;&nbsp;<input type="button" name="getsn" value="获取卡号"  onclick="M1GetSN();" />&nbsp;&nbsp;&nbsp;
+            </div>
+
+		</td>
+  </tr>
+</table>
+
+</body>
+</html>

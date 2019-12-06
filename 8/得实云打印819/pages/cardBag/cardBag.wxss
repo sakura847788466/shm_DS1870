@@ -1,0 +1,167 @@
+/* pages/cardBag/cardBag.wxss */
+
+.banner{
+  /* padding:0rpx 20rpx 0rpx 20rpx; */
+  background:#fff;
+}
+.banner swiper{
+  width:100%;
+  height:370rpx;
+}
+.img{
+  width:100%;
+  height:100%;
+}
+
+.container .locaUp {
+    position: relative;
+    width: 80%;
+    height: 214rpx;
+    border-radius: 15rpx;
+    margin: 36px auto;
+    border: 1px solid rgba(222, 222, 222, 1);
+    box-shadow: 7px 7px 14px 0px rgba(66,66,66,0.1);
+}
+.locaUp .bendi {
+    content: "";
+    width: 210rpx;
+    height: 210rpx;
+    position: absolute;
+    top:-25rpx;
+    left: 5%;
+    margin-left: -11px;
+    /* border-radius: 50%; */
+}
+
+.btn_txt {
+    position: absolute;
+    top: 9%;
+    right: 0;
+    width: 168.75px;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333333;
+    letter-spacing: 8px;
+}
+.btn_cont {
+    position: absolute;
+    top: 33%;
+    right: 0;
+    width: 168.75px;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #666;
+}
+.btn_cont span {
+    display: inline-block;
+    line-height: 37.5px;
+    border-bottom: 0.75px solid #999;
+}
+
+.btn_img {
+    position: absolute;
+    top: 68%;
+    right: 0;
+    width: 168.75px;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #666;
+    display:flex;
+    justify-content: space-between;
+    align-items:center; 
+    margin-top:10px;
+}
+.btn_img .left{
+  flex:1;
+  display:flex;
+  align-items: center;
+
+}
+
+.locaUp .left .btn_pdf,.locaUp .right .btn_pdf{
+    display: inline-block;
+    width: 11.5px;
+    height: 11.5px;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.btn_img .right{
+  flex:1;
+}
+
+
+/* 遮罩层 */
+.link_c{
+  height: 271px;
+  width:95%;
+  position:absolute;
+  top:18%;
+  left:2.5%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 9.6px;
+  border-top-right-radius: 16px;
+  
+}
+
+.msm_print_val {
+    resize: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    display: block;
+    width: 80%;
+    height: 125px;
+    margin: 0 auto;
+    padding: 23.6px;
+    margin-top:10px;
+}
+textarea {
+    font-size: 16px;
+    padding: 0 0.3rem;
+    outline: none;
+    /* font-size: 0.5rem; */
+    border-width: 0px;
+    border-style: none;
+    border-image: none;
+    border: 0.02rem solid darkgoldenrod;
+}
+
+button{
+  height:37.5px;
+  width:80%;
+  margin-top:10px; 
+  background: orange;
+  text-align: center;
+  color:#fff;
+  line-height: 37.5px;
+}
+
+.hide{
+  display:none;
+  opacity:0;
+}
+
+.show{
+  display:block;
+  opacity: 1;
+}
+
+.msm_false {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.top{
+  height:32px;
+  line-height:32px;
+  text-align: center;
+  margin-top:8px;
+}

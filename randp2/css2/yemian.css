@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: “微软雅黑”;
+}
+
+li {
+  list-style: none
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+body {
+  background: url("../img/th (2).jpg");
+}
+
+.top {
+  width: 100%;
+  background-color: rgba(46, 66, 87, .8);
+  height: 3rem;
+  text-align: center;
+  color: white;
+  line-height: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10% 5%;
+    color: white;
+    font-size: .8rem;
+  }
+
+  .title {
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  samp {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    float: left;
+    text-align: center;
+  }
+
+  .box span {
+    border: 1px solid rgb(179, 175, 175);
+    display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    width: 79%;
+    margin-top: .5rem;
+    background-color: white;
+    color: red;
+    float: right;
+  }
+
+  .read,
+  .submit {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    margin: 0 auto;
+    border-radius: .3rem;
+  }
+
+  .read {
+    margin-bottom: 2rem;
+  }
+
+  .submit {
+    margin-top: 1rem;
+
+  }
+
+  .shuru {
+    padding-top: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .shuru samp {
+    line-height: 2rem;
+    margin-right: 5%;
+  }
+
+  .shuru ul {
+    display: block;
+    width: 100%;
+    /* height: 7rem; */
+    margin: 0 auto;
+    overflow-y: scroll;
+    /*background-color: white;*/
+    color: white;
+    float: right;
+  }
+
+  .shuru li {
+    /*padding-left: 1rem;*/
+    padding: 5px;
+    line-height: 1.5rem;
+    font-size: .9rem;
+  }
+
+  .shuru li span {
+    height: 20px;
+    width: 63px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .shuru li input {
+    width: 78%;
+    outline: none;
+    border: none;
+    float: right;
+    padding-left: .5rem;
+    height: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 40%;
+    height: auto;
+    background-color: rgba(46, 66, 87, .8);
+    margin: 0 auto;
+    transform: translateY(20%);
+    padding: 3rem;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    color: white;
+    padding-bottom: 5rem;
+  }
+
+  .title {
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  samp {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    float: left;
+  }
+
+  .box span {
+    border: 1px solid rgb(179, 175, 175);
+    display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+    margin-top: .5rem;
+    text-align: center;
+    width: 75%;
+    color: red;
+    background-color: white;
+    border-radius: .3rem;
+    float: right;
+  }
+
+  .read,
+  .submit {
+    display: block;
+    width: 20%;
+    height: 2rem;
+    border-radius: .3rem;
+  }
+
+  .read {
+    margin-bottom: 2rem;
+    margin-left: 25%;
+  }
+
+  .submit {
+    float: right;
+    margin-top: 1rem;
+
+  }
+
+  .shuru {
+    padding-top: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .shuru samp {
+    line-height: 2rem;
+    margin-right: 5%;
+  }
+
+  .shuru ul {
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    /*overflow-y: scroll;*/
+    /*background-color: white;*/
+    color: white;
+    float: right;
+  }
+
+  .shuru li {
+    padding-left: 1rem;
+    line-height: 1.5rem;
+    font-size: .9rem;
+  }
+
+  .shuru li input {
+    width: 69%;
+    outline: none;
+    border: none;
+    float: right;
+    padding-left: .5rem;
+    height: 1.5rem;
+  }
+}

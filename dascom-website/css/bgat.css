@@ -1,0 +1,10 @@
+div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  background-image: url(http://www.w3school.com.cn/i/eg_bg_02.gif);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}

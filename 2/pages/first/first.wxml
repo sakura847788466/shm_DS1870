@@ -1,0 +1,53 @@
+
+<view class="page">
+  <view  class="item" bindtap='goToCfg' >
+    <image src='../../imgs/first/bluetooth_bg.png' class="icon1" hover-class="hover"  ></image>
+    <image  src="../../imgs/first/bluetooth.png" mode="scaleToFill" class='tu1' />
+        <view class="icon1_text">蓝牙打印</view>
+        <view class='sec1'>DP-230L</view>
+  </view>
+  
+   <view  class="item" bindtap='goToYunPrint'>
+      <image  src="../../imgs/first/order_bg.png" mode="scaleToFill" class="icon1" hover-class="hover"  />
+      <image  src="../../imgs/first/scancode.png" mode="scaleToFill" class='tu1' />
+        <view class="icon1_text">得实云打印</view>
+       <view class='sec1'>DS-1100II</view>
+  </view>
+
+  <view  class="item" style="padding-bottom:200px;"bindtap="goToWxBag">
+    <image src='../../imgs/first/scancode_bg.png' class="icon1" hover-class="hover" ></image>
+     <image  src="../../imgs/first/weixin@2x.png" mode="scaleToFill" class='tu1' />
+        <view class="icon1_text" >微信卡包</view>
+        <view class='sec1'>微信卡包</view>
+  </view>
+  <!-- <view >
+    <image  src="../../imgs/first/order_bg.png" mode="scaleToFill" class="icon2" hover-class="hover"  bindtap='goToYunPrint'/>
+    <image  src="../../imgs/first/scancode.png" mode="scaleToFill" class='tu2' />
+
+  </view>
+  <view class="icon2_text">得实云打印</view>
+   <view class='sec2'>DS-1100II</view> -->
+
+
+  <!-- <view class="icon3" hover-class="hover"  bindtap="scanCode">
+    <image  src="../../imgs/first/scancode_bg.png" mode="scaleToFill" class="icon3" hover-class="hover" />
+    <image  src="../../imgs/first/scancode.png" mode="scaleToFill" class='tu3' />
+
+  </view>
+  <view class="icon3_text" >点餐系统</view>
+   <view class='sec3'>扫码点餐</view> -->
+
+   <!-- 卡包 -->
+<!-- <view class="icon4" hover-class="hover"  bindtap="goToWxBag">
+    <image  src="../../imgs/first/scancode_bg.png" mode="scaleToFill" class="icon4" hover-class="hover"  />
+    <image  src="../../imgs/first/weixin@2x.png" mode="scaleToFill" class='tu4' />
+
+  </view>
+  <view class="icon4_text" >微信卡包</view>
+   <view class='sec4'>微信卡包</view> -->
+
+   <view class="footer">
+    <view>版权所有©得实集团</view>
+  </view>
+   
+</view>

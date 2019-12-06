@@ -1,0 +1,24 @@
+<view class='page'>
+<view class="print_img_preview" style="width: 667px; height: 375px; opacity: 1; transform: rotate(90deg) translateY(0%);">
+    <view class='print_img_preview_con'>
+        <view class='preview' style="width: 30%; height: 345px;">
+          <image class='preview_img' style='height: 345px;width:200px; margin-left: 0px; margin-bottom: -172.5px;' src='{{imgSrc}}'></image>
+        </view>
+        <view class='method' style='width: 375px;'>
+          <view class="clear">清除发票页面广告
+              <image src='{{srctu? "../../imgs/detail_carbag/left.jpg": "../../imgs/detail_carbag/right.jpg"}}' id="quxiao" bindtap="click" class=""></image>
+          </view>
+          <view class="nongdu">打印浓度
+						<view class="section " id="tryby">
+                    <picker bindchange="bindPickerChange" value="0" range="{{array}}"  mode="selector">
+                       <view class="picker try-by">{{array[index]}}</view>
+                    </picker>
+                </view>
+					</view>
+           <button class='img_cancel'>取消</button>
+           <button class='img_save' bindtap="save">保存</button>
+        </view>
+    </view>
+</view>
+   
+</view>

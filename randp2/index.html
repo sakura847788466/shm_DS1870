@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>农产品追溯打印</title>
+    <!--  <link rel="stylesheet" href="css/reset.css" type="text/css" />-->
+    <link rel="stylesheet" href="css2/yemian.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="js2/yemian.js" type="text/javascript" /> -->
+    <script src="js/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    // var initScreen = function () {
+    //   $('html').css(
+    //     'font-size',
+    //     (document.documentElement.clientWidth / 375) * 312.5 + '%'
+    //   )
+    // }
+    // $(window).on(
+    //   'onorientationchange' in window ? 'orientationchange' : 'resize',
+    //   function () {
+    //     setTimeout(initScreen, 200)
+    //   }
+    // )
+    //移动端适配
+  </script>
+
+  <body>
+    <div class="top">农产品追溯打印</div>
+    <div class="container">
+      <div class="box">
+        <div class="cent">
+          <button class="read">读取</button>
+          <div class="title">
+            <samp>number&nbsp;:</samp><span class="num"></span>
+          </div>
+          <div class="title">
+            <samp>重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量&nbsp;:</samp
+            ><span class="scan"></span>
+          </div>
+        </div>
+      </div>
+      <div class="shuru">
+        <ul>
+          <li>
+            品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:<input
+              class="pm"
+              type="text"
+              placeholder=""
+            />
+          </li>
+          <li>
+            规&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:<input
+              class="gg"
+              type="text"
+              placeholder=""
+            />
+          </li>
+          <li>
+            销&nbsp;&nbsp;售&nbsp;&nbsp;者:<input
+              class="xsz"
+              type="text"
+              placeholder=""
+            />
+          </li>
+          <li>
+            产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地:<input
+              class="cd"
+              type="text"
+              placeholder=""
+            />
+          </li>
+          <li>
+            价&nbsp;&nbsp;格/元:<input class="jg" type="text" placeholder="" />
+          </li>
+          <!--<li>重量:<input class="zl" type="text" placeholder="kg"></li>-->
+          <!--<li>总价:<input class="zj" type="text" placeholder="元"></li>-->
+          <li>包装日期:<input class="bzrq" type="text" placeholder="" /></li>
+          <li>生产商店:<input class="scs" type="text" placeholder="" /></li>
+          <li>
+            二&nbsp;&nbsp;维&nbsp;码:<input
+              class="ewm"
+              type="text"
+              placeholder=""
+            />
+          </li>
+          <li>
+            店&nbsp;&nbsp;内&nbsp;码:<input
+              class="dlm"
+              type="text"
+              placeholder=""
+            />
+          </li>
+        </ul>
+      </div>
+      <button class="submit">打印</button>
+    </div>
+  </body>
+  <script type="text/javascript">
+    $(function() {
+      $('.submit').attr('disabled', true)
+      $('.submit').css('background-color', '#c8ccd2')
+      $('.read').css('background-color', '#216cdc')
+      $('.read').click(function() {
+        $('.read').css('background', '#c8ccd2') //禁用颜色
+
+        try {
+          ws = new WebSocket('ws:test.dascomyun.cn/zkydemo/websocket/test/zky') //连接服务器
+          ws.onopen = function(event) {
+            alert('已经与服务器建立了连接')
+            $('.read').attr('disabled', true)
+          }
+          ws.onmessage = function(event) {
+            // alert("接收到服务器发送的数据：rn" + event.data);
+
+            console.log(event.data)
+            var arr = JSON.parse(event.data)
+
+            console.log(arr)
+            var number = arr.number
+            var scanData = arr.scandata
+            if (scanData == '重量不稳定') {
+              alert('重量不稳定')
+              return
+            }
+            $('.num').text(number)
+            $('.scan').text(scanData)
+            if (number == undefined) {
+              console.log('number不存在')
+              return
+              //a.number = num1
+              // a.重量 = weight
+              //
+              //
+            } else if (scanData == undefined) {
+              console.log('scanData不存在')
+              return
+            }
+            $('.submit').attr('disabled', false)
+            $('.submit').css('background-color', '#0a6ff5') //提交禁用  颜色更换
+
+            $('.read').attr('disabled', true)
+
+            var a = new Object()
+
+            // a.number = "003CC57350028100";
+            a.品名 = '苹果'
+            a.店内码 = '111'
+            a.二维码 = '154'
+            a.生产商 = '大连兴业源农产品有限公司'
+            a.包装日期 = '2019.07.31'
+            a.产地 = '山东威海'
+            a.销售者 = '本商场'
+            a.规格 = '6颗'
+            a.价格 = 12
+            a.重量 = 0.61
+
+            var str = JSON.stringify(a)
+            var pm = JSON.stringify(a.品名).replace(/\"/g, ''),
+              dlm = JSON.stringify(a.店内码).replace(/\"/g, ''),
+              ewm = JSON.stringify(a.二维码).replace(/\"/g, ''),
+              scs = JSON.stringify(a.生产商).replace(/\"/g, ''),
+              bzrq = JSON.stringify(a.包装日期).replace(/\"/g, ''),
+              cd = JSON.stringify(a.产地).replace(/\"/g, ''),
+              xsz = JSON.stringify(a.销售者).replace(/\"/g, ''),
+              gg = JSON.stringify(a.规格).replace(/\"/g, ''),
+              jg = JSON.stringify(a.价格).replace(/\"/g, ''),
+              zl = scanData,
+              zj = (zl.split('kg')[0].substring(0) * jg).toFixed(2)
+
+            $('.pm').val(pm)
+            $('.dlm').val(dlm)
+            $('.ewm').val(ewm)
+            $('.scs').val(scs)
+            $('.bzrq').val(bzrq)
+            $('.cd').val(cd)
+            $('.xsz').val(xsz)
+            $('.gg').val(gg)
+            $('.jg').val(jg)
+            $('.zl').val(zl)
+            $('.zj').val(zj)
+            //渲染span
+          }
+          ws.onclose = function(event) {
+            $('.read').attr('disabled', false)
+            $('.read').css('background-color', '#0a6ff5')
+            $('.submit').attr('disabled', true)
+            $('.cont').val('')
+            $('.scan').text(' ')
+            $('.num').text('')
+            alert('已经与服务器断开连接rn当前连接状态：' + this.readyState)
+          }
+          ws.onerror = function(event) {
+            alert('WebSocket异常！')
+          }
+        } catch (ex) {
+          alert(ex.message)
+        }
+      })
+
+      //提交
+      $('.submit').click(function() {
+        var num1 = $('.num').text()
+        var weight = $('.scan')
+          .text()
+          .split('kg')[0]
+          .substring(0)
+        //截掉kg
+        console.log(weight)
+        var b = new Object()
+        b.品名 = $('.pm').val()
+        b.店内码 = $('.dlm').val()
+        b.二维码 = $('.ewm').val()
+        b.生产商 = $('.scs').val()
+        b.包装日期 = $('.bzrq').val()
+        b.产地 = $('.cd').val()
+        b.销售者 = $('.xsz').val()
+        b.规格 = $('.gg').val()
+        b.价格 = $('.jg').val()
+        b.重量 = $('.zl').val()
+        var strNew = JSON.stringify(b)
+        console.log(strNew)
+
+        var str = JSON.parse(strNew)
+        str.number = num1
+        str.重量 = weight
+        console.log(str)
+
+        $.ajax({
+          url: 'http://test.dascomyun.cn/zkydemo/zky/print',
+          dataType: 'json',
+          contentType: 'application/json',
+          method: 'POST',
+          async: true,
+          data: JSON.stringify(str),
+          success: function(res) {
+            console.log(res)
+            if (res.data == '规格不能为空') {
+              alert(res.data)
+            } else if (res.data == '销售者不能为空') {
+              alert(res.data)
+            } else if (res.data == '品名不能为空') {
+              alert(res.data)
+            } else if (res.data == '店内码不能为空') {
+              alert(res.data)
+            } else if (res.data == '生产商不能为空') {
+              alert(res.data)
+            } else if (res.data == '包装日期不能为空') {
+              alert(res.data)
+            } else if (res.data == '产地不能为空') {
+              alert(res.data)
+            } else {
+              alert('打印成功')
+              return
+            }
+          },
+          error: function(err) {
+            console.log(err)
+          }
+        })
+      })
+    })
+  </script>
+</html>

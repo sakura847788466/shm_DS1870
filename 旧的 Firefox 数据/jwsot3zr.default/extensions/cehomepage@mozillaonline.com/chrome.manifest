@@ -1,0 +1,13 @@
+content ceerrorpage               chrome_errorpage/content/
+skin    ceerrorpage  classic/1.0  chrome_errorpage/skin/
+locale  ceerrorpage  en-US        chrome_errorpage/locale/en-US/
+locale  ceerrorpage  zh-CN        chrome_errorpage/locale/zh-CN/
+
+content   ntab               chrome_ntab/content/
+resource  ntab               chrome_ntab/modules/
+skin      ntab  classic/1.0  chrome_ntab/skin/
+
+locale    ntab   en-US       chrome_ntab/locale/en-US/
+locale    ntab   zh-CN       chrome_ntab/locale/zh-CN/
+
+# override  chrome://global/content/backgroundPageThumbsContent.js chrome://ntab/content/backgroundPageThumbsContent.js

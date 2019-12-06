@@ -1,0 +1,21 @@
+<view class="containerT">
+	<view id="nearby" class="section section-big nearby">
+		<view class="title">可配置的设备</view>
+		<view class="shop" wx:for="{{btDevices}}" wx:key="devId">
+			<navigator url="/pages/cardBag/cardBag?devId={{item.devId}}&devName={{item.name}}">
+					<div class="dev" style="flex-direction:row;">
+						<div class="name">
+							{{item.name}}
+							<view class="devId">
+								DevId:{{item.devId}}
+							</view>
+						</div>
+						<div class="rssi" style="vertical-align:middle">
+							<image src="{{item.img}}"/>
+							{{item.rssi}}
+						</div>				
+					</div>
+			</navigator>
+		</view>
+	</view>
+</view>

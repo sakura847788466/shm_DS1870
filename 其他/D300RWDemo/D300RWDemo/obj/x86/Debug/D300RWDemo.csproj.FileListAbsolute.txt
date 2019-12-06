@@ -1,0 +1,17 @@
+E:\HB\自助机-居住证\D300RWDemo\D300RWDemo\bin\Debug\D300RWDemo.exe
+E:\HB\自助机-居住证\D300RWDemo\D300RWDemo\bin\Debug\D300RWDemo.pdb
+E:\HB\自助机-居住证\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.Form1.resources
+E:\HB\自助机-居住证\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.Properties.Resources.resources
+E:\HB\自助机-居住证\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.csproj.GenerateResource.Cache
+E:\HB\自助机-居住证\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.exe
+E:\HB\自助机-居住证\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.pdb
+E:\HB\自助机-居住证\D300RWDemo\D300RWDemo\bin\Debug\D300RWDemo.exe.config
+E:\HB\自助机-居住证\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.csprojResolveAssemblyReference.cache
+C:\Users\DS030\Desktop\D300RWDemo\D300RWDemo\bin\Debug\D300RWDemo.exe.config
+C:\Users\DS030\Desktop\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.exe
+C:\Users\DS030\Desktop\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.pdb
+C:\Users\DS030\Desktop\D300RWDemo\D300RWDemo\bin\Debug\D300RWDemo.exe
+C:\Users\DS030\Desktop\D300RWDemo\D300RWDemo\bin\Debug\D300RWDemo.pdb
+C:\Users\DS030\Desktop\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.Form1.resources
+C:\Users\DS030\Desktop\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.Properties.Resources.resources
+C:\Users\DS030\Desktop\D300RWDemo\D300RWDemo\obj\x86\Debug\D300RWDemo.csproj.GenerateResource.Cache

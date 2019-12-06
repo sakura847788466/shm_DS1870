@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>收件</title>
+    <link rel="stylesheet" href="../css/send.css" />
+  </head>
+  <body>
+    <div class="message-box">
+      <div>你有一笔新的订单</div>
+
+      <div id="goto-pic">查看</div>
+    </div>
+    <div class="print-box">
+      <div>
+        <img src="../imgs/0001.png" alt="" />
+      </div>
+      <div id="print-btn">确定</div>
+    </div>
+    <div id="poup">
+      打印成功
+    </div>
+    <div class="mask"></div>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script>
+      $(function() {
+        setTimeout(function() {
+          $(".message-box").css("display", "block");
+          $(".mask").css("display", "block");
+        }, 3000);
+        $("#goto-pic").on("click", function() {
+          $(".message-box").css("display", "none");
+          $(".mask").css("display", "none");
+          $(".print-box").css("display", "block");
+        });
+        $("#print-btn").on('click',function(){
+$("#poup").css('display','block')
+        })
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./jquery-3.4.1.js">
+  <title>test</title>
+</head>
+<body>
+<ul>
+        <li>
+            <input type="checkbox" class="thead">全选或全不选 
+        </li>
+        <li>
+            <ol>
+                <li>
+                    <input class="one" type="checkbox">苹果
+                </li>
+                <li>
+                    <input class="one" type="checkbox">香蕉
+                </li>
+                <li>
+                    <input class="one" type="checkbox">草莓
+                </li>
+                <li>
+                    <input class="one" type="checkbox">葡萄
+                </li>
+                <li>
+                    <input class="one" type="checkbox">芒果
+                </li>
+            </ol>
+        </li>
+    </ul>
+    <script>
+        $(function () {
+            $('.thead').click(function () {
+                // prop()方法可以设置布尔类型的属性true或false
+                // thisChecked  等于true时复选框为选中状态
+               var thisChecked = $(this).prop('checked');
+               // 让ol中的input的checked的值等于thisChecked
+               $('ol input').prop('checked',thisChecked);
+              })
+
+              $('.one').click(function () {
+                  // ol 中被选中的复选框个数
+                  var num = $('ol input:checked').length;
+                  // ol 中所有复选框的个数
+                  var sum = $('ol input').length;
+                 if(num == sum){
+                     // num == sum 说明是全选
+                     $('.thead').prop('checked',true);
+                 }else{
+                      $('.thead').prop('checked', false);
+                 }
+                    
+                })
+
+          })
+    //云打印小程序
+     goToYunPrint: function () {
+    var that = this;
+    // 只允许从相机扫码
+    wx.scanCode({
+      onlyFromCamera: true,
+      success(res) {
+
+        var num = res.result.indexOf("#")
+        if (num < 0) {
+          wx.showModal({
+            title: '提示',
+            content: '二维码格式错误',
+            showCancel: false,
+          })
+        } else {
+          var strnum = res.result.substr(num + 1)//序列号
+          if (strnum.length != 16) {
+            wx.showModal({
+              title: '提示',
+              content: '二维码格式错误',
+              showCancel: false,
+            })
+            return;
+          }
+          var reg = /^[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]/;
+          if (!reg.test(strnum)) {
+            wx.showModal({
+              title: '提示',
+              content: '二维码格式错误',
+              showCancel: false,
+            })
+            return;
+          } else {
+            wx.navigateTo({
+              url: '/pages/print/print?devtype=1&deviceNum=' + strnum
+            })
+          }
+
+        }
+      },
+      fail(res) {
+        wx.showModal({
+          title: '提示',
+          content: '扫码失败，请重试。',
+          showCancel: false,
+        })
+      }
+    })
+  },
+    
+    </script>
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+  /* margin: 0 auto; */
+  padding-top: 30px;
+
+}
+
+.page .maskT {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(85, 83, 83, 0.925);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0.5;
+  z-index: 1000;
+}
+
+
+.page .el-message-box {
+  display: inline-block;
+  width: 420px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  font-size: 18px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+  text-align: left;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -211px;
+  margin-left: -210px;
+  z-index: 1000;
+}
+
+.page .el-message-box__header {
+  position: relative;
+  padding: 15px 15px 10px;
+}
+
+.page .el-message-box__title {
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 1;
+  color: #303133;
+}
+
+.page .el-message-box__content {
+  position: relative;
+  padding: 10px 15px;
+  color: #606266;
+  font-size: 14px;
+}
+
+.page .el-message-box__message {
+  margin: 0;
+}
+
+.page .el-message-box__message p {
+  margin: 0;
+  line-height: 24px;
+}
+
+.page .el-message-box__input {
+  padding-top: 15px;
+}
+
+.page .el-input {
+  position: relative;
+  font-size: 14px;
+  display: inline-block;
+  width: 100%;
+}
+
+.page .el-input__inner {
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  box-sizing: border-box;
+  color: #606266;
+  display: inline-block;
+  font-size: inherit;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0 15px;
+  transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+  width: 100%;
+}
+
+.page .el-message-box__errormsg {
+  color: #f56c6c;
+  font-size: 12px;
+  min-height: 18px;
+  margin-top: 2px;
+}
+
+.page .el-message-box__btns {
+  padding: 5px 15px 0;
+  text-align: right;
+}
+
+.page .el-button--small {
+  padding: 9px 15px;
+}
+
+.page .el-button--primary {
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
+
+.container {
+  margin: 0 auto;
+  height: 100%;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+
+
+}
+
+.container .top {
+  height: 50px;
+  /* background-color: rgb(200, 194, 194); */
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .top .top_content {
+  flex: 2;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+.container .top .left,
+.container .top .right {
+  height: 50px;
+  font-size: 24px;
+  /* line-height: 50px; */
+  text-align: center;
+  /* width: 300px; */
+  flex: 1.5
+}
+
+.container .top .left {
+  background: #ffff;
+  border-right: 2px solid black;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+
+}
+
+.container .top .right {
+  background: #ffff;
+  border-left: 2px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container .top .left .title_c {
+  flex: 1;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  color: #333333;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+}
+
+.container .top .left .switch {
+  height: 50px;
+  display: inline-block;
+  flex: 1;
+}
+
+.container .top .left .switch img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  /* margin-left: 120px; */
+
+}
+
+.container .content {
+  margin: 20px 50px 0px 50px;
+  /* height: 350px; */
+  border: 1px solid #E7E7E7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container .content .item-top {
+  width: 900px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container .content .item-top div {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  width: 100px;
+  flex: 1;
+  border-right: 2px solid #E7E7E7;
+  background-color: #F3F3F3;
+}
+
+.container .content .item-top input {
+  height: 50px;
+  width: 120px;
+  /* border: 1px solid black; */
+  text-align: center;
+  flex: 1;
+  background-color: #FCFCFC;
+  border-right: 2px solid #E7E7E7;
+
+}
+
+
+
+.container .xiuGai button {
+  width: 110px;
+  height: 34px;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 34px;
+  display: inline-block;
+}
+
+.container .submit button,
+.container .add button {
+  width: 60px;
+  height: 34px;
+  line-height: 34px;
+  border-radius: 6px;
+  display: inline-block;
+
+}
+
+
+/*-------mask---------*/
+.page .mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(85, 83, 83, 0.925);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  z-index: -1000;
+}
+
+.page .pageTwo {
+  height: 498px;
+  width: 498px;
+  border: 1px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -289px;
+  margin-left: -289px;
+  background-color: #ffff;
+  display: none;
+
+}
+
+.page .pageTwo .content {
+  height: 420px;
+  width: 382px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+
+}
+
+.page .pageTwo .content .item {
+  width: 300px;
+
+}
+
+.page .pageTwo .content .item .item_s {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.page .pageTwo .content .item .item_s .title {
+  flex: 1;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 10px;
+}
+
+.page .pageTwo .content .item .title span {
+  font-size: 18px;
+}
+
+.page .pageTwo .content .item input {
+  flex: 2;
+  height: 40px;
+  border: 1px solid #dcdfe6;
+  padding: 0px 5px;
+  border-radius: 5px;
+
+}
+
+.page .pageTwo .content .item input :-moz-placeholder {
+  color: #DCDFE6;
+}
+
+.page .pageTwo .content .isTrue {
+  position: absolute;
+  top: 446px;
+  right: 20px;
+  height: 40px;
+  width: 63px;
+}
+
+.page .pageTwo .content .cancel {
+  position: absolute;
+  top: 446px;
+  right: 96px;
+  height: 40px;
+  width: 63px;
+}
+
+.page .pageTwo .content .cancel button {
+  height: 40px;
+  width: 63px;
+  background-color: #ffff;
+  border-radius: 6px;
+  border: 1px solid #DCDFE6;
+
+}
+
+.page .pageTwo .content .isTrue button {
+  height: 40px;
+  width: 63px;
+  background-color: #409EFF;
+  border-radius: 6px;
+  color: #ffff;
+}
+
+.page .pageTwo .content .close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 40px;
+  width: 40px;
+}
+
+.page .pageTwo .content .close button {
+  height: 40px;
+  width: 40px;
+}

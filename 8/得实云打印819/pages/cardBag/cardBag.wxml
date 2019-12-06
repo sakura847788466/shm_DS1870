@@ -1,0 +1,86 @@
+<!-- pages/cardBag/cardBag.wxml -->
+<!-- <text>pages/cardBag/cardBag.wxml</text> -->
+<view class='page'>
+  <view class='banner'>
+    <!-- <swiper indicator-dots indicator-color='rgba(0,0,0,0.3)' indicator-active-color='#fff' autoplay circular interval='3000'>
+      <block wx:for='{{bannerList}}' wx:key='bannerList'>
+        <swiper-item>
+          <image src='{{item}}' class='img' mode='' data-id='' bindtap='toRichText' />
+        </swiper-item>
+      </block>
+    </swiper> -->
+    <swiper class="swiper" next-margin="140rpx" current-item-id="{{currentItemId}}" previous-margin="140rpx" bindchange="swiperChange">
+      <block wx:for="{{backClass}}" wx:key="index">
+        <swiper-item item-id="{{index}}" data-item-id="{{index}}" bindtap='clickChange'>
+          <view class='li'>
+            <view class='li1 {{item}} {{currentItemId == index ? "selected" : ""}}'></view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='container'>
+    <view class="locaUp" bindtap='cardClick'>
+      <image src="../../imgs/cardBag/weixinkabao@2x.png" class="bendi" />
+      <p class="btn_txt">微信卡包</p>
+      <p class="btn_cont">
+        <span>请选择微信卡包中发票进行打印</span>
+      </p>
+      <view class="btn_img">
+        <view class='left'>
+          <image class="btn_pdf" src='../../imgs/cardBag/mail_hook@2x.png'></image>
+          <span class="btn_rig">PDF</span>
+        </view>
+        <view class='right'>
+          <image class="btn_pdf" src='../../imgs/cardBag/mail_hook@2x.png'></image>
+          <span class="btn_tu">图片</span>
+        </view>
+      </view>
+      <!-- <input type="file" class="loca_space loca_input" name="" value="" /> -->
+    </view>
+    <view class="locaUp" bindtap='change'>
+      <image src="../../imgs/cardBag/duanxindayin@2x.png" class="bendi" bindtap='sms' />
+      <p class="btn_txt">短信打印</p>
+      <p class="btn_cont">
+        <span>请复制短信链接发票进行打印</span>
+      </p>
+      <view class="btn_img">
+        <view class='left'>
+          <image class="btn_pdf" src='../../imgs/cardBag/orange@2x.png'></image>
+          <span class="btn_rig">PDF</span>
+        </view>
+        <view class='right'>
+          <image class="btn_pdf" src='../../imgs/cardBag/orange@2x.png'></image>
+          <span class="btn_tu">图片</span>
+        </view>
+      </view>
+      <!-- <input type="file" class="loca_space loca_input" name="" value="" /> -->
+    </view>
+    <view class='hide{{showview? "show" : ""}} link_c'>
+      <view class='top'>
+        <span style="color:{{color}}">{{text}}</span>
+        <image src='../../imgs/cardBag/close.png' class="msm_false" bindtap='close'></image>
+      </view>
+      <textarea class="msm_print_val" name="" rows="" cols="" data-vlaue='' placeholder="请输入短信链接" bindinput='setValue'></textarea>
+      <button bindtap='getValue'>确定</button>
+    </view>
+    <view class="locaUp">
+      <image src="../../imgs/cardBag/bendifapiao@2x.png" class="bendi" bindtap='printimage' />
+      <p class="btn_txt">本地图片</p>
+      <p class="btn_cont">
+        <span>请选择本地图片进行打印</span>
+      </p>
+      <view class="btn_img">
+        <view class='left'>
+          <image class="btn_pdf" src='../../imgs/cardBag/dui@2x.png'></image>
+          <span class="btn_rig">PDF</span>
+        </view>
+        <view class='right'>
+          <image class="btn_pdf" src='../../imgs/cardBag/dui@2x.png'></image>
+          <span class="btn_tu">图片</span>
+        </view>
+      </view>
+      <!-- <input type="file" class="loca_space loca_input" name="" value="" /> -->
+    </view>
+  </view>
+</view>
